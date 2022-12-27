@@ -5,5 +5,7 @@ body, header, h1, h2, h5, ul{
 
 nav {
     background-color: #101E4E;
-  
+}
+nav>div>a{
+    color: #fff;
 }

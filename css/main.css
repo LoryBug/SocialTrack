@@ -15,3 +15,26 @@
         width: 100%;
     }
 }
+.blue-martini {
+    color: #101E4E ;
+}
+.btn-blueMartini {
+    background-color: #101E4E ;
+    color: #fff;
+}
+.red-martini {
+    color: #E4002B;
+}
+.bg-redMartini {
+    background-color: #E4002B;
+}
+.ciano-martini {
+    color: #96C4E8;
+}
+.bg-cianoMartini {
+    background-color: #96C4E8;
+}
+
+<!-- HTML !-->
+<button class="button-36" role="button">Button 36</button>
+

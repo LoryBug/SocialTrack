@@ -6,7 +6,9 @@ Elaborato di tecnologie web, anno 2022/23
 
 - decidere db e riempirlo
 - capire come collegare db a bootstrap usando php (lab 5/6)
-- definire le query
+- file database.php inserire tutte le query
+- file index.php 
+- file bootstrap.php 
 
 ## To Do Giamma:
 - post homepage

@@ -1,3 +1,21 @@
+body {
+  background-color: #E2E2E2;
+}
+.navbar {
+    background-color: #101E4E;
+}
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {height: 1500px}  
+ 
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height: auto;} 
+}
+
 .fs-0 {
     font-size: 4rem;
 }
@@ -14,25 +32,6 @@
         bottom: 0;
         width: 100%;
     }
-}
-.blue-martini {
-    color: #101E4E ;
-}
-.btn-blueMartini {
-    background-color: #101E4E ;
-    color: #fff;
-}
-.red-martini {
-    color: #E4002B;
-}
-.bg-redMartini {
-    background-color: #E4002B;
-}
-.ciano-martini {
-    color: #96C4E8;
-}
-.bg-cianoMartini {
-    background-color: #96C4E8;
 }
 
 <!-- HTML !-->

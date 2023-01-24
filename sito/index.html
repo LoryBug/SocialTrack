@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
@@ -17,19 +18,19 @@
     </div>
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container-fluid">
-            <ul class="navbar-nav">
+        <div class="container-fluid justify-content-center">
+            <ul class="nav  ">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link link-light" href="#">Home <em class="bi bi-house ps-2"></em></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link link-light" href="#">Profilo <em class="bi bi-person ps-2"></em></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link link-light" href="#">Impostazioni <em class="bi bi-gear ps-2"></em></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Download</a>
+                <li class="nav-item ">
+                    <a class="nav-link link-light" href="#">Notifiche <em class="bi bi-bell ps-2"></em></a>
                 </li>
             </ul>
         </div>
@@ -39,22 +40,47 @@
     <div class="container mt-5">
         <div class="row">
             <!--- Sidebar-->
-            <div class="col-sm-4">
+            <div class="col-sm-3 p-4 rounded shadow">
                 <a class="text-decoration-none link-dark" href="#">
                     <h3> Il mio profilo</h3>
                 </a>
                 <div class="my-1">
                     <img src="https://picsum.photos/id/237/100/150" alt="">
                 </div>
-                <a href="mailto:lory.leoni7@gmail.com" target="_blank"
-                    class="text-decoration-none">lory.leoni7@gmail.com</a>
-                <h3 class="mt-4">Filter</h3>
-                <p>Puoi filtrare e ordinare per:</p>
-                <ul class="nav nav-pills flex-column">
+                <ul class="mt-3">
                     <li>
+                        <p>Numero Followers: 200</p>
+                    </li>
+                    <li>
+                        <p>Numero Following: 200</p>
+                    </li>
+                    <li>
+                        <p>Numero Post: 10</p>
+                    </li>
+                    <li>
+                        <p>Numero Tracks: 3</p>
+                    </li>
+                </ul>
+
+                <h3 class="mt-4">Ordina</h3>
+                <p>Ordina per:</p>
+                <div class="btn-group dropend">
+                    <button type="button" class="btn btn-outline-primary dropdown-toggle " data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Data
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Più recenti</a></li>
+                        <li><a class="dropdown-item" href="#">Meno recenti</a></li>
+                    </ul>
+                </div>
+                <h3 class="mt-4">Filtra</h3>
+                <p>Filtrare per:</p>
+                <ul class="nav nav-pills flex-column">
+                    <li class="my-2">
                         <div class="btn-group dropend">
-                            <button type="button" class="btn btn-primary dropdown-toggle " data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <button type="button" class="btn btn-outline-primary dropdown-toggle "
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Lunghezza
                             </button>
                             <ul class="dropdown-menu">
@@ -64,10 +90,10 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    <li class="my-2">
                         <div class="btn-group dropend my-2">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <button type="button" class="btn btn-outline-primary dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Regione
                             </button>
                             <ul class="dropdown-menu">
@@ -79,22 +105,77 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                    <li class="my-2">
+                        <div class="btn-group dropend">
+                            <button type="button" class="btn btn-outline-primary dropdown-toggle "
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Tipologia
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Sterrato </a></li>
+                                <li><a class="dropdown-item" href="#">Stradale</a></li>
+                                <li><a class="dropdown-item" href="#">Circuito </a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <i class="fa-regular fa-magnifying-glass"></i> Link</a>
-                    </li>
-                    <li>
+                    <li class="mt-4">
                         <button type="button" class="btn btn-primary"> <i class="fa-regular fa-magnifying-glass"></i>
-                            Search</button>
+                            Search <em class="bi bi-search ps-2"></em></button>
                     </li>
                 </ul>
                 <hr class="d-sm-none">
             </div>
-            <!--Post-->
-            <div class="col-sm-8">
 
+
+            <!--Post-->
+            <div class="col-sm-9">
+                <div class="d-flex justify-content-evenly bd-highlight">
+
+                    <button type="button" class="btn btn-primary active">Posts <em
+                            class="bi bi-people ps-2"></em></button>
+                    <button type="button" class="btn btn-primary">Tracks <em class="bi bi-map ps-2"></em></button>
+                </div>
+                <!-- <ul class="list-inline justify-content-evenly">
+                    <li class="list-inline-item "><button type="button" class="btn btn-primary active">Posts</button></li>
+                    <li class="list-inline-item"><button type="button" class="btn btn-primary">Tracks</button></li>
+                  </ul>
+                <div class="">
+
+
+            </div>-->
+
+                <!--new post card-->
+                <div class="bg-white p-4 rounded shadow mt-3 container">
+                    <div class="row">
+                        <!-- avatar -->
+                        <div class="d-flex">
+                            <img src="https://picsum.photos/id/237/100/150" alt="avatar" class="rounded-circle me-2"
+                                style="width: 38px; height: 38px; object-fit: cover" />
+                            <div>
+                                <p class="m-0 fw-bold">LoryBart</p>
+                                <span class="">July 17 at 1:23 pm</span>
+                            </div>
+                        </div>
+                        <div class="my-2">
+                            <div class="input-group">
+                                <span class="input-group-text"> <em class="bi bi-pencil-square ps-2"></em></span>
+
+                                <textarea class="form-control" aria-label="With textarea"
+                                    placeholder="Scrivi un nuovo post ..."></textarea>
+                            </div>
+                            <div class="input-group mt-4">
+                                <input type="file" class="form-control" id="inputGroupFile04"
+                                    aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                <button class="btn btn-outline-secondary" type="button"
+                                    id="inputGroupFileAddon04">Button</button>
+                            </div>
+                            <!--<input type="text" class="form-control border-0 rounded-pill bg-gray"
+                            placeholder="Scrivi un nuovo post" />-->
+                        </div>
+
+
+                    </div>
+                </div>
                 <!--Post Card-->
                 <div class="bg-white p-4 rounded shadow mt-3 container">
                     <div class="row">
@@ -114,7 +195,8 @@
                             <!-- image content -->
                             <div class="mt-3">
                                 <div>
-                                    <img src="img/motorbike-example.jpg" alt="post image" class="img-fluid rounded" />
+                                    <img src="https://source.unsplash.com/collection/motorbike" alt="post image"
+                                        class="img-fluid rounded" />
                                 </div>
                             </div>
                         </div>
@@ -140,7 +222,7 @@
                                             data-bs-target="#collapsePost1" aria-expanded="false"
                                             aria-controls="collapsePost1" aria-controls="collapsePost1">
                                             <i class="fas fa-comment-alt me-2"></i>
-                                            something to say
+                                            Commenta ...
                                         </button>
 
                                     </div>
@@ -208,7 +290,8 @@
                             <!-- image content -->
                             <div class="mt-3">
                                 <div>
-                                    <img src="img/motorbike-example.jpg" alt="post image" class="img-fluid rounded" />
+                                    <img src="https://source.unsplash.com/collection/car" alt="post image"
+                                        class="img-fluid rounded" />
                                 </div>
                             </div>
                         </div>
@@ -292,7 +375,9 @@
     <!--- Footer-->
     <div class="conteiner-fluid">
         <footer class="mt-5 p-4 bg-dark text-white text-center">
-            <p>Footer</p>
+            <a href="#" class="text-decoration-none link-light">
+                <h3>SocialTrack</h3>
+            </a>
     </div>
     </div>
 

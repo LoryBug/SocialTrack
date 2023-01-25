@@ -13,7 +13,7 @@ class DatabaseHelper{
     
     // ------------------------------------ POST --------------------------------------------
     public function getRandomPosts($n=2){
-        $stmt = $this->db->prepare("SELECT PostID, Timestamp, Text, Image, Username FROM post ORDER BY RAND() LIMIT ?");
+        $stmt = $this->db->prepare("SELECT PostID, Post_timestamp, Post_text, Post_image, Username FROM post ORDER BY RAND() LIMIT ?");
         $stmt->bind_param("i", $n);
         $stmt->execute();
         $result = $stmt->get_result();

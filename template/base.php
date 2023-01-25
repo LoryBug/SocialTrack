@@ -176,7 +176,7 @@
                                     class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover" />
                                 <div>
                                     <p class="m-0 fw-bold"><?php echo $Pcasuale["Username"]; ?></p>
-                                    <span class="text-muted fs-7"><?php echo $Pcasuale["Timestamp"]; ?></span>
+                                    <span class="text-muted fs-7"><?php echo $Pcasuale["Post_timestamp"]; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                                 <!-- image content -->
                                 <div class="mt-3">
                                     <div>
-                                        <img src="<?php echo $Pcasuale["Image"]; ?>" alt="post image"
+                                        <img src="<?php echo $Pcasuale["Post_image"]; ?>" alt="post image"
                                             class="img-fluid rounded" />
                                     </div>
                                 </div>
@@ -195,7 +195,7 @@
                             <!--Right column-->
                             <div class="col-sm">
                                 <!-- text content -->
-                                <p class="my-2"><?php echo $Pcasuale["Text"]; ?></p>
+                                <p class="my-2"><?php echo $Pcasuale["Post_text"]; ?></p>
                             </div>
                         </div>
                         <!--Comment Row-->

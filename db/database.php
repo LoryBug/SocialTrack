@@ -41,8 +41,8 @@ class DatabaseHelper{
     
     // ------------------------------------ TRACK --------------------------------------------
 
-    public function getLatestTracks($n=5){
-        $stmt = $this->db->prepare("SELECT * FROM track ORDER BY 'Timestamp' ASC LIMIT ?");
+    public function getLatestTracks($n){
+        $stmt = $this->db->prepare("SELECT * FROM track ORDER BY Track_timestamp ASC LIMIT ?");
         $stmt->bind_param("i", $n); // i = integer
         $stmt->execute();
         $result = $stmt->get_result();
@@ -56,14 +56,14 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     public function getTrackByLength($length){
-        $stmt = $this->db->prepare("SELECT * FROM track WHERE Length <= ?");
+        $stmt = $this->db->prepare("SELECT * FROM track WHERE Track_length <= ?");
         $stmt->bind_param("i", $length); // i = integer
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     public function getTrackByType($type){
-        $stmt = $this->db->prepare("SELECT * FROM track WHERE Type = ?");
+        $stmt = $this->db->prepare("SELECT * FROM track WHERE Track_type = ?");
         $stmt->bind_param("s", $type); // s = string
         $stmt->execute();
         $result = $stmt->get_result();
@@ -92,11 +92,20 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+        
     // ------------------------------------ USER --------------------------------------------
 
-    //get
+    
     public function getUser($username){
         $stmt = $this->db->prepare("SELECT * FROM user WHERE Username = ?");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function getUserImg($username){
+        $stmt = $this->db->prepare("SELECT I<ProfileImg FROM user WHERE Username = ?");
         $stmt->bind_param("s", $username); // s = string
         $stmt->execute();
         $result = $stmt->get_result();
@@ -117,7 +126,7 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    // add
+
 
 
     // ------------------------------------ FOLLOW da riguardare --------------------------------------------

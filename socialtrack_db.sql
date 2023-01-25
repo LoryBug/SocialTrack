@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2023 at 03:01 PM
+-- Generation Time: Jan 25, 2023 at 03:00 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comment` (
   `CommentID` char(10) NOT NULL,
-  `Text` char(200) NOT NULL,
-  `Timestamp` date NOT NULL,
+  `Description` char(200) NOT NULL,
+  `Comment_date` datetime NOT NULL,
   `PostID` char(10) NOT NULL,
   `Username` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -55,9 +55,9 @@ CREATE TABLE `follow` (
 CREATE TABLE `notifica` (
   `NotID` char(10) NOT NULL,
   `CommentID` char(10) DEFAULT NULL,
-  `Type` char(100) NOT NULL,
+  `Notific_type` char(100) NOT NULL,
   `ReviewID` char(10) DEFAULT NULL,
-  `Text` char(200) NOT NULL,
+  `Notific_text` char(200) NOT NULL,
   `Checked` char(1) NOT NULL,
   `Username` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -70,9 +70,9 @@ CREATE TABLE `notifica` (
 
 CREATE TABLE `post` (
   `PostID` char(10) NOT NULL,
-  `Timestamp` date NOT NULL,
-  `Text` char(200) NOT NULL,
-  `Image` char(100) DEFAULT NULL,
+  `Post_timestamp` datetime NOT NULL,
+  `Description` char(200) NOT NULL,
+  `Post_image` char(100) DEFAULT NULL,
   `Username` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -84,9 +84,8 @@ CREATE TABLE `post` (
 
 CREATE TABLE `review` (
   `ReviewID` char(10) NOT NULL,
-  `NotID` char(10) DEFAULT NULL,
-  `Text` char(200) NOT NULL,
-  `Timestamp` date NOT NULL,
+  `Review_text` char(200) NOT NULL,
+  `Review_timestamp` datetime NOT NULL,
   `Voto` decimal(2,0) NOT NULL,
   `TrackID` decimal(10,0) NOT NULL,
   `Username` char(50) NOT NULL
@@ -100,13 +99,13 @@ CREATE TABLE `review` (
 
 CREATE TABLE `track` (
   `TrackID` decimal(10,0) NOT NULL,
-  `Text` char(200) NOT NULL,
-  `Type` char(30) NOT NULL,
-  `Timestamp` date NOT NULL,
-  `Length` float NOT NULL,
+  `Description` char(200) NOT NULL,
+  `Track_type` char(30) NOT NULL,
+  `Track_timestamp` datetime NOT NULL,
+  `Track_length` float NOT NULL,
   `Region` char(40) DEFAULT NULL,
   `FileGPX` char(200) NOT NULL,
-  `Image` char(100) DEFAULT NULL,
+  `Track_image` char(100) DEFAULT NULL,
   `Username` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

@@ -97,53 +97,22 @@
         <div class="row">
             <!--colonna a sinistra-->
             <!--hidden solo quando on sm display-->
-            <div class="col-sm-3 border-end shadow rounded-2 bg-white my-3 p-3 d-none d-sm-block">
+            <div
+                class="col-sm-3 border-end shadow rounded-2 bg-white mt-3 p-3 d-none d-sm-block d-flex align-self-start">
                 <!--my avatar-->
                 <div class="border border border-2 rounded-3 bg-white m-2 p-3">
-                    <a href="#">
-                        <p class="fs-5 fw-bold text-danger">My Profile</p>
+                    <a href="#"  class="text-decoration-none link-light">
+                        <h3 class="text-danger">My Profile</h3>
                         <img src="upload/image-deafult.jpg" class="rounded-circle" height="55" width="55" alt="Avatar">
                     </a>
-                </div>
-                <!--options-->
-                <div class="border border border-2 rounded-3 bg-light m-2">
-                    <p class="fs-5 fw-bold">Options</p>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">My Friends</li>
-                        <li class="list-group-item">My post</li>
-                        <li class="list-group-item">My track</li>
+                        <li class="list-group-item">Follower
+                        <span class="badge bg-primary rounded-pill ms-2">14</span>
+                        </li>
+                        <li class="list-group-item">Follow  
+                        <span class="badge bg-primary rounded-pill ms-4">14</span>
+                        </li>
                     </ul>
-                </div>
-                <!--Filter forms-->
-                <div class="border border border-2 rounded-3 bg-white m-2 p-2">
-                    <form>
-                        <p class="fs-5 fw-bold">Filter</p>
-                        <div class="form-floating my-2">
-                            <select class="form-select" id="Type" aria-label="Floating label select example">
-                                <option selected>Road</option>
-                                <option value="1">Off-Road</option>
-                                <option value="2">Dual</option>
-                            </select>
-                            <label for="Type">Select track's tipology</label>
-                        </div>
-                        <div class="form-floating my-2">
-                            <select class="form-select" id="Region" aria-label="Floating label select example">
-                                <option selected>Nord</option>
-                                <option value="1">Middle</option>
-                                <option value="2">Sud</option>
-                            </select>
-                            <label for="Region">Select Region</label>
-                        </div>
-                        <div class="form-floating my-2">
-                            <select class="form-select" id="kmFilter" aria-label="Floating label select example">
-                                <option selected>0km - 50km</option>
-                                <option value="1">50km - 100km</option>
-                                <option value="2">100km - 150km</option>
-                            </select>
-                            <label for="kmFilter">Select km range</label>
-                        </div>
-                        <button type="submit" class="btn btn-danger my-2">Filter</button>
-                    </form>
                 </div>
             </div>
             <!--fine colonna a sinistra-->
@@ -172,15 +141,19 @@
                         <!-- avatar -->
                         <div class="row">
                             <div class="d-flex">
-                                <img src="upload\image-deafult.jpg" alt="avatar"
-                                    class="rounded-circle me-2" style="width: 38px; height: 38px; object-fit: cover" />
+                                <img src="upload\image-deafult.jpg" alt="avatar" class="rounded-circle me-2"
+                                    style="width: 38px; height: 38px; object-fit: cover" />
                                 <div>
-                                    <p class="m-0 fw-bold"><?php echo $Pcasuale["Username"]; ?></p>
-                                    <span class="text-muted fs-7"><?php echo $Pcasuale["Post_timestamp"]; ?></span>
+                                    <p class="m-0 fw-bold">
+                                        <?php echo $Pcasuale["Username"]; ?>
+                                    </p>
+                                    <span class="text-muted fs-7">
+                                        <?php echo $Pcasuale["Post_timestamp"]; ?>
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                         <!-- Content -->
+                        <!-- Content -->
                         <div class="row">
                             <!--Left column-->
                             <div class="col-sm">
@@ -195,7 +168,9 @@
                             <!--Right column-->
                             <div class="col-sm">
                                 <!-- text content -->
-                                <p class="my-2"><?php echo $Pcasuale["Post_text"]; ?></p>
+                                <p class="my-2">
+                                    <?php echo $Pcasuale["Post_text"]; ?>
+                                </p>
                             </div>
                         </div>
                         <!--Comment Row-->
@@ -207,7 +182,7 @@
                                     <div class="accordion-item border-0">
                                         <!--button Comment-->
                                         <div class="d-grid gap-2 py-4">
-                                            <button class="btn btn-danger" type="button" data-bs-toggle="collapse"
+                                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#collapsePost1" aria-expanded="false"
                                                 aria-controls="collapsePost1" aria-controls="collapsePost1">
                                                 <i class="fas fa-comment-alt me-2"></i>
@@ -225,10 +200,10 @@
                                                     <!-- avatar -->
                                                     <img src="https://source.unsplash.com/random/2" alt="avatar"
                                                         class="rounded-circle me-2" style="
-                                          width: 38px;
-                                          height: 38px;
-                                          object-fit: cover;
-                                        " />
+                                                      width: 38px;
+                                                      height: 38px;
+                                                      object-fit: cover;
+                                                    " />
                                                     <!-- comment text -->
                                                     <div class="p-3 rounded comment__input w-100">
                                                         <p class="fw-bold m-0">Giova Nino</p>
@@ -244,10 +219,10 @@
                                                     <div>
                                                         <img src="https://source.unsplash.com/collection/happy-people"
                                                             alt="avatar" class="rounded-circle me-2" style="
-                                            width: 38px;
-                                            height: 38px;
-                                            object-fit: cover;
-                                          " />
+                                                        width: 38px;
+                                                        height: 38px;
+                                                        object-fit: cover;
+                                                      " />
                                                     </div>
                                                     <!-- input -->
                                                     <input type="text" class="form-control border-0 rounded-pill bg-gray"
@@ -268,35 +243,73 @@
 
             <!--colonna a destra-->
             <!--hidden solo quando on sm display-->
-            <div class="col-sm-2 border-start shadow rounded-2 bg-white my-3 p-2 d-none d-sm-block">
-                <p class="fw-bold">Next Events:</p>
-                <div class="border border-2 rounded-3 bg-light p-2 my-2">
-                    <img src="upload/mugello_logo.png" class="img-fluid" alt="Mugello circuit" width="120" height="90">
-                    <p><strong>Italy</strong></p>
-                    <p>Fri. 27 November 2023</p>
+            <div class="col-sm-2 border-start shadow rounded-2 bg-white mt-3 p-2 d-none d-sm-block align-self-start">
+                <!--Filter forms-->
+                <div class="rounded-3 bg-white m-2 p-2">
+                    <form>
+                        <h4>Filter</h4>
+                        <div class="form-floating my-2">
+                            <select class="form-select border-primary" id="Type"
+                                aria-label="Floating label select example">
+                                <option selected>All</option>
+                                <option value="1">Road</option>
+                                <option value="2">Off-Road</option>
+                                <option value="3">Dual</option>
+                            </select>
+                            <label for="Type">Select track</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <select class="form-select border-primary" id="Region"
+                                aria-label="Floating label select example">
+                                <option selected>All</option>
+                                <option value="1">Emiglia Romagna</option>
+                                <option value="2">Lombardia</option>
+                                <option value="3">Veneto</option>
+                                <option value="4">Liguria</option>
+                                <option value="5">Toscana</option>
+                                <option value="6">Altro</option>
+                            </select>
+                            <label for="Region">Select Region</label>
+                        </div>
+                        <div class="form-floating my-2">
+                            <select class="form-select border-primary" id="kmFilter"
+                                aria-label="Floating label select example">
+                                <option selected>All</option>
+                                <option value="1">0km - 50km</option>
+                                <option value="2">50km - 100km</option>
+                                <option value="3">100km - 150km</option>
+                                <option value="2">more 150km</option>
+                            </select>
+                            <label for="kmFilter">Select km range</label>
+                        </div>
+                        <button type="submit" class="btn btn-danger my-2">Filter</button>
+                    </form>
                 </div>
-                <div class="border border-2 rounded-3 bg-light p-2 my-3">
-                    <img src="upload/ads_logo.png" class="img-fluid" alt="imola circuit" width="120" height="90">
-                    <p><strong>ADS</strong></p>
-                </div>
-                <div class="border border-2 rounded-3 bg-light p-2 my-3">
-                    <img src="upload/imola_logo.jpg" class="img-fluid" alt="imola circuit" width="120" height="90">
-                    <p><strong>Imola Circuit</strong></p>
-                    <p>Fri. 15 Dicember 2023</p>
+                <!--Order by-->
+                <!--Filter forms-->
+                <div class="rounded-3 bg-white m-2 p-2">
+                    <form>
+                        <h4>Order by</h4>
+                        <div class="form-floating my-2">
+                            <select class="form-select border-primary" id="Type"
+                                aria-label="Floating label select example">
+                                <option selected>Latest</option>
+                                <option value="1">Older</option>
+                            </select>
+                            <label for="Type">Date post</label>
+                        </div>
+                        <button type="submit" class="btn btn-danger my-2">Order</button>
+                    </form>
                 </div>
             </div>
             <!--fine colonna a destra-->
         </div>
     </div>
 
-    <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-        </ul>
+    <footer class="mt-5 p-4 bg-dark text-white text-center py-3 my-4">
+        <a href="#" class="text-decoration-none link-light">
+            <h3>SocialTrack</h3>
+        </a>
         <p class="text-center text-muted">© 2023 Socialtrack by Leoni, Casamenti</p>
     </footer>
 

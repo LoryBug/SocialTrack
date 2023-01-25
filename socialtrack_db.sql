@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2023 at 03:00 PM
+-- Generation Time: Jan 25, 2023 at 03:38 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comment` (
   `CommentID` char(10) NOT NULL,
-  `Description` char(200) NOT NULL,
+  `Comment_text` char(200) NOT NULL,
   `Comment_date` datetime NOT NULL,
   `PostID` char(10) NOT NULL,
   `Username` char(50) NOT NULL
@@ -71,7 +71,7 @@ CREATE TABLE `notifica` (
 CREATE TABLE `post` (
   `PostID` char(10) NOT NULL,
   `Post_timestamp` datetime NOT NULL,
-  `Description` char(200) NOT NULL,
+  `Post_text` char(200) NOT NULL,
   `Post_image` char(100) DEFAULT NULL,
   `Username` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -86,7 +86,7 @@ CREATE TABLE `review` (
   `ReviewID` char(10) NOT NULL,
   `Review_text` char(200) NOT NULL,
   `Review_timestamp` datetime NOT NULL,
-  `Voto` decimal(2,0) NOT NULL,
+  `Review_voto` decimal(2,0) NOT NULL,
   `TrackID` decimal(10,0) NOT NULL,
   `Username` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -99,7 +99,7 @@ CREATE TABLE `review` (
 
 CREATE TABLE `track` (
   `TrackID` decimal(10,0) NOT NULL,
-  `Description` char(200) NOT NULL,
+  `Text_description` char(200) NOT NULL,
   `Track_type` char(30) NOT NULL,
   `Track_timestamp` datetime NOT NULL,
   `Track_length` float NOT NULL,
@@ -118,7 +118,7 @@ CREATE TABLE `track` (
 CREATE TABLE `user` (
   `Username` char(50) NOT NULL,
   `Email` char(50) NOT NULL,
-  `Password` char(30) NOT NULL,
+  `User_password` char(30) NOT NULL,
   `nFollow` decimal(10,0) NOT NULL,
   `nFollower` decimal(10,0) NOT NULL,
   `ProfileImg` char(100) DEFAULT NULL
@@ -128,7 +128,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`Username`, `Email`, `Password`, `nFollow`, `nFollower`, `ProfileImg`) VALUES
+INSERT INTO `user` (`Username`, `Email`, `User_password`, `nFollow`, `nFollower`, `ProfileImg`) VALUES
 ('LoryBart', 'lory.leoni@gmail.com', 'ciao', '10', '10', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.begingroup.net%2Fessere-bart-simpson%2F&psig=A');
 
 --

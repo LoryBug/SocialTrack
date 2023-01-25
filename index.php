@@ -2,8 +2,10 @@
 require_once("bootstrap.php");
 
 $templateParams["titolo"] = "Socialtrack - Home";
-$templateParams["username"] = $dbh->getUser("GiammaC")[0]["Username"];
-$templateParams["ProfileImg"] = $dbh->getUser("GiammaC")[0]["ProfileImg"];
+
+//prova get post dal DB
+$templateParams["postcasuali"] = $dbh->getRandomPosts(2);
+
 require("template/base.php");
 
 ?>

@@ -12,6 +12,14 @@ class DatabaseHelper{
     // TODO: tutte le add e le update
     
     // ------------------------------------ POST --------------------------------------------
+    public function getRandomPosts($n=2){
+        $stmt = $this->db->prepare("SELECT PostID, Timestamp, Text, Image, Username FROM post ORDER BY RAND() LIMIT ?");
+        $stmt->bind_param("i", $n);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     public function getLatestPosts($n){
         $stmt = $this->db->prepare("SELECT * FROM post ORDER BY 'Timestamp' ASC LIMIT ?");
         $stmt->bind_param("i", $n); // i = integer

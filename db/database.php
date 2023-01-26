@@ -30,24 +30,18 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
-    }
+    }     
 
+    // ------------------------------------ COMMENT--------------------------------------------
+    
     public function getCommentPost($postID){
-        $stmt = $this->db->prepare("SELECT * FROM comment WHERE PostID = ?");
+        $stmt = $this->db->prepare("SELECT * FROM comment as c, user as u WHERE u.username = c.username 
+        AND PostID = ?");
         $stmt->bind_param("i", $postID); // i = integer
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
-    }
-       
-    public function getProfileImgFromPost($postID){
-        $stmt = $this->db->prepare("SELECT  u.ProfileImg FROM  user as u, post as p WHERE u.Username = p.Username AND p.PostID = ?");
-        $stmt->bind_param("i", $postID); // i = integer
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        return $result->fetch_all(MYSQLI_ASSOC); 
     }
 
     // ------------------------------------ TRACK --------------------------------------------

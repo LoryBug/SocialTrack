@@ -76,9 +76,12 @@
                                 <?php foreach ($dbh->getCommentPost($Post["PostID"]) as $comment): ?>
                                     <div class="d-flex align-items-center my-1">
                                         <!-- avatar -->
-                                        <img src="" alt="">
+                                        <img src="<?php echo $comment["ProfileImg"]?>" height="50" width="50" alt="">
                                         <!-- comment text -->
                                         <div class="p-3">
+                                            <p>
+                                                <?php echo $comment["Comment_date"] ?>
+                                            </p>
                                             <p>
                                                 <?php echo $comment["Username"] ?>
                                             </p>
@@ -94,10 +97,10 @@
                                     <div>
                                         <img src="https://source.unsplash.com/collection/happy-people" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                    width: 38px;
-                                                                    height: 38px;
-                                                                    object-fit: cover;
-                                                                  " />
+                                                                        width: 38px;
+                                                                        height: 38px;
+                                                                        object-fit: cover;
+                                                                      " />
                                     </div>
                                     <!-- input -->
                                     <input type="text" class="form-control border-0 rounded-pill bg-gray"

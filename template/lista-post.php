@@ -20,7 +20,8 @@
                 <div class="input-group mt-4">
                     <input type="file" class="form-control" id="ImgInput" name="ImgInput"
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                    <button class="btn btn-outline-secondary" type="submit" value="Submit" Form="formNewPost" id="inputGroupFileAddon04">Pubblica</button>
+                    <button class="btn btn-outline-secondary" type="submit" value="Submit" Form="formNewPost"
+                        id="inputGroupFileAddon04">Pubblica</button>
                 </div>
             </div>
 </form>
@@ -113,19 +114,20 @@
 
                                 <?php endforeach; ?>
                                 <!-- create comment -->
-                                <form class="d-flex my-1">
+                                <form class="d-flex my-1" id="formNewComment" action="index.php" method="post">
                                     <!-- avatar -->
                                     <div>
                                         <img src="https://source.unsplash.com/collection/happy-people" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                                width: 38px;
-                                                                                height: 38px;
-                                                                                object-fit: cover;
-                                                                              " />
+                                                                                    width: 38px;
+                                                                                    height: 38px;
+                                                                                    object-fit: cover;
+                                                                                  " />
                                     </div>
                                     <!-- input -->
-                                    <input type="text" class="form-control border-0 rounded-pill bg-gray"
-                                        placeholder="Write a comment" />
+                                    <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"]?>">
+                                    <input type="text" class="form-control border-0 rounded-pill bg-gray" id="CommentInput"
+                                        name="CommentInput" placeholder="Write a comment" />
                                 </form>
                                 <!-- end -->
                             </div>

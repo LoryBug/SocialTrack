@@ -1,16 +1,32 @@
-<div class="row">
-    <div class="col-sm-12">
-        <div class="shadow rounded-2 bg-white mt-3 p-2">
-            <p class="fw-bold">New Post</p>
-            <div class="col-sm-1">
-                <img src="upload/image-deafult.jpg" alt="avatar" class="rounded-circle me-2"
-                    style="width: 38px; height: 38px; object-fit: cover">
+<!--new post card-->
+<form action="index.php" method="post">
+    <div class="bg-white p-4 rounded shadow mt-3 container">
+        <div class="row">
+            <!-- avatar -->
+            <div class="d-flex">
+                <img src="upload/GC_default.JPG" alt="avatar" class="rounded-circle me-2"
+                    style="width: 38px; height: 38px; object-fit: cover" />
+                <div>
+                    <p class="m-0 fw-bold">GiammaC</p>
+                </div>
             </div>
-            <div class="col">
-                <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
+            <div class="my-2">
+                <div class="input-group">
+                    <span class="input-group-text"> <em class="bi bi-pencil-square ps-2"></em></span>
+
+                    <textarea class="form-control" aria-label="With textarea"
+                        placeholder="Scrivi un nuovo post ..."></textarea>
+                </div>
+                <div class="input-group mt-4">
+                    <input type="file" class="form-control" id="inputGroupFile04"
+                        aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Pubblica</button>
+                </div>
             </div>
-        </div>
-    </div>
+</form>
+
+
+</div>
 </div>
 <!--post-->
 <?php foreach ($dbh->getLatestPosts() as $Post): ?>
@@ -76,7 +92,7 @@
                                 <?php foreach ($dbh->getCommentPost($Post["PostID"]) as $comment): ?>
                                     <div class="d-flex align-items-center my-1">
                                         <!-- avatar -->
-                                        <img src="<?php echo $comment["ProfileImg"]?>" height="50" width="50" alt="">
+                                        <img src="<?php echo $comment["ProfileImg"] ?>" height="50" width="50" alt="">
                                         <!-- comment text -->
                                         <div class="p-3">
                                             <p>
@@ -97,10 +113,10 @@
                                     <div>
                                         <img src="https://source.unsplash.com/collection/happy-people" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                        width: 38px;
-                                                                        height: 38px;
-                                                                        object-fit: cover;
-                                                                      " />
+                                                                                width: 38px;
+                                                                                height: 38px;
+                                                                                object-fit: cover;
+                                                                              " />
                                     </div>
                                     <!-- input -->
                                     <input type="text" class="form-control border-0 rounded-pill bg-gray"

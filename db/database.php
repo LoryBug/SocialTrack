@@ -12,17 +12,17 @@ class DatabaseHelper{
     // TODO: tutte le add e le update
     
     // ------------------------------------ POST --------------------------------------------
-    public function getRandomPosts($n=2){
-        $stmt = $this->db->prepare("SELECT PostID, Post_timestamp, Post_text, Post_image, Username FROM post ORDER BY RAND() LIMIT ?");
-        $stmt->bind_param("i", $n);
+   
+    public function getLatestPosts(){
+        $stmt = $this->db->prepare("SELECT PostID, Post_timestamp, Post_text, Post_image, Username FROM post ORDER BY Post_timestamp DESC");
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    public function getLatestPosts($n){
-        $stmt = $this->db->prepare("SELECT * FROM post ORDER BY 'Timestamp' ASC LIMIT ?");
-        $stmt->bind_param("i", $n); // i = integer
+
+    public function getOlderPosts(){
+        $stmt = $this->db->prepare("SELECT PostID, Post_timestamp, Post_text, Post_image, Username FROM post");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -37,8 +37,19 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+       
+    public function getProfileImgFromPost($postID){
+        $stmt = $this->db->prepare("SELECT  u.ProfileImg FROM  user as u, post as p WHERE u.Username = p.Username AND p.PostID = ?");
+        $stmt->bind_param("i", $postID); // i = integer
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
+
+    public function getProfileImgFromComment($username){
+
+    }
     // ------------------------------------ TRACK --------------------------------------------
 
     public function getLatestTracks($n){

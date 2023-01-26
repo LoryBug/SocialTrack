@@ -2,10 +2,9 @@
 require_once("bootstrap.php");
 
 $templateParams["titolo"] = "Socialtrack - Home";
+$templateParams["nome"] = "lista-post.php";
 
-//prova get post dal DB
-$templateParams["postcasuali"] = $dbh->getRandomPosts(2);
+
 
 require("template/base.php");
-
 ?>

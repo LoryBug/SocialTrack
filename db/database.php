@@ -11,12 +11,8 @@ class DatabaseHelper
             die("Connesione fallita al db");
         }
     }
-    // TODO: tutte le add e le update
 
     // ------------------------------------ POST --------------------------------------------
-
-
-
     public function getLatestPosts()
     {
         $stmt = $this->db->prepare("SELECT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg
@@ -54,7 +50,6 @@ class DatabaseHelper
     }
 
     // ------------------------------------ COMMENT--------------------------------------------
-
     public function getCommentPost($postID)
     {
         $stmt = $this->db->prepare("SELECT * FROM comment as c, user as u WHERE u.username = c.username 

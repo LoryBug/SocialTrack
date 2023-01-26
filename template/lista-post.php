@@ -90,6 +90,7 @@
                             <div class="accordion-body">
                                 <!-- comment 1 -->
                                 <?php foreach ($dbh->getCommentPost($Post["PostID"]) as $comment): ?>
+<<<<<<< HEAD
                                     <div class="d-flex align-items-center my-1">
                                         <!-- avatar -->
                                         <img src="<?php echo $comment["ProfileImg"] ?>" height="50" width="50" alt="">
@@ -104,8 +105,29 @@
                                             <p>
                                                 <?php echo $comment["Comment_text"] ?>
                                             </p>
+=======
+                                    <div class="row py-2">
+
+                                        <div class="d-flex align-self-center">
+                                            <!-- avatar -->
+                                            <img src="<?php echo $comment["ProfileImg"]; ?>" alt="avatar"
+                                                class="rounded-circle me-2"
+                                                style="width: 40px; height: 40px; object-fit: cover">
+
+                                            <!-- comment text -->
+                                            <div class="w-100">
+                                                <p class="fw-bold m-0 text-start">
+                                                    <?php echo $comment["Username"]; ?>
+                                                </p>
+                                                <p class="m-0 fs-7 bg-gray rounded text-start">
+                                                    <?php echo $comment["Comment_text"] ?>
+                                                </p>
+                                            </div>
+>>>>>>> da24611589ab360075f979ac7dab2a418c38f30b
                                         </div>
                                     </div>
+
+
                                 <?php endforeach; ?>
                                 <!-- create comment -->
                                 <form class="d-flex my-1">
@@ -113,10 +135,17 @@
                                     <div>
                                         <img src="https://source.unsplash.com/collection/happy-people" alt="avatar"
                                             class="rounded-circle me-2" style="
+<<<<<<< HEAD
                                                                                 width: 38px;
                                                                                 height: 38px;
                                                                                 object-fit: cover;
                                                                               " />
+=======
+                                                                                                    width: 38px;
+                                                                                                    height: 38px;
+                                                                                                    object-fit: cover;
+                                                                                                  " />
+>>>>>>> da24611589ab360075f979ac7dab2a418c38f30b
                                     </div>
                                     <!-- input -->
                                     <input type="text" class="form-control border-0 rounded-pill bg-gray"

@@ -36,6 +36,14 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getPostNewID(){
+        $stmt = $this->db->prepare("SELECT COUNT(PostID)+1 FROM post");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    } 
+    
     public function insertNewPost($postID, $post_timestamp, $post_text, $post_image, $username)
     {
         $stmt = $this->db->prepare("INSERT INTO post(PostID, Post_timestamp, Post_text, Post_image, Username)

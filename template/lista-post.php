@@ -1,5 +1,5 @@
 <!--new post card-->
-<form action="index.php" method="post">
+<form id="formNewPost" action="index.php" method="post">
     <div class="bg-white p-4 rounded shadow mt-3 container">
         <div class="row">
             <!-- avatar -->
@@ -13,14 +13,14 @@
             <div class="my-2">
                 <div class="input-group">
                     <span class="input-group-text"> <em class="bi bi-pencil-square ps-2"></em></span>
-
-                    <textarea class="form-control" aria-label="With textarea"
+                    <!--testo da inserire-->
+                    <textarea class="form-control" aria-label="With textarea" id="textAreaPost" name="textAreaPost"
                         placeholder="Scrivi un nuovo post ..."></textarea>
                 </div>
                 <div class="input-group mt-4">
-                    <input type="file" class="form-control" id="inputGroupFile04"
+                    <input type="file" class="form-control" id="ImgInput" name="ImgInput"
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Pubblica</button>
+                    <button class="btn btn-outline-secondary" type="submit" value="Submit" Form="formNewPost" id="inputGroupFileAddon04">Pubblica</button>
                 </div>
             </div>
 </form>
@@ -90,22 +90,6 @@
                             <div class="accordion-body">
                                 <!-- comment 1 -->
                                 <?php foreach ($dbh->getCommentPost($Post["PostID"]) as $comment): ?>
-<<<<<<< HEAD
-                                    <div class="d-flex align-items-center my-1">
-                                        <!-- avatar -->
-                                        <img src="<?php echo $comment["ProfileImg"] ?>" height="50" width="50" alt="">
-                                        <!-- comment text -->
-                                        <div class="p-3">
-                                            <p>
-                                                <?php echo $comment["Comment_date"] ?>
-                                            </p>
-                                            <p>
-                                                <?php echo $comment["Username"] ?>
-                                            </p>
-                                            <p>
-                                                <?php echo $comment["Comment_text"] ?>
-                                            </p>
-=======
                                     <div class="row py-2">
 
                                         <div class="d-flex align-self-center">
@@ -123,7 +107,6 @@
                                                     <?php echo $comment["Comment_text"] ?>
                                                 </p>
                                             </div>
->>>>>>> da24611589ab360075f979ac7dab2a418c38f30b
                                         </div>
                                     </div>
 
@@ -135,17 +118,10 @@
                                     <div>
                                         <img src="https://source.unsplash.com/collection/happy-people" alt="avatar"
                                             class="rounded-circle me-2" style="
-<<<<<<< HEAD
                                                                                 width: 38px;
                                                                                 height: 38px;
                                                                                 object-fit: cover;
                                                                               " />
-=======
-                                                                                                    width: 38px;
-                                                                                                    height: 38px;
-                                                                                                    object-fit: cover;
-                                                                                                  " />
->>>>>>> da24611589ab360075f979ac7dab2a418c38f30b
                                     </div>
                                     <!-- input -->
                                     <input type="text" class="form-control border-0 rounded-pill bg-gray"

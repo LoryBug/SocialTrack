@@ -193,7 +193,7 @@
         </div>
     </div>
 
-    <footer class="mt-5 p-4 bg-dark text-white text-center py-3 my-4">
+    <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
         <a href="#" class="text-decoration-none link-light">
             <h3>SocialTrack</h3>
         </a>

@@ -13,8 +13,11 @@ class DatabaseHelper{
     
     // ------------------------------------ POST --------------------------------------------
    
+ 
+
     public function getLatestPosts(){
-        $stmt = $this->db->prepare("SELECT PostID, Post_timestamp, Post_text, Post_image, Username FROM post ORDER BY Post_timestamp DESC");
+        $stmt = $this->db->prepare("SELECT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg
+         FROM user as u, post as p WHERE u.Username = p.Username ORDER BY Post_timestamp DESC");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -47,9 +50,6 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC); 
     }
 
-    public function getProfileImgFromComment($username){
-
-    }
     // ------------------------------------ TRACK --------------------------------------------
 
     public function getLatestTracks($n){

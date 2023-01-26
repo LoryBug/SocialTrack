@@ -19,7 +19,7 @@
         <!-- avatar -->
         <div class="row">
             <div class="d-flex">
-                <img src="<?php echo $dbh->getProfileImgFromPost($Post["PostID"]); ?>" alt="avatar" class="rounded-circle me-2"
+                <img src="<?php echo $Post["ProfileImg"]; ?>" alt="avatar" class="rounded-circle me-2"
                     style="width: 38px; height: 38px; object-fit: cover" />
                 <div>
                     <p class="m-0 fw-bold">

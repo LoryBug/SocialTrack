@@ -192,6 +192,16 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    //----------------------------------LOGIN------------------------------------------
+    public function checkLogin($username, $password)
+    {
+        $stmt = $this->db->prepare("SELECT Username FROM user WHERE Username = ? AND User_password = ?");
+        $stmt->bind_param("ss", $username, $password); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
 
 ?>

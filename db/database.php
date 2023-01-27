@@ -90,7 +90,23 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function getTrackNewID()
+    {
+        $stmt = $this->db->prepare("SELECT COUNT(TrackID)+1 FROM track");
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function insertNewTrack($ID, $description, $type, $timestamp, $length, $region, $fileGPX, $image, $Username)
+    {
+        $stmt = $this->db->prepare("INSERT INTO track(TrackID, Text_description, Track_type,
+         Track_timestamp, Track_length, Region, FileGPX, Track_image, Username)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssssss", $ID, $description, $type, $timestamp, $length, $region, $fileGPX, $image, $Username);
+        return $stmt->execute();
+    }
     // ------------------------------------ REVIEW--------------------------------------------
     public function getReviewTrack($trackID)
     {
@@ -100,6 +116,24 @@ class DatabaseHelper
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function insertNewReview($ID, $text, $date, $voto, $TrackID, $username)
+    {
+        $stmt = $this->db->prepare("INSERT INTO review(ReviewID, Review_text, Review_timestamp, Review_voto, TrackID, Username)
+         VALUES (?, ?, ?, ?, ?,?)");
+        $stmt->bind_param("ssssss", $ID, $text, $date, $voto, $TrackID, $username);
+        return $stmt->execute();
+    }
+
+    public function getReviewNewID()
+    {
+        $stmt = $this->db->prepare("SELECT COUNT(ReviewID)+1 FROM review");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+
     }
 
     // ------------------------------------ USER --------------------------------------------

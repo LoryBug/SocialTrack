@@ -63,7 +63,7 @@
         </div>
         <!--Comment Row-->
         <div class="row">
-            <!-- like and reviewS -->
+            <!-- like and review -->
             <div class="post__comment mt-3 position-relative">
                 <!-- comments start-->
                 <div class="accordion" id="accordionExample">
@@ -105,8 +105,8 @@
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
-                                <!-- create comment -->
-                                <form class="d-flex my-1" id="formNewComment" action="index.php" method="post">
+                                <!-- create review -->
+                                <form class="d-flex my-1" id="formNewReview" action="track.php" method="post">
                                     <!-- avatar -->
                                     <div>
                                         <img src="https://source.unsplash.com/collection/happy-people" alt="avatar"
@@ -117,9 +117,10 @@
                                                                                                   " />
                                     </div>
                                     <!-- input -->
-                                    <input type="hidden" id="postID" name="postID" value="">
-                                    <input type="text" class="form-control border-0 rounded-pill bg-gray" id="CommentInput"
-                                        name="CommentInput" placeholder="Write a comment" />
+                                    <input type="hidden" id="trackID" name="trackID" value="<?php echo $Track["TrackID"] ?>">
+                                    <!--<input type="number" class="form-control" id="trackVote" name="trackVote" placeholder="rate">-->
+                                    <input type="text" class="form-control border-0 rounded-pill bg-gray" id="reviewInput"
+                                        name="reviewInput" placeholder="Write a review" />
                                 </form>
                                 <!-- end -->
                             </div>

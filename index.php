@@ -15,12 +15,9 @@ if (isset($_POST["CommentInput"])) {
 }
 
 $templateParams["titolo"] = "Socialtrack - Home";
-//$templateParams["opzione"] = "inserisci-post.php";
-//$templateParams["lista"] = "lista-post.php";
-
-//-------------------------------------------------------test track page
-$templateParams["opzione"] = "inserisci-track.php";
-$templateParams["lista"] = "lista-track.php";
+$templateParams["opzione"] = "selectView.php";
+$templateParams["inserimento"] = "inserisci-post.php";
+$templateParams["lista"] = "lista-post.php";
 
 require("template/base.php");
 ?>

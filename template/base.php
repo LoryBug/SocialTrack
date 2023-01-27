@@ -122,13 +122,11 @@
 
             <!--colonna MAIN-->
             <div class="col-sm-7">
-                <div class="d-flex justify-content-evenly bd-highlight mt-3">
-                    <button type="button" class="btn btn-primary active">Posts <em
-                            class="bi bi-people ps-2"></em></button>
-                    <button type="button" class="btn btn-primary">Tracks <em class="bi bi-map ps-2"></em></button>
-                </div>
                 <?php
                 require($templateParams["opzione"]);
+                ?>
+                <?php
+                require($templateParams["inserimento"]);
                 ?>
                 <?php
                 require($templateParams["lista"]);

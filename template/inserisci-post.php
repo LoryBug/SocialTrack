@@ -24,4 +24,6 @@
                         id="inputGroupFileAddon04">Pubblica</button>
                 </div>
             </div>
+        </div>
+    </div>
 </form>

@@ -1,5 +1,3 @@
-</div>
-</div>
 <!--post-->
 <?php foreach ($dbh->getLatestPosts() as $Post): ?>
     <!--Post Card-->

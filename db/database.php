@@ -80,69 +80,29 @@ class DatabaseHelper
     }
 
     // ------------------------------------ TRACK --------------------------------------------
+    public function getLatestTracks()
+    {
+        $stmt = $this->db->prepare("SELECT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
+         t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t 
+         WHERE u.Username = t.Username ORDER BY Track_timestamp DESC");
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    public function getLatestTracks($n)
-    {
-        $stmt = $this->db->prepare("SELECT * FROM track ORDER BY Track_timestamp ASC LIMIT ?");
-        $stmt->bind_param("i", $n); // i = integer
-        $stmt->execute();
-        $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    public function getTrackByRegion($region)
-    {
-        $stmt = $this->db->prepare("SELECT * FROM track WHERE Region = ?");
-        $stmt->bind_param("s", $region); // s = string
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-    public function getTrackByLength($length)
-    {
-        $stmt = $this->db->prepare("SELECT * FROM track WHERE Track_length <= ?");
-        $stmt->bind_param("i", $length); // i = integer
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-    public function getTrackByType($type)
-    {
-        $stmt = $this->db->prepare("SELECT * FROM track WHERE Track_type = ?");
-        $stmt->bind_param("s", $type); // s = string
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
+
+    // ------------------------------------ REVIEW--------------------------------------------
     public function getReviewTrack($trackID)
     {
-        $stmt = $this->db->prepare("SELECT * FROM review WHERE TrackID = ?");
+        $stmt = $this->db->prepare("SELECT * FROM review as r, user as u WHERE u.username = r.username AND r.TrackID = ?");
         $stmt->bind_param("i", $trackID); // i = integer
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
 
-    public function getTopTracks($n)
-    {
-        $stmt = $this->db->prepare("SELECT TrackID, AVG(Vote) FROM review GROUP BY TrackID ORDER BY AVG(Vote) DESC LIMIT ?");
-        $stmt->bind_param("i", $n); // i = integer
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
-    public function getAvgVoteTrack($trackID)
-    {
-        $stmt = $this->db->prepare("SELECT AVG(Vote) FROM review WHERE TrackID = ?");
-        $stmt->bind_param("i", $trackID); // i = integer
-        $stmt->execute();
-        $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     // ------------------------------------ USER --------------------------------------------
-
-
     public function getUser($username)
     {
         $stmt = $this->db->prepare("SELECT * FROM user WHERE Username = ?");

@@ -29,13 +29,15 @@
             <div class="bg-white shadow rounded p-3 input-group-lg">
                 <form action="login.php" method="post">
 
-                <h2 class="text-center">Login</h2>
-                <input type="username" class="form-control my-3" placeholder="Usermame" name="username" id="username">
-                <label for="username" class="form-label" hidden>username</label>
-                <input type="password" class="form-control my-3" placeholder="Password" name="password" id="password">
-                <label for="password" class="form-label" hidden>password</label>
-                <input class="btn btn-danger w-100 my-3" type="submit" value="Start to race" >
-    
+                    <h2 class="text-center">Login</h2>
+                    <input type="username" class="form-control my-3" placeholder="Usermame" name="username"
+                        id="username">
+                    <label for="username" class="form-label" hidden>username</label>
+                    <input type="password" class="form-control my-3" placeholder="Password" name="password"
+                        id="password">
+                    <label for="password" class="form-label" hidden>password</label>
+                    <input class="btn btn-danger w-100 my-3" type="submit" value="Start to race">
+
                 </form>
 
                 <div class="form-check ms-3">
@@ -70,6 +72,7 @@
                             <div class="modal-body">
                                 <form>
                                     <!-- name -->
+
                                     <div class="row">
                                         <div class="col">
                                             <input type="text" class="form-control" placeholder="Nome">
@@ -78,10 +81,16 @@
                                             <input type="text" class="form-control" placeholder="Cognome">
                                         </div>
                                     </div>
-                                    <!-- username,email e pass -->
-                                    <input type="username" class="form-control my-3" placeholder="Usermame">
-                                    <input type="email" class="form-control my-3" placeholder="Email address">
-                                    <input type="password" class="form-control my-3" placeholder="New password">
+                                    <form action="login.php" method="post">
+                                        <!-- username,email e pass -->
+                                        <input type="username" class="form-control my-3" placeholder="Usermame"
+                                            name="username" id="username">
+                                        <input type="email" class="form-control my-3" placeholder="Email address"
+                                            name="email" id="email">
+                                        <input type="password" class="form-control my-3" placeholder="New password"
+                                            name="password" id="password">
+                                        
+                                    </form>
                                     <!-- Regione -->
                                     <div class="row my-3">
                                         <span class="text-muted fs-7">
@@ -95,6 +104,7 @@
                                             </select>
                                         </div>
                                     </div>
+
                                     <!-- disclaimer -->
 
                                     <!-- button footer-->

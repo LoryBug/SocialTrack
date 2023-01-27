@@ -15,11 +15,11 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
 if(isUserLoggedIn()){
     header('Location: ./index.php');
 }
+// richiamo la query di insert nuovo utente con le variabili di sessione prese dal form di registrazione
 
 
 $templateParams["titolo"] = "Socialtrack - Login";
 
 require("template/base-login.php");
-
 
 ?>

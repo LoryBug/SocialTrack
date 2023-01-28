@@ -38,7 +38,7 @@
                         <a class="nav-link text-white" href="track.php">Track</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">My Account</a>
+                        <a class="nav-link text-white" href="profile.php">My Account</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -101,7 +101,7 @@
                 class="col-sm-3 border-end shadow rounded-2 bg-white mt-3 p-3 d-none d-sm-block d-flex align-self-start">
                 <!--my avatar-->
                 <div class="rounded-3 bg-white m-2 p-3">
-                    <a href="template/base-profile.php" class="text-decoration-none link-light">
+                    <a href="profile.php" class="text-decoration-none link-light">
                         <h3 class="text-danger">My Profile</h3>
                         <img src="upload/image-deafult.jpg" class="rounded-circle" height="55" width="55" alt="Avatar">
                     </a>

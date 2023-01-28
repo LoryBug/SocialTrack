@@ -13,12 +13,11 @@ if (isset($_POST["reviewInput"])) {
     $nReviewID = $dbh->getReviewNewID()[0]["COUNT(ReviewID)+1"];
     //var_dump($_POST["reviewInput"]);
     $datetimeReview = date("Y/m/d H:i:s");
-    $dbh->insertNewReview("$nReviewID", "$_POST[reviewInput]", "$datetimeReview","$_POST[trackVote]", "$_POST[trackID]", "GiammaC");
+    $dbh->insertNewReview("$nReviewID", "$_POST[reviewInput]", "$datetimeReview","3", "$_POST[trackID]", "GiammaC");
 }
 
 
 $templateParams["titolo"] = "Socialtrack - track";
-$templateParams["opzione"] = "selectView.php";
 $templateParams["inserimento"] = "inserisci-track.php";
 $templateParams["lista"] = "lista-track.php";
 

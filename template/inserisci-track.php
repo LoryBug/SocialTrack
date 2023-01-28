@@ -13,25 +13,34 @@
             <div class="my-2">
                 <div class="input-group">
                     <span class="input-group-text"> <em class="bi bi-pencil-square ps-2"></em></span>
-                    <!--testo da inserire-->
                     <textarea class="form-control" aria-label="With textarea" id="textAreaTrack" name="textAreaTrack"
                         placeholder="Pubblica un nuovo tracciato ..."></textarea>
                 </div>
                 <div class="row align-items-center mt-4">
                     <div class="col-sm-3">
                         <label class="visually-hidden" for="specificSizeInputName">Km</label>
-                        <input type="number" class="form-control" id="lengthTrack" name="lengthTrack" placeholder="Length">
+                        <input min="10" max="200" type="number" class="form-control" id="lengthTrack" name="lengthTrack"
+                            placeholder="Kilometers">
                     </div>
                     <div class="col-sm-3">
-                        <label class="visually-hidden" for="specificSizeInputName">Type</label>
-                        <input type="text" class="form-control" id="typeTrack" name="typeTrack" placeholder="Type">
+                        <select class="form-select" aria-label="Default select example" id="typeTrack" name="typeTrack">
+                            <option selected>Road</option>
+                            <option value="1">Off-Road</option>
+                            <option value="2">Dual</option>
+                        </select>
                     </div>
                     <div class="col-sm-3">
-                        <label class="visually-hidden" for="specificSizeInputName">Region</label>
-                        <input type="text" class="form-control" id="RegionTrack" name="RegionTrack" placeholder="Region">
+                        <select class="form-select" aria-label="Default select example" id="RegionTrack"
+                            name="RegionTrack">
+                            <option selected>Nord</option>
+                            <option value="1">Centro</option>
+                            <option value="2">Sud</option>
+                        </select>
                     </div>
                 </div>
-                <p>DA INSERIRE GPX</p>
+                
+                <input type="file" class="form-control mt-4" id="ImgInput" name="ImgInput"
+                    aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 <div class="input-group mt-4">
                     <input type="file" class="form-control" id="ImgInput" name="ImgInput"
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload">

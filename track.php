@@ -20,6 +20,6 @@ if (isset($_POST["reviewInput"])) {
 $templateParams["titolo"] = "Socialtrack - track";
 $templateParams["inserimento"] = "inserisci-track.php";
 $templateParams["lista"] = "lista-track.php";
-
+$templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
 require("template/base.php");
 ?>

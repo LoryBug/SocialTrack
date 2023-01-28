@@ -58,13 +58,13 @@
                     <div class="profile-header-cover"></div>
                     <div class="profile-header-content">
                         <div class="profile-header-img">
-                            <img src="<?php echo $templateParams["imageProfile"]; ?>"
+                            <img src="<?php echo $templateParams["imgProfile"]; ?>"
                                 class="rounded-circle shadow-lg my-4" height="250" width="250" alt="image profile" />
                         </div>
                         <hr>
                         <div class="row">
                             <h4>
-                                <?php echo $_SESSION['username']; ?>
+                                <?php echo $templateParams["username"] ?>
                             </h4>
                             <a href="#" class="btn btn-primary">Follow</a>
                         </div>

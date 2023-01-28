@@ -4,7 +4,7 @@
         <div class="row">
             <!-- avatar -->
             <div class="d-flex">
-                <img src="upload/GC_default.JPG" alt="avatar" class="rounded-circle me-2"
+                <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar" class="rounded-circle me-2"
                     style="width: 38px; height: 38px; object-fit: cover" />
                 <div>
                     <a class="m-0 fw-bold text-decoration-none text-black" href="#">
@@ -14,7 +14,7 @@
             </div>
             <div class="my-2">
                 <div class="input-group">
-                    <span class="input-group-text"> <em class="bi bi-pencil-square ps-2"></em></span>
+                    <span class="input-group-text"> <em class="bi bi-pencil-square p-2"></em></span>
                     <!--testo da inserire-->
                     <textarea class="form-control" aria-label="With textarea" id="textAreaPost" name="textAreaPost"
                         placeholder="Scrivi un nuovo post ..."></textarea>

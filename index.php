@@ -17,6 +17,7 @@ if (isset($_POST["CommentInput"])) {
 $templateParams["titolo"] = "Socialtrack - Home";
 $templateParams["inserimento"] = "inserisci-post.php";
 $templateParams["lista"] = "lista-post.php";
+$templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
 
 require("template/base.php");
 ?>

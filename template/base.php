@@ -10,6 +10,7 @@
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -103,13 +104,14 @@
                 <div class="rounded-3 bg-white m-2 p-3">
                     <a href="profile.php" class="text-decoration-none link-light">
                         <h3 class="text-danger">My Profile</h3>
-                        <img src="upload/image-deafult.jpg" class="rounded-circle" height="55" width="55" alt="Avatar">
+                        <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle" height="55" width="55" alt="Avatar">
                     </a>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item mt-2">Follower
                             <span class="badge bg-primary rounded-pill ms-2">14</span>
                         </li>
                         <li class="list-group-item mt-2">Follow
+                      
                             <span class="badge bg-primary rounded-pill ms-4">14</span>
                         </li>
                         <li class="list-group-item mt-2">

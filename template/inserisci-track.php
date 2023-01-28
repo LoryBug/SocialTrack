@@ -7,7 +7,9 @@
                 <img src="upload/GC_default.JPG" alt="avatar" class="rounded-circle me-2"
                     style="width: 38px; height: 38px; object-fit: cover" />
                 <div>
-                    <p class="m-0 fw-bold">GiammaC</p>
+                <a class="m-0 fw-bold text-decoration-none text-black" href="#">
+                        <?php echo $_SESSION['username']; ?>
+                    </a>
                 </div>
             </div>
             <div class="my-2">
@@ -38,10 +40,10 @@
                         </select>
                     </div>
                 </div>
-
-                <input type="file" class="form-control mt-4" id="ImgInput" name="ImgInput"
+                <h6 class="text-start mt-3">Inserisci GPX</h6>
+                <input type="file" class="form-control mt-1" id="ImgInput" name="ImgInput"
                     aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                <h6 class="text-start mt-4">Inserisci immagine</h6>
+                <h6 class="text-start mt-3">Inserisci immagine</h6>
                 <div class="input-group mt-1">
                     <input type="file" class="form-control" id="ImgInput" name="ImgInput"
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload">

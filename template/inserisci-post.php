@@ -7,7 +7,9 @@
                 <img src="upload/GC_default.JPG" alt="avatar" class="rounded-circle me-2"
                     style="width: 38px; height: 38px; object-fit: cover" />
                 <div>
-                    <p class="m-0 fw-bold">GiammaC</p>
+                    <a class="m-0 fw-bold text-decoration-none text-black" href="#">
+                        <?php echo $_SESSION['username']; ?>
+                    </a>
                 </div>
             </div>
             <div class="my-2">

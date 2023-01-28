@@ -173,7 +173,8 @@ class DatabaseHelper
     }
     public function getPostByUser($username)
     {
-        $stmt = $this->db->prepare("SELECT * FROM post WHERE Username = ?");
+        $stmt = $this->db->prepare("SELECT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg
+        FROM user as u, post as p WHERE u.Username = ? AND u.Username = p.Username ORDER BY Post_timestamp DESC");
         $stmt->bind_param("s", $username); // s = string
         $stmt->execute();
         $result = $stmt->get_result();

@@ -86,7 +86,7 @@
                                 <form class="d-flex my-1" id="formNewComment" action="index.php" method="post">
                                     <!-- avatar -->
                                     <div>
-                                        <img src="https://source.unsplash.com/collection/happy-people" alt="avatar"
+                                        <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
                                             class="rounded-circle me-2" style="
                                                                                             width: 38px;
                                                                                             height: 38px;

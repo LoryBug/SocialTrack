@@ -22,5 +22,7 @@ $templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["Prof
 $templateParams["nFollowers"] = $dbh->getNFollowers($_SESSION['username'])[0]["nFollower"];
 $templateParams["nFollowing"] = $dbh->getNFollowing($_SESSION['username'])[0]["nFollow"];
 
+$templateParams["nTracks"] = $dbh->getNTrack($_SESSION['username'])[0]["COUNT(TrackID)"];
+
 require("template/base.php");
 ?>

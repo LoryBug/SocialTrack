@@ -107,6 +107,17 @@ class DatabaseHelper
         $stmt->bind_param("sssssssss", $ID, $description, $type, $timestamp, $length, $region, $fileGPX, $image, $Username);
         return $stmt->execute();
     }
+
+    public function getNTrack($username)
+    {
+
+        $stmt = $this->db->prepare("SELECT COUNT(TrackID) FROM track WHERE Username = ?");
+        $stmt->bind_param("s", $username); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     // ------------------------------------ REVIEW--------------------------------------------
     public function getReviewTrack($trackID)
     {

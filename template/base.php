@@ -109,19 +109,30 @@
                     </a>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item mt-2">Follower
-                            <span class="badge bg-primary rounded-pill ms-2"> <?php echo $templateParams["nFollowers"];?></span>
+                            <span class="badge bg-primary rounded-pill ms-2">
+                                <?php echo $templateParams["nFollowers"]; ?>
+                            </span>
                         </li>
                         <li class="list-group-item mt-2">Follow
 
-                            <span class="badge bg-primary rounded-pill ms-4"> <?php echo $templateParams["nFollowing"];?></span>
+                            <span class="badge bg-primary rounded-pill ms-4">
+                                <?php echo $templateParams["nFollowing"]; ?>
+                            </span>
                         </li>
                         <li class="list-group-item mt-2">
-                            <span class="badge bg-success">Beginner</span>
+                            <?php if (($templateParams["nTracks"])<5): ?>
+                                <span class="badge bg-success">Principate</span>
+                            <?php elseif (($templateParams["nTracks"])<10 && ($templateParams["nTracks"])>5): ?>
+                                <span class="badge bg-warning">Intermedio</span>
+                            <?php elseif (($templateParams["nTracks"]) >= 10): ?>
+                                <span class="badge bg-danger">Pilota</span>
+                            <?php endif; ?>
+
                         </li>
                     </ul>
                 </div>
                 <div class="d-flex align-self-start pt-3">
-                <a href="logout.php" class="text-decoration-none link-light">
+                    <a href="logout.php" class="text-decoration-none link-light">
                         <button type="button" class="btn btn-outline-danger">Logout</button>
                     </a>
                 </div>

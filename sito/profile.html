@@ -50,74 +50,461 @@
     <!--Filter Button-->
     <!--visible solo quando sm-->
 
-    <div class="container text-center">
-        <div class="row">
-            <div class="container py-5 h-50">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col col-lg-9 col-xl-7">
-                        <div class="card">
-                            <div class="rounded-top text-white d-flex flex-row"
-                                style="background-color: #000; height:200px;">
-                                <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                                        alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
-                                        style="width: 150px; z-index: 1">
-                                    <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
-                                        style="z-index: 1;">
-                                        Follow
-                                    </button>
-                                </div>
-                                <div class="ms-3" style="margin-top: 130px;">
-                                    <h5>Mars</h5>
-                                    <p>New York</p>
+    <div class="container text-center border shadow mt-4 pt-4">
+        <div class="container">
+            <div class="profile">
+                <div class="profile-header">
+                    <div class="profile-header-cover"></div>
+                    <div class="profile-header-content">
+                        <div class="profile-header-img">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                        </div>
+                        <nav class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-link " id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab"
+                                aria-controls="nav-home" aria-selected="true">Followers</a>
+                            <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab"
+                                aria-controls="nav-profile" aria-selected="false">Following</a>
+                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-disabled"
+                                role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Posts</a>
+                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-disabled"
+                                role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Tracks</a>
+                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-disabled"
+                                role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                aria-labelledby="nav-home-tab">
+                                <div class="profile-content pt-2">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="tab-content p-0">
+                                                <div class="tab-pane fade active show" id="profile-followers">
+                                                    <div class="list-group">
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Ethel
+                                                                        Wilkes</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">North Raundspic</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#"
+                                                                        class="text-dark font-weight-600">Shanaya
+                                                                        Hansen</a></div>
+                                                                <div class="text-muted fs-13px">North Raundspic</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">James
+                                                                        Allman</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">North Raundspic</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Marie
+                                                                        Welsh</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">Crencheporford</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Lamar
+                                                                        Kirkland</a></div>
+                                                                <div class="text-muted fs-13px">Prince Ewoodswan</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#"
+                                                                        class="text-dark font-weight-600">Bentley
+                                                                        Osborne</a></div>
+                                                                <div class="text-muted fs-13px">Red Suvern</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Ollie
+                                                                        Goulding</a></div>
+                                                                <div class="text-muted fs-13px">Doa</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar8.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Hiba
+                                                                        Calvert</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">Stemunds</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Rivka
+                                                                        Redfern</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">Fallnee</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#"
+                                                                        class="text-dark font-weight-600">Roshni
+                                                                        Fernandez</a></div>
+                                                                <div class="text-muted fs-13px">Mount Lerdo</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center p-3">
+                                                        <a href="#" class="text-dark text-decoration-none">Show more <b
+                                                                class="caret"></b></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="p-4 text-black" style="background-color: #f8f9fa;">
-                                <div class="d-flex justify-content-end text-center py-1">
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                aria-labelledby="nav-profile-tab">
+                                <div class="profile-content pt-2">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="tab-content p-0">
+                                                <div class="tab-pane fade active show" id="profile-followers">
+                                                    <div class="list-group">
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Ethel
+                                                                        Wilkes</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">North Raundspic</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#"
+                                                                        class="text-dark font-weight-600">Shanaya
+                                                                        Hansen</a></div>
+                                                                <div class="text-muted fs-13px">North Raundspic</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">James
+                                                                        Allman</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">North Raundspic</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Marie
+                                                                        Welsh</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">Crencheporford</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Lamar
+                                                                        Kirkland</a></div>
+                                                                <div class="text-muted fs-13px">Prince Ewoodswan</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#"
+                                                                        class="text-dark font-weight-600">Bentley
+                                                                        Osborne</a></div>
+                                                                <div class="text-muted fs-13px">Red Suvern</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Ollie
+                                                                        Goulding</a></div>
+                                                                <div class="text-muted fs-13px">Doa</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar8.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Hiba
+                                                                        Calvert</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">Stemunds</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#" class="text-dark font-weight-600">Rivka
+                                                                        Redfern</a>
+                                                                </div>
+                                                                <div class="text-muted fs-13px">Fallnee</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                        <div class="list-group-item d-flex align-items-center">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                                alt="" width="50px" class="rounded-sm ml-n2" />
+                                                            <div class="flex-fill pl-3 pr-3">
+                                                                <div><a href="#"
+                                                                        class="text-dark font-weight-600">Roshni
+                                                                        Fernandez</a></div>
+                                                                <div class="text-muted fs-13px">Mount Lerdo</div>
+                                                            </div>
+                                                            <a href="#" class="btn btn-outline-primary">Follow</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center p-3">
+                                                        <a href="#" class="text-dark text-decoration-none">Show more <b
+                                                                class="caret"></b></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                    <div class="px-3">
-                                        <p class="mb-1 h5">1026</p>
-                                        <p class="small text-muted mb-0">Followers</p>
-                                    </div>
-                                    <div>
-                                        <p class="mb-1 h5">478</p>
-                                        <p class="small text-muted mb-0">Following</p>
-                                    </div>
-                                </div>
                             </div>
-                            <div class="card-body p-4 text-black">
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <p class="lead fw-normal mb-0">Recent photos</p>
-                                    <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
-                                </div>
-                                <div class="row g-2">
-                                    <div class="col mb-2">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
-                                            alt="image 1" class="w-100 rounded-3">
-                                    </div>
-                                    <div class="col mb-2">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
-                                            alt="image 1" class="w-100 rounded-3">
-                                    </div>
-                                </div>
-                                <div class="row g-2">
-                                    <div class="col">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
-                                            alt="image 1" class="w-100 rounded-3">
-                                    </div>
-                                    <div class="col">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
-                                            alt="image 1" class="w-100 rounded-3">
+                            <div class="tab-pane fade" id="nav-disabled" role="tabpanel"
+                                aria-labelledby="nav-disabled-tab">Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit. Laudantium minima repellat incidunt facilis obcaecati blanditiis corrupti ad
+                                officia doloribus ullam sapiente ipsum, nemo a, excepturi voluptatem voluptatibus velit
+                                eum dignissimos ut, nam tempora? Reiciendis illo itaque veritatis eligendi fuga,
+                                mollitia ratione totam veniam esse in.</div>
+                        </div>
+                        <!--  <ul class="profile-header-tab nav nav-tabs nav-tabs-v2">
+                            <li class="nav-item">
+                                <a href="#profile-post" class="nav-link" data-toggle="tab">
+                                    <div class="nav-field">Posts</div>
+                                    <div class="nav-value">382</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#profile-followers" class="nav-link active" data-toggle="tab">
+                                    <div class="nav-field">Followers</div>
+                                    <div class="nav-value">1.3m</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#profile-media" class="nav-link" data-toggle="tab">
+                                    <div class="nav-field">Photos</div>
+                                    <div class="nav-value">1,397</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#profile-media" class="nav-link" data-toggle="tab">
+                                    <div class="nav-field">Videos</div>
+                                    <div class="nav-value">120</div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#profile-followers" class="nav-link" data-toggle="tab">
+                                    <div class="nav-field">Following</div>
+                                    <div class="nav-value">2,592</div>
+                                </a>
+                            </li>
+                        </ul>-->
+                    </div>
+                </div>
+
+               <!-- <div class="profile-container">
+                    <div class="profile-sidebar">
+                        <div class="desktop-sticky-top">
+                            <h4>John Smith</h4>
+                            <div class="font-weight-600 mb-3 text-muted mt-n2">@johnsmith</div>
+                            <p>
+                                Principal UXUI Design &amp; Brand Architecture for Studio. Creator of SeanTheme.
+                                Bringing the world closer together. Studied Computer Science and Psychology at Harvard
+                                University.
+                            </p>
+                            <div class="mb-1"><i class="fa fa-map-marker-alt fa-fw text-muted"></i> New York, NY</div>
+                            <div class="mb-3"><i class="fa fa-link fa-fw text-muted"></i> seantheme.com/studio</div>
+                            <hr class="mt-4 mb-4" />
+                        </div>
+                    </div>
+
+                    <div class="profile-content">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="tab-content p-0">
+                                    <div class="tab-pane fade active show" id="profile-followers">
+                                        <div class="list-group">
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">Ethel Wilkes</a>
+                                                    </div>
+                                                    <div class="text-muted fs-13px">North Raundspic</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">Shanaya
+                                                            Hansen</a></div>
+                                                    <div class="text-muted fs-13px">North Raundspic</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">James Allman</a>
+                                                    </div>
+                                                    <div class="text-muted fs-13px">North Raundspic</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">Marie Welsh</a>
+                                                    </div>
+                                                    <div class="text-muted fs-13px">Crencheporford</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">Lamar
+                                                            Kirkland</a></div>
+                                                    <div class="text-muted fs-13px">Prince Ewoodswan</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">Bentley
+                                                            Osborne</a></div>
+                                                    <div class="text-muted fs-13px">Red Suvern</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">Ollie
+                                                            Goulding</a></div>
+                                                    <div class="text-muted fs-13px">Doa</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">Hiba Calvert</a>
+                                                    </div>
+                                                    <div class="text-muted fs-13px">Stemunds</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">Rivka Redfern</a>
+                                                    </div>
+                                                    <div class="text-muted fs-13px">Fallnee</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                            <div class="list-group-item d-flex align-items-center">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""
+                                                    width="50px" class="rounded-sm ml-n2" />
+                                                <div class="flex-fill pl-3 pr-3">
+                                                    <div><a href="#" class="text-dark font-weight-600">Roshni
+                                                            Fernandez</a></div>
+                                                    <div class="text-muted fs-13px">Mount Lerdo</div>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary">Follow</a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center p-3">
+                                            <a href="#" class="text-dark text-decoration-none">Show more <b
+                                                    class="caret"></b></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
-
-            <!-----------------------------colonna post--------------------------------------------------------------->
         </div>
+
     </div>
 
 

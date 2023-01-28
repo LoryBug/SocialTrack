@@ -146,6 +146,14 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function getUserEmail($username)
+    {
+        $stmt = $this->db->prepare("SELECT Email FROM user WHERE Username = ?");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     public function getUserImg($username)
     {
         $stmt = $this->db->prepare("SELECT ProfileImg FROM user WHERE Username = ?");

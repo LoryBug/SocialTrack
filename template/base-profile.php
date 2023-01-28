@@ -66,30 +66,43 @@
                             <h4>
                                 <?php echo $templateParams["username"] ?>
                             </h4>
+                            <a href="mailto:<?php echo $templateParams["email"] ?>"
+                                class="text-decoration-none text-dark">
+                                <p>
+                                    <?php echo $templateParams["email"] ?>
+                                </p>
+                            </a>
                             <a href="#" class="btn btn-primary">Follow</a>
                         </div>
                         <hr>
                         <nav class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-link " id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab"
+                            <a class="nav-link " id="nav-home-tab" data-bs-toggle="tab" href="#nav-follower" role="tab"
                                 aria-controls="nav-home" aria-selected="true">Followers</a>
-                            <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab"
-                                aria-controls="nav-profile" aria-selected="false">Following</a>
-                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-disabled"
-                                role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Posts</a>
-                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-disabled"
+                            <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-following"
+                                role="tab" aria-controls="nav-profile" aria-selected="false">Following</a>
+                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-posts" role="tab"
+                                aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Posts</a>
+                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-tracks"
                                 role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Tracks</a>
-                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-disabled"
+                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-notifiche"
                                 role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel">
-                            </div>
+                            <div class="tab-pane fade show active" id="nav-follower" role="tabpanel">
 
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel">
 
                             </div>
-                            <div class="tab-pane fade" id="nav-disabled" role="tabpanel"
-                                aria-labelledby="nav-disabled-tab">
+
+                            <div class="tab-pane fade" id="nav-following" role="tabpanel">
+
+                            </div>
+                            <div class="tab-pane fade" id="nav-posts" role="tabpanel">
+                                <?php require($templateParams["listaPost"]); ?>
+                            </div>
+                            <div class="tab-pane fade" id="nav-tracks" role="tabpanel">
+                                <?php require($templateParams["listaTrack"]); ?>
+                            </div>
+                            <div class="tab-pane fade" id="nav-notifiche" role="tabpanel">
                             </div>
                         </div>
                     </div>

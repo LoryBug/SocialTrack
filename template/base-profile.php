@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-    <title>Socialtrack-Home</title>
+    <title>
+        <?php echo $templateParams["titolo"]; ?>
+    </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -30,10 +32,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Home</a>
+                        <a class="nav-link text-white" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Track</a>
+                        <a class="nav-link text-white" href="track.php">Track</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">My Account</a>
@@ -46,10 +48,6 @@
             </div>
         </div>
     </nav>
-
-    <!--Filter Button-->
-    <!--visible solo quando sm-->
-
     <div class="container text-center">
         <div class="row">
             <div class="container py-5 h-50">
@@ -59,7 +57,7 @@
                             <div class="rounded-top text-white d-flex flex-row"
                                 style="background-color: #000; height:200px;">
                                 <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                    <img src="https://source.unsplash.com/featured/300x201"
                                         alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
                                         style="width: 150px; z-index: 1">
                                     <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
@@ -92,21 +90,21 @@
                                 </div>
                                 <div class="row g-2">
                                     <div class="col mb-2">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
+                                        <img src="https://source.unsplash.com/featured/300x202"
                                             alt="image 1" class="w-100 rounded-3">
                                     </div>
                                     <div class="col mb-2">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
+                                        <img src="https://source.unsplash.com/featured/300x202"
                                             alt="image 1" class="w-100 rounded-3">
                                     </div>
                                 </div>
                                 <div class="row g-2">
                                     <div class="col">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
+                                        <img src="https://source.unsplash.com/featured/300x202"
                                             alt="image 1" class="w-100 rounded-3">
                                     </div>
                                     <div class="col">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
+                                        <img src="https://source.unsplash.com/featured/300x202"
                                             alt="image 1" class="w-100 rounded-3">
                                     </div>
                                 </div>
@@ -120,15 +118,10 @@
         </div>
     </div>
 
-
-    <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-        </ul>
+    <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
+        <a href="#" class="text-decoration-none link-light">
+            <h3>SocialTrack</h3>
+        </a>
         <p class="text-center text-muted">© 2023 Socialtrack by Leoni, Casamenti</p>
     </footer>
 

@@ -109,11 +109,11 @@
                     </a>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item mt-2">Follower
-                            <span class="badge bg-primary rounded-pill ms-2">14</span>
+                            <span class="badge bg-primary rounded-pill ms-2"> <?php echo $templateParams["nFollowers"];?></span>
                         </li>
                         <li class="list-group-item mt-2">Follow
 
-                            <span class="badge bg-primary rounded-pill ms-4">14</span>
+                            <span class="badge bg-primary rounded-pill ms-4"> <?php echo $templateParams["nFollowing"];?></span>
                         </li>
                         <li class="list-group-item mt-2">
                             <span class="badge bg-success">Beginner</span>

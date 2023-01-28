@@ -15,7 +15,6 @@ if (isset($_POST["CommentInput"])) {
 }
 
 $templateParams["titolo"] = "Socialtrack - Home";
-$templateParams["opzione"] = "selectView.php";
 $templateParams["inserimento"] = "inserisci-post.php";
 $templateParams["lista"] = "lista-post.php";
 

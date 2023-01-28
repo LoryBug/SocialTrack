@@ -12,3 +12,4 @@ Elaborato di tecnologie web, anno 2022/23
 - sistemare track
 - sistemare user track e post 
 - sistema per aprir commenti di un determinato post
+- tutto il sistema dei filtri

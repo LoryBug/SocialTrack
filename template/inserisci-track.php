@@ -20,7 +20,7 @@
                     <div class="col-sm-3">
                         <label class="visually-hidden" for="specificSizeInputName">Km</label>
                         <input min="10" max="200" type="number" class="form-control" id="lengthTrack" name="lengthTrack"
-                            placeholder="Kilometers">
+                            placeholder="Lunghezza km">
                     </div>
                     <div class="col-sm-3">
                         <select class="form-select" aria-label="Default select example" id="typeTrack" name="typeTrack">
@@ -38,10 +38,11 @@
                         </select>
                     </div>
                 </div>
-                
+
                 <input type="file" class="form-control mt-4" id="ImgInput" name="ImgInput"
                     aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                <div class="input-group mt-4">
+                <h6 class="text-start mt-4">Inserisci immagine</h6>
+                <div class="input-group mt-1">
                     <input type="file" class="form-control" id="ImgInput" name="ImgInput"
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                     <button class="btn btn-outline-secondary" type="submit" value="Submit" Form="formNewTrack"

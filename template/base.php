@@ -104,20 +104,26 @@
                 <div class="rounded-3 bg-white m-2 p-3">
                     <a href="profile.php" class="text-decoration-none link-light">
                         <h3 class="text-danger">My Profile</h3>
-                        <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle" height="55" width="55" alt="Avatar">
+                        <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle" height="55"
+                            width="55" alt="Avatar">
                     </a>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item mt-2">Follower
                             <span class="badge bg-primary rounded-pill ms-2">14</span>
                         </li>
                         <li class="list-group-item mt-2">Follow
-                      
+
                             <span class="badge bg-primary rounded-pill ms-4">14</span>
                         </li>
                         <li class="list-group-item mt-2">
                             <span class="badge bg-success">Beginner</span>
                         </li>
                     </ul>
+                </div>
+                <div class="d-flex align-self-start pt-3">
+                <a href="login.php" class="text-decoration-none link-light">
+                        <button type="button" class="btn btn-outline-danger">Logout</button>
+                    </a>
                 </div>
             </div>
             <!--fine colonna a sinistra-->

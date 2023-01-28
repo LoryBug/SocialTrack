@@ -40,48 +40,57 @@
 
                 </form>
 
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Remind me
-                    </label>
-                </div>
-                <!--create account-->
-                <hr />
+                <al>
 
-                <div class="text-center my-4">
-                    <button class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#createModal">
-                        Create new Account
-                    </button>
-                </div>
-                <!--create sing-up pop-up MODAL-->
-                <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <!-- head -->
-                            <div class="modal-header">
-                                <div>
-                                    <h2 class="modal-title" id="createModalLabel">Sign-up</h2>
-                                    <p class="text-muted fs-7">It's fast like your bike</p>
-                                </div>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <!-- body -->
-                            <div class="modal-body">
-                                <form action="login.php" method="post" id="registration_form">
-                                    <!-- name -->
+                    <?php if (isset($templateParams["errorelogin"])): ?>
 
-                                    <div class="row">
-                                        <div class="col">
-                                            <input type="text" class="form-control" placeholder="Nome">
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" class="form-control" placeholder="Cognome">
-                                        </div>
+                        <div class="alert alert-danger" role="alert">
+                            <?php echo $templateParams["errorelogin"] ?>
+                        </div>
+
+                    <?php endif; ?>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Remind me
+                        </label>
+                    </div>
+                    <!--create account-->
+                    <hr />
+
+                    <div class="text-center my-4">
+                        <button class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#createModal">
+                            Create new Account
+                        </button>
+                    </div>
+                    <!--create sing-up pop-up MODAL-->
+                    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- head -->
+                                <div class="modal-header">
+                                    <div>
+                                        <h2 class="modal-title" id="createModalLabel">Sign-up</h2>
+                                        <p class="text-muted fs-7">It's fast like your bike</p>
                                     </div>
-                                    
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <!-- body -->
+                                <div class="modal-body">
+                                    <form action="login.php" method="post" id="registration_form">
+                                        <!-- name -->
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Nome">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Cognome">
+                                            </div>
+                                        </div>
+
                                         <!-- username,email e pass -->
                                         <input type="username" class="form-control my-3" placeholder="Usermame"
                                             name="reg_username" id="reg_username">
@@ -89,35 +98,36 @@
                                             name="reg_email" id="reg_email">
                                         <input type="password" class="form-control my-3" placeholder="New password"
                                             name="reg_password" id="reg_password">
-                                        
-                                    <!-- Regione -->
-                                    <div class="row my-3">
-                                        <span class="text-muted fs-7">
-                                            Regione
-                                        </span>
-                                        <div class="col">
-                                            <select class="form-select">
-                                                <option value="1">Nord</option>
-                                                <option value="2">Centro</option>
-                                                <option value="3">Sud</option>
-                                            </select>
+
+                                        <!-- Regione -->
+                                        <div class="row my-3">
+                                            <span class="text-muted fs-7">
+                                                Regione
+                                            </span>
+                                            <div class="col">
+                                                <select class="form-select">
+                                                    <option value="1">Nord</option>
+                                                    <option value="2">Centro</option>
+                                                    <option value="3">Sud</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <!-- disclaimer -->
+                                        <!-- disclaimer -->
 
-                                    <!-- button footer-->
-                                    <div class="text-center mt-3">
-                                        <button type="submit" value="Submit" form="registration_form" class="btn btn-primary btn-lg" >
-                                            Sign-up
-                                        </button>
-                                    </div>
-                                </form>
+                                        <!-- button footer-->
+                                        <div class="text-center mt-3">
+                                            <button type="submit" value="Submit" form="registration_form"
+                                                class="btn btn-primary btn-lg">
+                                                Sign-up
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--finish sign-up pop-up-->
+                    <!--finish sign-up pop-up-->
             </div>
         </div>
     </div>

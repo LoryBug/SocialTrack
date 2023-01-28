@@ -70,7 +70,7 @@
                             </div>
                             <!-- body -->
                             <div class="modal-body">
-                                <form>
+                                <form action="login.php" method="post" id="registration_form">
                                     <!-- name -->
 
                                     <div class="row">
@@ -81,16 +81,15 @@
                                             <input type="text" class="form-control" placeholder="Cognome">
                                         </div>
                                     </div>
-                                    <form action="login.php" method="post">
+                                    
                                         <!-- username,email e pass -->
                                         <input type="username" class="form-control my-3" placeholder="Usermame"
-                                            name="username" id="username">
+                                            name="reg_username" id="reg_username">
                                         <input type="email" class="form-control my-3" placeholder="Email address"
-                                            name="email" id="email">
+                                            name="reg_email" id="reg_email">
                                         <input type="password" class="form-control my-3" placeholder="New password"
-                                            name="password" id="password">
+                                            name="reg_password" id="reg_password">
                                         
-                                    </form>
                                     <!-- Regione -->
                                     <div class="row my-3">
                                         <span class="text-muted fs-7">
@@ -109,7 +108,7 @@
 
                                     <!-- button footer-->
                                     <div class="text-center mt-3">
-                                        <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal">
+                                        <button type="submit" value="Submit" form="registration_form" class="btn btn-primary btn-lg" >
                                             Sign-up
                                         </button>
                                     </div>

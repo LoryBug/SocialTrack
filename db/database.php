@@ -171,6 +171,13 @@ class DatabaseHelper
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function insertNewUser($username,$password,$email)
+    {
+        $stmt = $this->db->prepare("INSERT INTO user(Username, User_password, Email, nFollower, nFollow)
+         VALUES (?, ?, ?,0,0)");
+        $stmt->bind_param("sss", $username, $password, $email);
+        return $stmt->execute();
+    }
 
 
 

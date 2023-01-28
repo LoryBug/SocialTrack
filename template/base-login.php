@@ -29,13 +29,15 @@
             <div class="bg-white shadow rounded p-3 input-group-lg">
                 <form action="login.php" method="post">
 
-                <h2 class="text-center">Login</h2>
-                <input type="username" class="form-control my-3" placeholder="Usermame" name="username" id="username">
-                <label for="username" class="form-label" hidden>username</label>
-                <input type="password" class="form-control my-3" placeholder="Password" name="password" id="password">
-                <label for="password" class="form-label" hidden>password</label>
-                <input class="btn btn-danger w-100 my-3" type="submit" value="Start to race" >
-    
+                    <h2 class="text-center">Login</h2>
+                    <input type="username" class="form-control my-3" placeholder="Usermame" name="username"
+                        id="username">
+                    <label for="username" class="form-label" hidden>username</label>
+                    <input type="password" class="form-control my-3" placeholder="Password" name="password"
+                        id="password">
+                    <label for="password" class="form-label" hidden>password</label>
+                    <input class="btn btn-danger w-100 my-3" type="submit" value="Start to race">
+
                 </form>
 
                 <div class="form-check ms-3">
@@ -68,8 +70,9 @@
                             </div>
                             <!-- body -->
                             <div class="modal-body">
-                                <form>
+                                <form action="login.php" method="post" id="registration_form">
                                     <!-- name -->
+
                                     <div class="row">
                                         <div class="col">
                                             <input type="text" class="form-control" placeholder="Nome">
@@ -78,10 +81,15 @@
                                             <input type="text" class="form-control" placeholder="Cognome">
                                         </div>
                                     </div>
-                                    <!-- username,email e pass -->
-                                    <input type="username" class="form-control my-3" placeholder="Usermame">
-                                    <input type="email" class="form-control my-3" placeholder="Email address">
-                                    <input type="password" class="form-control my-3" placeholder="New password">
+                                    
+                                        <!-- username,email e pass -->
+                                        <input type="username" class="form-control my-3" placeholder="Usermame"
+                                            name="reg_username" id="reg_username">
+                                        <input type="email" class="form-control my-3" placeholder="Email address"
+                                            name="reg_email" id="reg_email">
+                                        <input type="password" class="form-control my-3" placeholder="New password"
+                                            name="reg_password" id="reg_password">
+                                        
                                     <!-- Regione -->
                                     <div class="row my-3">
                                         <span class="text-muted fs-7">
@@ -95,11 +103,12 @@
                                             </select>
                                         </div>
                                     </div>
+
                                     <!-- disclaimer -->
 
                                     <!-- button footer-->
                                     <div class="text-center mt-3">
-                                        <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal">
+                                        <button type="submit" value="Submit" form="registration_form" class="btn btn-primary btn-lg" >
                                             Sign-up
                                         </button>
                                     </div>

@@ -121,7 +121,7 @@
                     </ul>
                 </div>
                 <div class="d-flex align-self-start pt-3">
-                <a href="login.php" class="text-decoration-none link-light">
+                <a href="logout.php" class="text-decoration-none link-light">
                         <button type="button" class="btn btn-outline-danger">Logout</button>
                     </a>
                 </div>

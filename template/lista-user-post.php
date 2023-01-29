@@ -88,14 +88,14 @@
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                                            width: 38px;
-                                                                                            height: 38px;
+                                                                                            width: 40px;
+                                                                                            height: 40px;
                                                                                             object-fit: cover;
                                                                                           " />
                                     </div>
                                     <!-- input -->
                                     <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"] ?>">
-                                    <input type="text" class="form-control border-0 rounded-pill bg-gray" id="CommentInput"
+                                    <input type="text" class="form-control border shadow-sm rounded-pill bg-gray" id="CommentInput"
                                         name="CommentInput" placeholder="Write a comment" />
                                 </form>
                                 <!-- end -->

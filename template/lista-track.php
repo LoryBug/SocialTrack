@@ -102,19 +102,32 @@
                                     <!-- avatar -->
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
-                                            class="rounded-circle me-2"
-                                            style="
-                                                                                                                                                            width: 38px;
-                                                                                                                                                            height: 38px;
-                                                                                                                                                            object-fit: cover;
-                                                                                                                                                          " />
+                                            class="rounded-circle me-2" style="
+                                                                width: 40px;
+                                                                height: 40px;
+                                                                object-fit: cover;
+                                                                " />
                                     </div>
                                     <!-- input -->
                                     <input type="hidden" id="trackID" name="trackID"
                                         value="<?php echo $Track["TrackID"] ?>">
-                                    <!--<input type="number" class="form-control" id="trackVote" name="trackVote" placeholder="rate">-->
-                                    <input type="text" class="form-control border-0 rounded-pill bg-gray" id="reviewInput"
-                                        name="reviewInput" placeholder="Write a review" />
+                                    <div class="container d-flex">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <input type="number"
+                                                    class="form-control border col-1 shadow-sm rounded-pill" id="trackVote"
+                                                    name="trackVote" placeholder="Voto">
+                                            </div>
+
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control border shadow-sm rounded-pill"
+                                                    id="reviewInput" name="reviewInput" placeholder="Write a review" />
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
                                 </form>
                                 <!-- end -->
                             </div>

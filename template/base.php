@@ -196,17 +196,18 @@
                 <!--Order by-->
                 <!--Filter forms-->
                 <div class="rounded-3 bg-white m-2 p-2">
-                    <form>
+                    <form id="formOrderBy" action="index.php" method="post">
                         <h4>Order by</h4>
                         <div class="form-floating my-2">
-                            <select class="form-select border-primary" id="Type"
+                            <select class="form-select border-primary" id="date" name="date"
                                 aria-label="Floating label select example">
                                 <option selected>Più recente</option>
                                 <option value="1">Meno recente</option>
                             </select>
                             <label for="Type">Data</label>
                         </div>
-                        <button type="submit" class="btn btn-danger my-2">Order <span
+                        <button type="submit" class="btn btn-danger my-2" type="submit" value="Submit"
+                            Form="formOrderBy" id="inputOrder">Order <span
                                 class="bi bi-arrow-down-up"></span></button>
                     </form>
                 </div>

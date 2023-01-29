@@ -25,7 +25,8 @@ class DatabaseHelper
 
     public function getOlderPosts()
     {
-        $stmt = $this->db->prepare("SELECT PostID, Post_timestamp, Post_text, Post_image, Username FROM post");
+        $stmt = $this->db->prepare("SELECT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg
+        FROM user as u, post as p WHERE u.Username = p.Username ORDER BY Post_timestamp ASC");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -90,6 +91,8 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+   
+
     public function getTrackNewID()
     {
         $stmt = $this->db->prepare("SELECT COUNT(TrackID)+1 FROM track");

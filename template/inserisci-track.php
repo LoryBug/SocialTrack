@@ -27,16 +27,16 @@
                     <div class="col-sm-3">
                         <select class="form-select" aria-label="Default select example" id="typeTrack" name="typeTrack">
                             <option selected>Road</option>
-                            <option value="1">Off-Road</option>
-                            <option value="2">Dual</option>
+                            <option value="Off-Road">Off-Road</option>
+                            <option value="Dual">Dual</option>
                         </select>
                     </div>
                     <div class="col-sm-3">
                         <select class="form-select" aria-label="Default select example" id="RegionTrack"
                             name="RegionTrack">
                             <option selected>Nord</option>
-                            <option value="1">Centro</option>
-                            <option value="2">Sud</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Sud">Sud</option>
                         </select>
                     </div>
                 </div>

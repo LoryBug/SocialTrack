@@ -16,12 +16,24 @@ if (isset($_POST["CommentInput"])) {
 
 $templateParams["titolo"] = "Socialtrack - Home";
 $templateParams["inserimento"] = "inserisci-post.php";
-$templateParams["lista"] = "lista-post.php";
-$templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
 
+//scelta ORDER BY filter
+$orderBy="Più recente";
+if(isset($_POST["date"]))
+{
+    $orderBy=$_POST["date"];
+}
+if($orderBy == "Più recente"){
+
+    $templateParams["lista"] = "lista-post.php";
+}
+else{
+    $templateParams["lista"] = "lista-older-post.php";
+}
+
+$templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
 $templateParams["nFollowers"] = $dbh->getNFollowers($_SESSION['username'])[0]["nFollower"];
 $templateParams["nFollowing"] = $dbh->getNFollowing($_SESSION['username'])[0]["nFollow"];
-
 $templateParams["nTracks"] = $dbh->getNTrack($_SESSION['username'])[0]["COUNT(TrackID)"];
 
 require("template/base.php");

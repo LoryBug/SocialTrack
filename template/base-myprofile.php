@@ -104,6 +104,7 @@
                                 <?php require($templateParams["listaTrack"]); ?>
                             </div>
                             <div class="tab-pane fade" id="nav-notifiche" role="tabpanel">
+                                <?php require($templateParams["notifiche"]); ?>
                             </div>
                         </div>
                     </div>

@@ -107,6 +107,17 @@ class DatabaseHelper
         $stmt->bind_param("sssssssss", $ID, $description, $type, $timestamp, $length, $region, $fileGPX, $image, $Username);
         return $stmt->execute();
     }
+
+    public function getNTrack($username)
+    {
+
+        $stmt = $this->db->prepare("SELECT COUNT(TrackID) FROM track WHERE Username = ?");
+        $stmt->bind_param("s", $username); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     // ------------------------------------ REVIEW--------------------------------------------
     public function getReviewTrack($trackID)
     {
@@ -188,12 +199,30 @@ class DatabaseHelper
         return $stmt->execute();
     }
 
+    public function getNFollowers($username)
+    {
+        $stmt = $this->db->prepare("SELECT nFollower FROM user WHERE Username = ?");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function getNFollowing($username)
+    {
+        $stmt = $this->db->prepare("SELECT nFollow FROM user WHERE Username = ?");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 
 
     // ------------------------------------ FOLLOW da riguardare --------------------------------------------
+    
     public function getUserFollowing($username)
     {
-        $stmt = $this->db->prepare("SELECT * FROM follow WHERE Username = ?");
+        $stmt = $this->db->prepare("SELECT f.FOL_Username, u.Email, u.ProfileImg  FROM follow AS f, user AS u WHERE f.Username = ? AND f.FOL_Username = u.Username");
         $stmt->bind_param("s", $username); // s = string
         $stmt->execute();
         $result = $stmt->get_result();
@@ -201,11 +230,23 @@ class DatabaseHelper
     }
     public function getUserFollowers($username)
     {
-        $stmt = $this->db->prepare("SELECT * FROM follow WHERE FOL_Username = ?");
+        $stmt = $this->db->prepare("SELECT f.Username, u.Email, u.ProfileImg  FROM follow AS f, user AS u WHERE FOL_Username = ? AND f.Username = u.Username");
         $stmt->bind_param("s", $username); // s = string
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function insertNewFollow($username, $FOL_Username)
+    {
+        $stmt = $this->db->prepare("INSERT INTO follow(Username, FOL_Username) VALUES (?, ?)");
+        $stmt->bind_param("ss", $username, $FOL_Username);
+        return $stmt->execute();
+    }
+    public function deleteFollow($username, $FOL_Username)
+    {
+        $stmt = $this->db->prepare("DELETE FROM follow WHERE Username = ? AND FOL_Username = ?");
+        $stmt->bind_param("ss", $username, $FOL_Username);
+        return $stmt->execute();
     }
 
     //----------------------------------LOGIN------------------------------------------

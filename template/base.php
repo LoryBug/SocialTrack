@@ -24,7 +24,9 @@
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Socialtrack</a>
+            <a class="navbar-brand" href="#">
+                <h3>Socialtrack</h3>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -33,18 +35,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="index.php">Home</a>
+                        <a class="nav-link text-white" href="index.php">Home <span class="bi bi-fuel-pump"></span> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="track.php">Track</a>
+                        <a class="nav-link text-white" href="track.php">Track <span class="bi bi-map"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="profile.php">My Account</a>
+                        <a class="nav-link text-white" href="profile.php">My Account <span
+                                class="bi bi-person"></span></a>
                     </li>
                 </ul>
+                <div class="d-flex me-4">
+                    <a class="btn btn-light" href="logout.php">Logout <span class="bi bi-sign-stop"></span></a>
+                </div>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-light" type="submit">Search</button>
+                    <button class="btn btn-light" type="submit"><span class="bi bi-search"></span></button>
                 </form>
             </div>
         </div>
@@ -75,7 +81,7 @@
                     <div class="form-floating my-2">
                         <select class="form-select" id="Region" aria-label="Floating label select example">
                             <option selected>Nord</option>
-                            <option value="1">Middle</option>
+                            <option value="1">Centro</option>
                             <option value="2">Sud</option>
                         </select>
                         <label for="Region">Select Region</label>
@@ -88,7 +94,7 @@
                         </select>
                         <label for="kmFilter">Select km range</label>
                     </div>
-                    <button type="submit" class="btn btn-danger my-2">Filter</button>
+                    <button type="submit" class="btn btn-danger my-2"><span class="bi bi-filter"></span></button>
                 </form>
             </div>
         </div>
@@ -104,20 +110,38 @@
                 <div class="rounded-3 bg-white m-2 p-3">
                     <a href="profile.php" class="text-decoration-none link-light">
                         <h3 class="text-danger">My Profile</h3>
-                        <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle" height="55" width="55" alt="Avatar">
+                        <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle" height="55"
+                            width="55" alt="Avatar">
                     </a>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item mt-2">Follower
-                            <span class="badge bg-primary rounded-pill ms-2">14</span>
+                            <span class="badge bg-primary rounded-pill ms-2">
+                                <?php echo $templateParams["nFollowers"]; ?>
+                            </span>
                         </li>
                         <li class="list-group-item mt-2">Follow
-                      
-                            <span class="badge bg-primary rounded-pill ms-4">14</span>
+
+                            <span class="badge bg-primary rounded-pill ms-4">
+                                <?php echo $templateParams["nFollowing"]; ?>
+                            </span>
                         </li>
                         <li class="list-group-item mt-2">
-                            <span class="badge bg-success">Beginner</span>
+                            <?php if (($templateParams["nTracks"]) < 5): ?>
+                                <span class="badge bg-success">Principiante</span>
+                            <?php elseif (($templateParams["nTracks"]) < 10 && ($templateParams["nTracks"]) > 5): ?>
+                                <span class="badge bg-warning">Intermedio</span>
+                            <?php elseif (($templateParams["nTracks"]) >= 10): ?>
+                                <span class="badge bg-danger">Pilota</span>
+                            <?php endif; ?>
+
                         </li>
                     </ul>
+                </div>
+                <div class="d-flex align-self-start pt-3">
+                    <a href="logout.php" class="text-decoration-none link-light">
+                        <button type="button" class="btn btn-outline-danger">Logout <span
+                                class="bi bi-sign-stop"></span></button>
+                    </a>
                 </div>
             </div>
             <!--fine colonna a sinistra-->
@@ -143,38 +167,36 @@
                         <div class="form-floating my-2">
                             <select class="form-select border-primary" id="Type"
                                 aria-label="Floating label select example">
-                                <option selected>All</option>
+                                <option selected>Tutto</option>
                                 <option value="1">Road</option>
                                 <option value="2">Off-Road</option>
                                 <option value="3">Dual</option>
                             </select>
-                            <label for="Type">Select track</label>
+                            <label for="Type">Tipo</label>
                         </div>
                         <div class="form-floating my-2">
                             <select class="form-select border-primary" id="Region"
                                 aria-label="Floating label select example">
-                                <option selected>All</option>
-                                <option value="1">Emiglia Romagna</option>
-                                <option value="2">Lombardia</option>
-                                <option value="3">Veneto</option>
-                                <option value="4">Liguria</option>
-                                <option value="5">Toscana</option>
-                                <option value="6">Altro</option>
+                                <option selected>Tutto</option>
+                                <option value="1">Nord</option>
+                                <option value="2">Centro</option>
+                                <option value="2">Sud</option>
                             </select>
-                            <label for="Region">Select Region</label>
+                            <label for="Region">Regione</label>
                         </div>
                         <div class="form-floating my-2">
                             <select class="form-select border-primary" id="kmFilter"
                                 aria-label="Floating label select example">
-                                <option selected>All</option>
+                                <option selected>Tutto</option>
                                 <option value="1">0km - 50km</option>
                                 <option value="2">50km - 100km</option>
                                 <option value="3">100km - 150km</option>
                                 <option value="2">more 150km</option>
                             </select>
-                            <label for="kmFilter">Select km range</label>
+                            <label for="kmFilter">Lunghezza</label>
                         </div>
-                        <button type="submit" class="btn btn-danger my-2">Filter</button>
+                        <button type="submit" class="btn btn-danger my-2">Filter <span
+                                class="bi bi-filter"></span></button>
                     </form>
                 </div>
                 <!--Order by-->
@@ -185,12 +207,13 @@
                         <div class="form-floating my-2">
                             <select class="form-select border-primary" id="Type"
                                 aria-label="Floating label select example">
-                                <option selected>Latest</option>
-                                <option value="1">Older</option>
+                                <option selected>Più recente</option>
+                                <option value="1">Meno recente</option>
                             </select>
-                            <label for="Type">Date post</label>
+                            <label for="Type">Data</label>
                         </div>
-                        <button type="submit" class="btn btn-danger my-2">Order</button>
+                        <button type="submit" class="btn btn-danger my-2">Order <span
+                                class="bi bi-arrow-down-up"></span></button>
                     </form>
                 </div>
             </div>

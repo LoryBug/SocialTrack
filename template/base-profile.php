@@ -89,12 +89,11 @@
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-follower" role="tabpanel">
-
-
+                                <?php require($templateParams["followers"]); ?>
                             </div>
 
                             <div class="tab-pane fade" id="nav-following" role="tabpanel">
-
+                            <?php require($templateParams["following"]); ?>
                             </div>
                             <div class="tab-pane fade" id="nav-posts" role="tabpanel">
                                 <?php require($templateParams["listaPost"]); ?>

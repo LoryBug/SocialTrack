@@ -20,36 +20,7 @@
 </head>
 
 <body class="bg-white">
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Socialtrack</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="track.php">Track</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="profile.php">My Account</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-light" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-
+    <?php require_once("nav.php"); ?>
 
     <div class="container text-center border shadow mt-4 pt-4">
         <div class="container">
@@ -87,21 +58,21 @@
                             <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-notifiche"
                                 role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
                         </nav>
-                        <div class="tab-content pb-3" id="nav-tabContent">
+                        <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-follower" role="tabpanel">
                                 <?php require($templateParams["followers"]); ?>
                             </div>
 
-                            <div class="tab-pane fade pb-3" id="nav-following" role="tabpanel">
-                            <?php require($templateParams["following"]); ?>
+                            <div class="tab-pane fade" id="nav-following" role="tabpanel">
+                                <?php require($templateParams["following"]); ?>
                             </div>
-                            <div class="tab-pane fade pb-3" id="nav-posts" role="tabpanel">
+                            <div class="tab-pane fade" id="nav-posts" role="tabpanel">
                                 <?php require($templateParams["listaPost"]); ?>
                             </div>
-                            <div class="tab-pane fade pb-3" id="nav-tracks" role="tabpanel">
+                            <div class="tab-pane fade" id="nav-tracks" role="tabpanel">
                                 <?php require($templateParams["listaTrack"]); ?>
                             </div>
-                            <div class="tab-pane fade pb-3" id="nav-notifiche" role="tabpanel">
+                            <div class="tab-pane fade" id="nav-notifiche" role="tabpanel">
                             </div>
                         </div>
                     </div>
@@ -110,12 +81,7 @@
             </div>
         </div>
     </div>
-    <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
-        <a href="#" class="text-decoration-none link-light">
-            <h3>SocialTrack</h3>
-        </a>
-        <p class="text-center text-muted">© 2023 Socialtrack by Leoni, Casamenti</p>
-    </footer>
+    <?php require_once("footer.php"); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

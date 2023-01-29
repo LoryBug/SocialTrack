@@ -218,7 +218,6 @@
         </div>
     </div>
 
-
     <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
         <a href="#" class="text-decoration-none link-light">
             <h3>SocialTrack</h3>

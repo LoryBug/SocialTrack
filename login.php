@@ -18,6 +18,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
 
 if(isset($_POST["reg_username"])){
     //insert e check se esistono nel db
+    $defaultImgPath = "upload\login-default.jpg";
     $dbh->insertNewUser($_POST["reg_username"], $_POST["reg_password"], $_POST["reg_email"]);
     $login_result = $dbh->checkLogin($_POST["reg_username"], $_POST["reg_password"]);
 

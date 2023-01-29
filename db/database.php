@@ -193,8 +193,9 @@ class DatabaseHelper
     }
     public function insertNewUser($username,$password,$email)
     {
+
         $stmt = $this->db->prepare("INSERT INTO user(Username, User_password, Email, nFollower, nFollow, ProfileImg)
-         VALUES (?, ?, ?,0,0,upload/login-default.jpg");
+         VALUES (?, ?, ?,0,0, 'upload/login-default.jpg')");
         $stmt->bind_param("sss", $username, $password, $email);
         return $stmt->execute();
     }

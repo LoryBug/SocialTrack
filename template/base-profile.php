@@ -87,21 +87,21 @@
                             <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-notifiche"
                                 role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
                         </nav>
-                        <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-content pb-3" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-follower" role="tabpanel">
                                 <?php require($templateParams["followers"]); ?>
                             </div>
 
-                            <div class="tab-pane fade" id="nav-following" role="tabpanel">
+                            <div class="tab-pane fade pb-3" id="nav-following" role="tabpanel">
                             <?php require($templateParams["following"]); ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-posts" role="tabpanel">
+                            <div class="tab-pane fade pb-3" id="nav-posts" role="tabpanel">
                                 <?php require($templateParams["listaPost"]); ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-tracks" role="tabpanel">
+                            <div class="tab-pane fade pb-3" id="nav-tracks" role="tabpanel">
                                 <?php require($templateParams["listaTrack"]); ?>
                             </div>
-                            <div class="tab-pane fade" id="nav-notifiche" role="tabpanel">
+                            <div class="tab-pane fade pb-3" id="nav-notifiche" role="tabpanel">
                             </div>
                         </div>
                     </div>

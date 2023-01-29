@@ -1,7 +1,7 @@
 <!--post-->
 <?php foreach ($dbh->getPostByUser($_SESSION["username"]) as $Post): ?>
     <!--Post Card-->
-    <div class="bg-white p-4 rounded shadow mt-3 container">
+    <div class="bg-white p-4 rounded border border-danger mt-3 container">
         <!-- avatar -->
         <div class="row">
             <div class="d-flex">

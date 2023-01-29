@@ -1,7 +1,7 @@
 <!-- my TRACK-->
-<?php foreach ($dbh->getLatestTracks() as $Track): ?>
-    <!--Post Card-->
-    <div class="bg-white p-4 rounded shadow mt-3 container">
+<?php foreach ($dbh->getTracksByUser($_SESSION["username"]) as $Track): ?>
+    <!--reviewCard Card-->
+    <div class="bg-white p-4 rounded border border-danger  mt-3 container">
         <!-- avatar -->
         <div class="row">
             <div class="d-flex">

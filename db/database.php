@@ -174,14 +174,6 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    public function getTrackByUser($username)
-    {
-        $stmt = $this->db->prepare("SELECT * FROM track WHERE Username = ?");
-        $stmt->bind_param("s", $username); // s = string
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
     public function getPostByUser($username)
     {
         $stmt = $this->db->prepare("SELECT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg
@@ -191,6 +183,18 @@ class DatabaseHelper
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function getTracksByUser($username)
+    {
+        $stmt = $this->db->prepare("SELECT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
+        t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t 
+        WHERE u.Username = ? AND u.Username = t.Username ORDER BY Track_timestamp DESC");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function insertNewUser($username,$password,$email)
     {
 

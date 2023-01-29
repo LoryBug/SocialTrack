@@ -188,7 +188,8 @@
             <!--fine colonna a destra-->
         </div>
     </div>
+    
 
- <?php require_once("footer.php"); ?>
+    <?php require_once("footer.php"); ?>
 
 </html>

@@ -6,7 +6,7 @@ if (isset($_POST["textAreaTrack"])) {
     $nTrackID = $dbh->getTrackNewID()[0]["COUNT(TrackID)+1"];
     $datetimeTrack = date("Y/m/d H:i:s");
     $dbh->insertNewTrack("$nTrackID", "$_POST[textAreaTrack]", "$_POST[typeTrack]",
-    "$datetimeTrack","$_POST[lengthTrack]", "$_POST[RegionTrack]","upload/...","upload/$_POST[ImgInput]", "GiammaC");
+    "$datetimeTrack","$_POST[lengthTrack]", "$_POST[RegionTrack]","upload/$_POST[GPXInput]","upload/$_POST[ImgInput]", $_SESSION["username"]);
 }
 if (isset($_POST["reviewInput"])) {
     //var_dump($_POST["TrackInput"]);

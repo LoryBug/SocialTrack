@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <h6 class="text-start mt-3">Inserisci GPX</h6>
-                <input type="file" class="form-control mt-1" id="ImgInput" name="ImgInput"
+                <input type="file" class="form-control mt-1" id="GPXInput" name="GPXInput"
                     aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                 <h6 class="text-start mt-3">Inserisci immagine</h6>
                 <div class="input-group mt-1">

@@ -22,7 +22,36 @@
 
 <body class="bg-white">
     <!--navbar-->
-    <?php require_once("nav.php"); ?>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.php">
+                <h3>Socialtrack</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.php">Home <span class="bi bi-fuel-pump"></span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="track.php">Track <span class="bi bi-map"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="myprofile.php">My Account <span
+                                class="bi bi-person"></span></a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-light" type="submit"><span class="bi bi-search"></span></button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
     <!--Filter Button-->
     <!--visible solo quando sm-->
@@ -188,8 +217,16 @@
             <!--fine colonna a destra-->
         </div>
     </div>
-    
 
-    <?php require_once("footer.php"); ?>
+    <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
+        <a href="#" class="text-decoration-none link-light">
+            <h3>SocialTrack</h3>
+        </a>
+        <p class="text-center text-muted">© 2023 Socialtrack by Leoni, Casamenti</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 
 </html>

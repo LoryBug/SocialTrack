@@ -1,19 +1,25 @@
 <?php foreach ($dbh->getUserFollowing($_SESSION['username']) as $Following): ?>
-    <div class="row py-2">
-        <div class="d-flex align-self-center">
-            <!-- avatar -->
-            <img src="<?php echo $Following["ProfileImg"]; ?>" alt="avatar" class="rounded-circle me-2"
-                style="width: 40px; height: 40px; object-fit: cover">
 
-            <!-- comment text -->
-            <div class="w-100">
-                <p class="fw-bold m-0 text-start">
-                    <?php echo $Following["FOL_Username"]; ?>
-                </p>
-                <p class="m-0 fs-7 bg-gray rounded text-start">
-                    <?php echo $Following["Email"]; ?>
-                </p>
+    <div class="row my-2">
+        <div class="col sm-7 border shadow-sm rounded-3">
+            <div class="d-flex align-items-center p-2">
+                <img src="<?php echo $Following["ProfileImg"]; ?>" class="rounded-circle me-2" alt="" width="50px"
+                    height="50px" class="rounded-sm ml-n2" />
+                <div class="flex-fill pl-3 pr-3 ps-4">
+                    <div><a href="#" class="fw-bold text-decoration-none text-dark">
+                            <?php echo $Following["FOL_Username"]; ?>
+                        </a>
+                    </div>
+                    <div class="text-muted fs-13px">
+                        <a href="mailto:<?php echo $Following["Email"]; ?>" class="text-decoration-none text-dark">
+                            <?php echo $Following["Email"]; ?></a>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-outline-primary">Unfollow</a>
             </div>
         </div>
+
     </div>
+
+
 <?php endforeach; ?>

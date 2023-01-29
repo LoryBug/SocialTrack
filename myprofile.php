@@ -2,7 +2,7 @@
 require_once("bootstrap.php");
 
 
-$templateParams["titolo"] = "Socialtrack - Profilo";
+$templateParams["titolo"] = "Socialtrack - Mio Profilo";
 $templateParams["username"] = $_SESSION['username'];
 $templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
 $templateParams["email"] = $dbh->getUserEmail($_SESSION['username'])[0]["Email"];
@@ -16,5 +16,5 @@ $templateParams["notifiche"] = "lista-notifiche.php";
 
 
 
-require("template/base-profile.php");
+require("template/base-myprofile.php");
 ?>

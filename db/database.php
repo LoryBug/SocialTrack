@@ -266,6 +266,28 @@ class DatabaseHelper
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    //----------------------------------NOTIFICHE---------------------------ù
+    //public function getNotificationsByUser($username)
+    //{
+      //  $stmt = $this->db->prepare("SELECT n.NotificationID, n.Notification_timestamp, n.Notification_text, n.Username, u.ProfileImg
+        //FROM user as u, notifica as n WHERE u.Username = ? AND u.Username = n.Username ORDER BY Notification_timestamp DESC");
+       // $stmt->bind_param("s", $username); // s = string
+        //$stmt->execute();
+        //$result = $stmt->get_result();
+        //return $result->fetch_all(MYSQLI_ASSOC);
+    //}
+    public function getNotifica($username)
+    {
+        $stmt = $this->db->prepare("SELECT notifica.NotID, notifica.Notific_text, notifica.Username AS Notific_username, comment.Username as Comment_username, user.ProfileImg AS Comment_profileImg
+        FROM notifica, comment, user
+        WHERE notifica.CommentID=comment.CommentID AND comment.Username = user.Username AND notifica.Username = ?");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+    }
+
 
 }
 

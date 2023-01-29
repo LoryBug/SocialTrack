@@ -98,18 +98,19 @@
                                     </div>
                                 <?php endforeach; ?>
                                 <!-- create review -->
-                                <form class="d-flex my-1" id="formNewReview" action="track.php" method="post">
+                                <form class="d-flex my-1" id="formNewReview" action="myprofile.php" method="post">
                                     <!-- avatar -->
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
-                                            class="rounded-circle me-2"
-                                            style="
-                                                width: 40px;
-                                                height: 40px;
-                                                object-fit: cover;
-                                                " />
+                                            class="rounded-circle me-2" style="
+                                                                            width: 40px;
+                                                                            height: 40px;
+                                                                            object-fit: cover;
+                                                                            " />
                                     </div>
                                     <!-- input -->
+                                    <input type="hidden" id="trackID" name="trackID"
+                                        value="<?php echo $Track["TrackID"] ?>">
                                     <div class="container d-flex">
                                         <div class="row">
                                             <div class="col-sm-3">
@@ -117,15 +118,19 @@
                                                     class="form-control border col-1 shadow-sm rounded-pill" id="trackVote"
                                                     name="trackVote" placeholder="Voto">
                                             </div>
-
-                                            <div class="col-sm-9">
+                                            <div class="col-sm-6">
                                                 <input type="text" class="form-control border shadow-sm rounded-pill"
                                                     id="reviewInput" name="reviewInput" placeholder="Write a review" />
-
                                             </div>
-
+                                            <div class="col-sm-3">
+                                                <button class="btn btn-outline-danger rounded-pill" type="submit"
+                                                    value="Submit" Form="formNewReview" id="inputGroupFile">
+                                                    Pubblica
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </form>
                                 <!-- end -->
                             </div>

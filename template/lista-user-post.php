@@ -83,7 +83,7 @@
 
                                 <?php endforeach; ?>
                                 <!-- create comment -->
-                                <form class="d-flex my-1" id="formNewComment" action="index.php" method="post">
+                                <form class="d-flex my-1" id="formNewComment" action="myprofile.php" method="post">
                                     <!-- avatar -->
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"

@@ -70,10 +70,15 @@
                                     <?php echo $templateParams["email"] ?>
                                 </p>
                             </a>
-                            <?php if (isset($templateParams["profile"])&& $templateParams["profile"] != $_SESSION["username"])
+                            <?php if (isset($templateParams["profile"]) && $templateParams["profile"] != $_SESSION["username"])
                             : ?>
-                            
-                            <a href="#" class="btn btn-primary">Follow</a>
+                                <!---guardare che follow si in lista-->
+                                <?php if (in_array($templateParams["profile"], multiDimArrayToArray($templateParams["user_following"]))): ?>
+                                    <a href="#" class="btn btn-outline-primary" type="submit" value="Submit">Unfollow</a>
+                                <?php else: ?>
+                                    <a href="#" class="btn btn-primary" type="submit" value="Submit">Follow</a>
+
+                                <?php endif; ?>
                             <?php endif; ?>
                         </div>
                         <hr>
@@ -86,7 +91,7 @@
                                 aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Posts</a>
                             <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-tracks"
                                 role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Tracks</a>
-                            <?php if (isset($templateParams["profile"])&& $templateParams["profile"] == $_SESSION["username"] || !isset($templateParams["profile"]))
+                            <?php if (isset($templateParams["profile"]) && $templateParams["profile"] == $_SESSION["username"] || !isset($templateParams["profile"]))
                             : ?>
                                 <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-notifiche"
                                     role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
@@ -106,7 +111,7 @@
                             <div class="tab-pane fade mb-2" id="nav-tracks" role="tabpanel">
                                 <?php require($templateParams["listaTrack"]); ?>
                             </div>
-                            <?php if (isset($templateParams["profile"])&& $templateParams["profile"] == $_SESSION["username"]|| !isset($templateParams["profile"]))
+                            <?php if (isset($templateParams["profile"]) && $templateParams["profile"] == $_SESSION["username"] || !isset($templateParams["profile"]))
                             : ?>
                                 <div class="tab-pane fade mb-2" id="nav-notifiche" role="tabpanel">
                                     <a href="myprofile.php?action=upd" class="text-decoration-none">Segna tutte come

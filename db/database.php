@@ -267,15 +267,26 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     //----------------------------------NOTIFICHE---------------------------ù
-    //public function getNotificationsByUser($username)
-    //{
-      //  $stmt = $this->db->prepare("SELECT n.NotificationID, n.Notification_timestamp, n.Notification_text, n.Username, u.ProfileImg
-        //FROM user as u, notifica as n WHERE u.Username = ? AND u.Username = n.Username ORDER BY Notification_timestamp DESC");
-       // $stmt->bind_param("s", $username); // s = string
-        //$stmt->execute();
-        //$result = $stmt->get_result();
-        //return $result->fetch_all(MYSQLI_ASSOC);
-    //}
+  
+    public function setNotificaComment($username, $commentID)
+    {
+        $stmt = $this->db->prepare("INSERT INTO notifica(Username, CommentID, Checked, Notific_text, Notific_type) VALUES (?, ?, 0, 'ha commentato il tuo post', 'comment')");
+        $stmt->bind_param("ss", $username, $commentID);
+        return $stmt->execute();
+    }
+    public function setNotificaReview($username, $reviewID)
+    {
+        $stmt = $this->db->prepare("INSERT INTO notifica(Username, ReviewID, Checked, Notific_text, Notific_type) VALUES (?, ?, 0, 'ha recensito il tuo tracciato', 'review')");
+        $stmt->bind_param("ss", $username, $reviewID);
+        return $stmt->execute();
+    }
+    //da riguardare---------------------------------------------------------
+    public function setNotificaFollow($username)
+    {
+        $stmt = $this->db->prepare("INSERT INTO notifica(Username, Checked, Notific_text, Notific_type) VALUES (?, ?, 0, 'ha iniziato a seguirti', 'follow')");
+        $stmt->bind_param("s", $username);
+        return $stmt->execute();
+    }
     public function getNotifica($username)
     {
         $stmt = $this->db->prepare("SELECT notifica.NotID, notifica.Checked, notifica.Notific_text, notifica.Username AS Notific_username, comment.Username as Comment_username, user.ProfileImg AS Comment_profileImg

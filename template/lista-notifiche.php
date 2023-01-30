@@ -1,7 +1,7 @@
 <?php foreach ($dbh->getNotifica($_SESSION["username"]) as $Notific): ?>
     <div class="row my-2">
         <?php if ($Notific["Checked"] == 0): ?>      
-                <div class="col sm-7 border border-3 border-primary shadow-sm rounded-3">
+                <div class="col sm-7 border border-3 bg-info bg-opacity-10 shadow-sm rounded-3">
         <?php else: ?>
             <div class="col sm-7 border shadow-sm rounded-3">
             <?php endif; ?>

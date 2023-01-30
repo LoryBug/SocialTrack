@@ -40,8 +40,8 @@ else{
 }
 
 $templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
-$templateParams["nFollowers"] = $dbh->getNFollowers($_SESSION['username'])[0]["nFollower"];
-$templateParams["nFollowing"] = $dbh->getNFollowing($_SESSION['username'])[0]["nFollow"];
+$templateParams["nFollowers"] = $dbh->getNFollowers($_SESSION['username'])[0]["total"];
+$templateParams["nFollowing"] = $dbh->getNFollowing($_SESSION['username'])[0]["total"];
 $templateParams["nTracks"] = $dbh->getNTrack($_SESSION['username'])[0]["COUNT(TrackID)"];
 
 require("template/base.php");

@@ -113,8 +113,7 @@
                                 <?php echo $templateParams["nFollowers"]; ?>
                             </span>
                         </li>
-                        <li class="list-group-item mt-2">Follow
-
+                        <li class="list-group-item mt-2">Following
                             <span class="badge bg-primary rounded-pill ms-4">
                                 <?php echo $templateParams["nFollowing"]; ?>
                             </span>

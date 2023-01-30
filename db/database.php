@@ -216,25 +216,6 @@ class DatabaseHelper
         return $stmt->execute();
     }
 
-    public function getNFollowers($username)
-    {
-        $stmt = $this->db->prepare("SELECT nFollower FROM user WHERE Username = ?");
-        $stmt->bind_param("s", $username); // s = string
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-    public function getNFollowing($username)
-    {
-        $stmt = $this->db->prepare("SELECT nFollow FROM user WHERE Username = ?");
-        $stmt->bind_param("s", $username); // s = string
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
-
-
     // ------------------------------------ FOLLOW da riguardare --------------------------------------------
 
     public function getUserFollowing($username)
@@ -264,6 +245,22 @@ class DatabaseHelper
         $stmt = $this->db->prepare("DELETE FROM follow WHERE Username = ? AND FOL_Username = ?");
         $stmt->bind_param("ss", $username, $FOL_Username);
         return $stmt->execute();
+    }
+    public function getNFollowers($username)
+    {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS total FROM follow WHERE FOL_Username = ?");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function getNFollowing($username)
+    {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS total FROM follow WHERE Username = ?");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     //----------------------------------LOGIN------------------------------------------

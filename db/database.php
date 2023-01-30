@@ -239,7 +239,7 @@ class DatabaseHelper
 
     public function getUserFollowing($username)
     {
-        $stmt = $this->db->prepare("SELECT f.FOL_Username, u.Email, u.ProfileImg  FROM follow AS f, user AS u WHERE f.Username = ? AND f.FOL_Username = u.Username");
+        $stmt = $this->db->prepare("SELECT f.Username, u.Email, u.ProfileImg  FROM follow AS f, user AS u WHERE f.Username = ? AND f.Username = u.Username");
         $stmt->bind_param("s", $username); // s = string
         $stmt->execute();
         $result = $stmt->get_result();

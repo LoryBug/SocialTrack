@@ -91,7 +91,7 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-   
+
 
     public function getTrackNewID()
     {
@@ -115,7 +115,7 @@ class DatabaseHelper
     {
 
         $stmt = $this->db->prepare("SELECT COUNT(TrackID) FROM track WHERE Username = ?");
-        $stmt->bind_param("s", $username); 
+        $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -207,7 +207,7 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function insertNewUser($username,$password,$email)
+    public function insertNewUser($username, $password, $email)
     {
 
         $stmt = $this->db->prepare("INSERT INTO user(Username, User_password, Email, nFollower, nFollow, ProfileImg)
@@ -236,7 +236,7 @@ class DatabaseHelper
 
 
     // ------------------------------------ FOLLOW da riguardare --------------------------------------------
-    
+
     public function getUserFollowing($username)
     {
         $stmt = $this->db->prepare("SELECT f.FOL_Username, u.Email, u.ProfileImg  FROM follow AS f, user AS u WHERE f.Username = ? AND f.FOL_Username = u.Username");
@@ -276,7 +276,8 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     //----------------------------------NOTIFICHE---------------------------
-    public function getNotNewID(){
+    public function getNotNewID()
+    {
         $stmt = $this->db->prepare("SELECT COUNT(NotID)+1 FROM notifica");
         $stmt->execute();
         $result = $stmt->get_result();
@@ -284,7 +285,6 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
 
     }
-  
     public function setNotificaComment($notID, $commentID, $username)
     {
         $stmt = $this->db->prepare("INSERT INTO notifica(NotID, CommentID, Notific_type, ReviewID, Notific_text, Checked, Username) 
@@ -292,12 +292,14 @@ class DatabaseHelper
         $stmt->bind_param("sss", $notID, $commentID, $username);
         return $stmt->execute();
     }
-    public function setNotificaReview($username, $reviewID)
+    public function setNotificaReview($notID, $reviewID, $username)
     {
-        $stmt = $this->db->prepare("INSERT INTO notifica(Username, ReviewID, Checked, Notific_text, Notific_type) VALUES (?, ?, 0, 'ha recensito il tuo tracciato', 'review')");
-        $stmt->bind_param("ss", $username, $reviewID);
+        $stmt = $this->db->prepare("INSERT INTO notifica(NotID, CommentID, Notific_type, ReviewID, Notific_text, Checked, Username) 
+        VALUES (?, NULL, 'review', ? , 'ha recensito il tuo track', 0, ?)");
+        $stmt->bind_param("sss", $notID, $reviewID, $username);
         return $stmt->execute();
     }
+
     //da riguardare---------------------------------------------------------
     public function setNotificaFollow($username)
     {
@@ -307,8 +309,21 @@ class DatabaseHelper
     }
     public function getNotificaPost($username)
     {
-        $stmt = $this->db->prepare("SELECT post.Username as Post_username, notifica.NotID, notifica.Checked, notifica.Notific_text, notifica.Username AS Notific_username, comment.Username as Comment_username, user.ProfileImg AS Comment_profileImg FROM notifica,comment, user,post 
-        WHERE notifica.CommentID=comment.CommentID AND post.Username = user.Username AND notifica.Username = ? AND post.PostID = comment.PostID;");
+        $stmt = $this->db->prepare("SELECT post.Username as Post_username, notifica.NotID, notifica.Checked, notifica.Notific_text, notifica.Username AS Notific_username,
+        comment.Username as Comment_username, user.ProfileImg AS Comment_profileImg FROM notifica,comment, user,post 
+        WHERE notifica.CommentID=comment.CommentID AND comment.Username = user.Username AND notifica.Username = ? AND post.PostID = comment.PostID;");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+    }
+    public function getNotificaTrack($username)
+    {
+        $stmt = $this->db->prepare("SELECT track.Username as Track_username, notifica.NotID, notifica.Checked, notifica.Notific_text,
+         notifica.Username AS Notific_username, review.Username as Review_username, user.ProfileImg AS Review_Img 
+         FROM notifica,review, user,track WHERE notifica.ReviewID=review.ReviewID AND review.Username = user.Username 
+         AND notifica.Username = ? AND track.TrackID = review.TrackID;");
         $stmt->bind_param("s", $username); // s = string
         $stmt->execute();
         $result = $stmt->get_result();

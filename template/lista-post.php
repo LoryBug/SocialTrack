@@ -95,7 +95,7 @@
                                                                                           " />
                                     </div>
                                     <!-- input -->
-                        
+                                    <input type="hidden" id="userPost" name="userPost" value="<?php echo $Post["Username"] ?>">
                                     <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"] ?>">
                                     <input type="text" class="form-control border shadow-sm rounded-pill bg-gray" id="CommentInput"
                                         name="CommentInput" placeholder="Write a comment" />

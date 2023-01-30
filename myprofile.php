@@ -17,6 +17,8 @@ $templateParams["notifiche"] = "lista-notifiche.php";
 
 
 //--------------------------------------------
+
+
 if (isset($_GET["user"])) {
     $templateParams["profile"] = $_GET["user"];
 } else {
@@ -34,6 +36,25 @@ if (isset($templateParams["profile"])) {
 
 }
 
+if (isset($templateParams["profile"]) && $templateParams["profile"] != $_SESSION["username"]) {
+    //cavo followers da lista follower
+    if (isset($_POST["unfollowlist"])) {
+        $dbh->deleteFollow($Follower["Username"], $_SESSION["username"]);
+    }
+    if (isset($_POST["followlist"])) {
+        $dbh->insertNewFollow($Follower["Username"], $_SESSION["username"]);
+    }
+} else {
+    //cavo followers da lista follower
+    if (isset($_POST["unfollowlist"])) {
+        $dbh->deleteFollow($_SESSION["username"],$Follower["Username"]);
+    }
+    if (isset($_POST["followlist"])) {
+        $dbh->insertNewFollow($_SESSION["username"],$Follower["Username"]);
+    }
+}
+
+
 if (isset($_GET["action"]) && $_GET["action"] == "upd") {
     $dbh->updateNotifica($_SESSION['username']);
     header("Location: myprofile.php");
@@ -48,6 +69,8 @@ if (isset($_GET["user"]) && $_GET["user"] != $_SESSION['username']) {
     $templateParams["followers"] = "lista-follower.php";
     $templateParams["following"] = "lista-following.php";
     $templateParams["notifiche"] = "lista-notifiche.php";
+    $templateParams["user_following"] = $dbh->getUserFollowing($templateParams["username"]);
+    $templateParams["user_follower"] = $dbh->getUserFollowers($templateParams["username"]);
 } elseif (isset($_GET["username"]) && $_GET["username"] == $_SESSION['username']) {
 
     $templateParams["username"] = $_SESSION['username'];
@@ -58,6 +81,8 @@ if (isset($_GET["user"]) && $_GET["user"] != $_SESSION['username']) {
     $templateParams["followers"] = "lista-follower.php";
     $templateParams["following"] = "lista-following.php";
     $templateParams["notifiche"] = "lista-notifiche.php";
+    $templateParams["user_following"] = $dbh->getUserFollowing($_SESSION['username']);
+    $templateParams["user_follower"] = $dbh->getUserFollowers($_SESSION['username']);
 } else {
     $templateParams["username"] = $_SESSION['username'];
     $templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
@@ -67,10 +92,11 @@ if (isset($_GET["user"]) && $_GET["user"] != $_SESSION['username']) {
     $templateParams["followers"] = "lista-follower.php";
     $templateParams["following"] = "lista-following.php";
     $templateParams["notifiche"] = "lista-notifiche.php";
+    $templateParams["user_following"] = $dbh->getUserFollowing($_SESSION['username']);
+    $templateParams["user_follower"] = $dbh->getUserFollowers($_SESSION['username']);
 
 }
-$templateParams["user_following"] = $dbh->getUserFollowing($_SESSION['username']);
-$templateParams["user_follower"] = $dbh->getUserFollowers($_SESSION['username']);
+
 
 require("template/base-myprofile.php");
 ?>

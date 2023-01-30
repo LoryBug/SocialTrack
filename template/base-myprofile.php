@@ -40,9 +40,9 @@
                                 class="bi bi-person"></span></a>
                     </li>
                 </ul>
-                <form class="d-flex" method="get" action="search.php" 
-                name="formSearchUser" id="formSearchUser">
-                    <input class="form-control me-2" type="search" name="filter" placeholder="Search" aria-label="Search">
+                <form class="d-flex" method="get" action="search.php" name="formSearchUser" id="formSearchUser">
+                    <input class="form-control me-2" type="search" name="filter" placeholder="Search"
+                        aria-label="Search">
                     <button class="btn btn-light" type="submit" form="formSearchUser"><span
                             class="bi bi-search"></span></button>
                 </form>
@@ -74,20 +74,38 @@
                             </a>
                             <?php if (isset($templateParams["profile"]) && $templateParams["profile"] != $_SESSION["username"])
                             : ?>
-                                <!-------sezione da usare in tutti i tasti followe------------------>
-                                <?php if (in_array($templateParams["profile"], multiDimArrayToArray($templateParams["user_following"]))): ?>
-                                    <form id="formUnfollow" action="#" method="post">
-                                        <input class="btn btn-outline-primary" type="submit" name="unfollow" value="Unfollow" form="formUnfollow">
-                                    </form>
+                                <?php if ($_SESSION["username"] == $Follower["Username"]): ?>
 
+                                    <!-------manca il controllo su utente diverso da se stesso penso da fare in un altro if------------------>
+                                    <?php if (in_array($templateParams["profile"], multiDimArrayToArray($templateParams["user_following"]))): ?>
+                                        <form id="formUnfollow" action="#" method="post">
+                                            <input class="btn btn-outline-primary" type="submit" name="unfollow" value="Unfollow"
+                                                form="formUnfollow">
+                                        </form>
+
+                                    <?php else: ?>
+                                        <form id="formFollow" action="#" method="post">
+
+                                            <input class="btn btn-primary" type="submit" name="follow" value="Follow"
+                                                form="formFollow">
+
+                                        </form>
+                                    <?php endif; ?>
                                 <?php else: ?>
-                                    <form id="formFollow" action="#" method="post">
+                                    <?php if (in_array($Follower["Username"], multiDimArrayToArray($templateParams["user_following"]))): ?>
+                                        <form id="formUnfollow" action="#" method="post">
+                                            <input class="btn btn-outline-primary" type="submit" name="unfollow" value="Unfollow"
+                                                form="formUnfollow">
+                                        </form>
 
-                                        <input class="btn btn-primary" type="submit" name="follow" value="Follow" form="formFollow">
+                                    <?php else: ?>
+                                        <form id="formFollow" action="#" method="post">
 
-                                    </form>
+                                            <input class="btn btn-primary" type="submit" name="follow" value="Follow"
+                                                form="formFollow">
 
-
+                                        </form>
+                                    <?php endif; ?>
                                 <?php endif; ?>
                             <?php endif; ?>
                         </div>

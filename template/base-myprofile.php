@@ -70,7 +70,10 @@
                                     <?php echo $templateParams["email"] ?>
                                 </p>
                             </a>
+                            <?php if (isset($templateParams["profile"])&& $templateParams["profile"] != $_SESSION["username"])
+                            : ?>
                             <a href="#" class="btn btn-primary">Follow</a>
+                            <?php endif; ?>
                         </div>
                         <hr>
                         <nav class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -82,7 +85,7 @@
                                 aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Posts</a>
                             <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-tracks"
                                 role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Tracks</a>
-                            <?php if ($templateParams["profile"] == $_SESSION["username"])
+                            <?php if (isset($templateParams["profile"])&& $templateParams["profile"] == $_SESSION["username"] || !isset($templateParams["profile"]))
                             : ?>
                                 <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-notifiche"
                                     role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
@@ -102,7 +105,7 @@
                             <div class="tab-pane fade mb-2" id="nav-tracks" role="tabpanel">
                                 <?php require($templateParams["listaTrack"]); ?>
                             </div>
-                            <?php if ($templateParams["profile"] == $_SESSION["username"])
+                            <?php if (isset($templateParams["profile"])&& $templateParams["profile"] == $_SESSION["username"]|| !isset($templateParams["profile"]))
                             : ?>
                                 <div class="tab-pane fade mb-2" id="nav-notifiche" role="tabpanel">
                                     <a href="myprofile.php?action=upd" class="text-decoration-none">Segna tutte come

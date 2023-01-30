@@ -1,4 +1,9 @@
-<?php foreach ($dbh->getUserFollowers($templateParams["profile"]) as $Follower): ?>
+<?php foreach ($dbh->getAllUser() as $Follower): ?>
+
+
+    //mi tiro giu la lista con la query, solo nome 
+
+    
     <div class="row my-2">
         <div class="col sm-7 border shadow-sm rounded-3">
             <div class="d-flex align-items-center p-2">

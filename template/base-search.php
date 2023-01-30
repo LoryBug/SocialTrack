@@ -48,7 +48,7 @@
             </div>
         </div>
     </nav>
-    <div class="container text-center border shadow mt-4 pt-4">
+    <div class="container text-center border shadow mt-4 p-4">
         <?php require($templateParams["lista"]); ?>
     </div>
     <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">

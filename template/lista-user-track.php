@@ -51,7 +51,6 @@
                 </h6>
             </div>
         </div>
-
         <!--Comment Row-->
         <div class="row mt-2">
             <!-- like and review -->
@@ -62,14 +61,14 @@
                         <!--button Comment and Download-->
                         <div class="btn-group container-fluid" role="group" aria-label="Basic outlined example">
                             <button type="button " class="btn btn-outline-primary" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTrack" aria-expanded="false" aria-controls="collapseTrack"
-                                aria-controls="collapseTrack">Review</button>
+                                data-bs-target="#collapsePost<?php echo $Track["TrackID"]?>" aria-expanded="false"
+                                aria-controls="collapsePost<?php echo $Track["TrackID"]?>">Review</button>
                             <a href="#" download="<?php echo $Track["FileGPX"]; ?>">
                                 <button type="button" class="btn btn-outline-danger">Download</button>
                             </a>
                         </div>
                         <!-- review expand -->
-                        <div id="collapseTrack" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        <div id="collapsePost<?php echo $Track["TrackID"]?>" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                             data-bs-parent="#accordionExample">
                             <hr />
                             <div class="accordion-body">

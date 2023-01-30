@@ -46,15 +46,15 @@
                         <!--button Comment-->
                         <div class="d-grid gap-2 py-4">
                             <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapsePost1" aria-expanded="false" aria-controls="collapsePost1"
-                                aria-controls="collapsePost1">
+                                data-bs-target="#collapsePost<?php echo $Post["PostID"]?>" aria-expanded="false"
+                                aria-controls="collapsePost<?php echo $Post["PostID"]?>">
                                 <i class="fas fa-comment-alt me-2"></i>
                                 Commenta ...
                             </button>
 
                         </div>
                         <!-- comment expand -->
-                        <div id="collapsePost1" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        <div id="collapsePost<?php echo $Post["PostID"]?>" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                             data-bs-parent="#accordionExample">
                             <hr />
                             <div class="accordion-body">

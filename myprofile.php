@@ -12,6 +12,7 @@ $templateParams["followers"] = "lista-follower.php";
 $templateParams["following"] = "lista-following.php";
 $templateParams["notifiche"] = "lista-notifiche.php";
 */
+
 if (isset($_GET["user"])) {
     $templateParams["profile"] = $_GET["user"];
 }else{
@@ -54,7 +55,7 @@ if (isset($_GET["user"]) && $_GET["user"] != $_SESSION['username']) {
     $templateParams["notifiche"] = "lista-notifiche.php";
 
 }
-
+$templateParams["user_following"]= $dbh->getUserFollowing($_SESSION['username']);
 
 require("template/base-myprofile.php");
 ?>

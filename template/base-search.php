@@ -40,9 +40,10 @@
                                 class="bi bi-person"></span></a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-light" type="submit"><span
+                <form class="d-flex" method="get" action="search.php" 
+                name="formSearchUser" id="formSearchUser">
+                    <input class="form-control me-2" type="search" name="filter" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-light" type="submit" form="formSearchUser"><span
                             class="bi bi-search"></span></button>
                 </form>
             </div>

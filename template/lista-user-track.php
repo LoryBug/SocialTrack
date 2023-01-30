@@ -1,5 +1,5 @@
 <!-- my TRACK-->
-<?php foreach ($dbh->getTracksByUser($_SESSION["username"]) as $Track): ?>
+<?php foreach ($dbh->getTracksByUser($templateParams["profile"]) as $Track): ?>
     <!--reviewCard Card-->
     <div class="bg-white p-4 rounded border border-danger  mt-3 container">
         <!-- avatar -->

@@ -1,5 +1,5 @@
 <!--post-->
-<?php foreach ($dbh->getPostByUser($_SESSION["username"]) as $Post): ?>
+<?php foreach ($dbh->getPostByUser($templateParams["profile"]) as $Post): ?>
     <!--Post Card-->
     <div class="bg-white p-4 rounded border border-danger mt-3 container">
         <!-- avatar -->

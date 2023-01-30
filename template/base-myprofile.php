@@ -72,6 +72,7 @@
                             </a>
                             <?php if (isset($templateParams["profile"])&& $templateParams["profile"] != $_SESSION["username"])
                             : ?>
+                            
                             <a href="#" class="btn btn-primary">Follow</a>
                             <?php endif; ?>
                         </div>

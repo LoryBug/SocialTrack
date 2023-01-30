@@ -151,6 +151,15 @@ class DatabaseHelper
     }
 
     // ------------------------------------ USER --------------------------------------------
+    public function getAllUser()
+    {
+        $stmt = $this->db->prepare("SELECT Username, Email, ProfileImg FROM user");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
     public function getUser($username)
     {
         $stmt = $this->db->prepare("SELECT * FROM user WHERE Username = ?");

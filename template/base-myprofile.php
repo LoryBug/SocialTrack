@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!--style css-->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -82,8 +82,11 @@
                                 aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Posts</a>
                             <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-tracks"
                                 role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Tracks</a>
-                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-notifiche"
-                                role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
+                            <?php if ($templateParams["profile"] == $_SESSION["username"])
+                            : ?>
+                                <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-notifiche"
+                                    role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
+                            <?php endif; ?>
                         </nav>
                         <div class="tab-content mb-2" id="nav-tabContent">
                             <div class="tab-pane fade mb-2" id="nav-follower" role="tabpanel">
@@ -99,11 +102,16 @@
                             <div class="tab-pane fade mb-2" id="nav-tracks" role="tabpanel">
                                 <?php require($templateParams["listaTrack"]); ?>
                             </div>
-                            <div class="tab-pane fade mb-2" id="nav-notifiche" role="tabpanel">
-                                <a href="myprofile.php?action=upd" class="text-decoration-none">Segna tutte come lette</a>
-                                <!-- quando lo clicco chiamo la query update notifica -->
-                                <?php require($templateParams["notifiche"]); ?>
-                            </div>
+                            <?php if ($templateParams["profile"] == $_SESSION["username"])
+                            : ?>
+                                <div class="tab-pane fade mb-2" id="nav-notifiche" role="tabpanel">
+                                    <a href="myprofile.php?action=upd" class="text-decoration-none">Segna tutte come
+                                        lette</a>
+                                    <!-- quando lo clicco chiamo la query update notifica -->
+                                    <?php require($templateParams["notifiche"]); ?>
+                                </div>
+                            <?php endif; ?>
+
                         </div>
                     </div>
                 </div>

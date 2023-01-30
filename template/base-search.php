@@ -42,15 +42,15 @@
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-light" type="submit"><span class="bi bi-search"></span></button>
+                    <button class="btn btn-light" type="submit"><span
+                            class="bi bi-search"></span></button>
                 </form>
             </div>
         </div>
     </nav>
     <div class="container text-center border shadow mt-4 pt-4">
-
+        <?php require($templateParams["filter"]); ?>
     </div>
-
     <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
         <a href="#" class="text-decoration-none link-light">
             <h3>SocialTrack</h3>

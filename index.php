@@ -14,6 +14,12 @@ if (isset($_POST["CommentInput"])) {
     $dbh->insertNewComment("$nCommentID", "$_POST[CommentInput]", "$datetimeComment", "$_POST[postID]",$_SESSION["username"]);
 }
 
+// da sistemare la get del profilo
+if(isset($_GET["username"]) && $_GET["username"] != $_SESSION["username"]){
+    $dbh->updateNotifica($_SESSION['username']);
+    header("Location: myprofile.php");
+}
+
 $templateParams["titolo"] = "Socialtrack - Home";
 $templateParams["inserimento"] = "inserisci-post.php";
 

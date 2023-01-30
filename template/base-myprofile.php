@@ -85,8 +85,8 @@
                             <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-notifiche"
                                 role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
                         </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-follower" role="tabpanel">
+                        <div class="tab-content mb-2" id="nav-tabContent">
+                            <div class="tab-pane fade mb-2" id="nav-follower" role="tabpanel">
                                 <?php require($templateParams["followers"]); ?>
                             </div>
 
@@ -100,6 +100,8 @@
                                 <?php require($templateParams["listaTrack"]); ?>
                             </div>
                             <div class="tab-pane fade mb-2" id="nav-notifiche" role="tabpanel">
+                                <a href="myprofile.php?action=upd" class="text-decoration-none">Segna tutte come lette</a>
+                                <!-- quando lo clicco chiamo la query update notifica -->
                                 <?php require($templateParams["notifiche"]); ?>
                             </div>
                         </div>

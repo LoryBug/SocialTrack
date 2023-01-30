@@ -13,6 +13,10 @@ $templateParams["followers"] = "lista-follower.php";
 $templateParams["following"] = "lista-following.php";
 $templateParams["notifiche"] = "lista-notifiche.php";
 
+if(isset($_GET["action"]) && $_GET["action"] == "upd"){
+    $dbh->updateNotifica($_SESSION['username']);
+    header("Location: myprofile.php");
+}
 
 
 

@@ -278,7 +278,7 @@ class DatabaseHelper
     //}
     public function getNotifica($username)
     {
-        $stmt = $this->db->prepare("SELECT notifica.NotID, notifica.Notific_text, notifica.Username AS Notific_username, comment.Username as Comment_username, user.ProfileImg AS Comment_profileImg
+        $stmt = $this->db->prepare("SELECT notifica.NotID, notifica.Checked, notifica.Notific_text, notifica.Username AS Notific_username, comment.Username as Comment_username, user.ProfileImg AS Comment_profileImg
         FROM notifica, comment, user
         WHERE notifica.CommentID=comment.CommentID AND comment.Username = user.Username AND notifica.Username = ?");
         $stmt->bind_param("s", $username); // s = string
@@ -286,6 +286,12 @@ class DatabaseHelper
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
 
+    }
+    public function updateNotifica($username)
+    {
+        $stmt = $this->db->prepare("UPDATE notifica SET Checked = 1 WHERE Username = ? AND Checked = 0");
+        $stmt->bind_param("s", $username); // s = string
+        return $stmt->execute();
     }
 
 

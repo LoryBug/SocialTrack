@@ -9,6 +9,7 @@
                     style="width: 38px; height: 38px; object-fit: cover" />
                 <div>
                     <p class="m-0 fw-bold">
+                        <a href="index.php?user=<?php echo $Post["Username"]; ?>"></a>
                         <?php echo $Post["Username"]; ?>
                     </p>
                     <span class="text-muted fs-7">

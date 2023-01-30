@@ -7,7 +7,7 @@
                 <img src="<?php echo $user["ProfileImg"]; ?>" class="rounded-circle me-2" alt="" width="50px"
                     height="50px" class="rounded-sm ml-n2" />
                 <div class="flex-fill pl-3 pr-3 ps-4">
-                    <div><a href="#" class="fw-bold text-decoration-none text-dark">
+                    <div><a href="myprofile.php?user=<?php echo $user["Username"]; ?>" class="fw-bold text-decoration-none text-dark">
                             <?php echo $user["Username"]; ?>
                         </a>
                     </div>

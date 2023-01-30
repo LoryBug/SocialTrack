@@ -72,11 +72,19 @@
                             </a>
                             <?php if (isset($templateParams["profile"]) && $templateParams["profile"] != $_SESSION["username"])
                             : ?>
-                                <!---guardare che follow si in lista-->
+                                <!-------sezione da usare in tutti i tasti followe------------------>
                                 <?php if (in_array($templateParams["profile"], multiDimArrayToArray($templateParams["user_following"]))): ?>
-                                    <a href="#" class="btn btn-outline-primary" type="submit" value="Submit">Unfollow</a>
+                                    <form id="formUnfollow" action="#" method="post">
+                                        <input class="btn btn-outline-primary" type="submit" name="unfollow" value="Unfollow" form="formUnfollow">
+                                    </form>
+
                                 <?php else: ?>
-                                    <a href="#" class="btn btn-primary" type="submit" value="Submit">Follow</a>
+                                    <form id="formFollow" action="#" method="post">
+
+                                        <input class="btn btn-primary" type="submit" name="follow" value="Follow" form="formFollow">
+
+                                    </form>
+
 
                                 <?php endif; ?>
                             <?php endif; ?>

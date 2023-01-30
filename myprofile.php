@@ -14,6 +14,8 @@ $templateParams["notifiche"] = "lista-notifiche.php";
 */
 if (isset($_GET["user"])) {
     $templateParams["profile"] = $_GET["user"];
+}else{
+    $templateParams["profile"] = $_SESSION["username"];
 }
 
 

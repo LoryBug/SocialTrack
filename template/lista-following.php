@@ -1,4 +1,4 @@
-<?php foreach ($dbh->getUserFollowing($_SESSION['username']) as $Following): ?>
+<?php foreach ($dbh->getUserFollowing($templateParams["profile"]) as $Following): ?>
 
     <div class="row my-2">
         <div class="col sm-7 border shadow-sm rounded-3">

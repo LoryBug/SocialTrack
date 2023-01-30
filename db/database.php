@@ -266,12 +266,21 @@ class DatabaseHelper
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    //----------------------------------NOTIFICHE---------------------------ù
+    //----------------------------------NOTIFICHE---------------------------
+    public function getNotNewID(){
+        $stmt = $this->db->prepare("SELECT COUNT(NotID)+1 FROM notifica");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+    }
   
-    public function setNotificaComment($username, $commentID)
+    public function setNotificaComment($notID, $commentID, $username)
     {
-        $stmt = $this->db->prepare("INSERT INTO notifica(Username, CommentID, Checked, Notific_text, Notific_type) VALUES (?, ?, 0, 'ha commentato il tuo post', 'comment')");
-        $stmt->bind_param("ss", $username, $commentID);
+        $stmt = $this->db->prepare("INSERT INTO notifica(NotID, CommentID, Notific_type, ReviewID, Notific_text, Checked, Username) 
+        VALUES (?, ?, 'comment', NULL , 'ha commentato il tuo post', 0, ?)");
+        $stmt->bind_param("sss", $notID, $commentID, $username);
         return $stmt->execute();
     }
     public function setNotificaReview($username, $reviewID)
@@ -287,11 +296,10 @@ class DatabaseHelper
         $stmt->bind_param("s", $username);
         return $stmt->execute();
     }
-    public function getNotifica($username)
+    public function getNotificaPost($username)
     {
-        $stmt = $this->db->prepare("SELECT notifica.NotID, notifica.Checked, notifica.Notific_text, notifica.Username AS Notific_username, comment.Username as Comment_username, user.ProfileImg AS Comment_profileImg
-        FROM notifica, comment, user
-        WHERE notifica.CommentID=comment.CommentID AND comment.Username = user.Username AND notifica.Username = ?");
+        $stmt = $this->db->prepare("SELECT post.Username as Post_username, notifica.NotID, notifica.Checked, notifica.Notific_text, notifica.Username AS Notific_username, comment.Username as Comment_username, user.ProfileImg AS Comment_profileImg FROM notifica,comment, user,post 
+        WHERE notifica.CommentID=comment.CommentID AND post.Username = user.Username AND notifica.Username = ? AND post.PostID = comment.PostID;");
         $stmt->bind_param("s", $username); // s = string
         $stmt->execute();
         $result = $stmt->get_result();

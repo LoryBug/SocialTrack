@@ -10,8 +10,10 @@ if (isset($_POST["textAreaPost"])) {
 if (isset($_POST["CommentInput"])) {
     //var_dump($_POST["CommentInput"]);
     $nCommentID = $dbh->getCommentNewID()[0]["COUNT(CommentID)+1"];
+    $notID = $dbh->getNotNewID()[0]["COUNT(NotID)+1"];
     $datetimeComment = date("Y/m/d H:i:s");
     $dbh->insertNewComment("$nCommentID", "$_POST[CommentInput]", "$datetimeComment", "$_POST[postID]",$_SESSION["username"]);
+    $dbh->setNotificaComment($notID, $nCommentID,$_SESSION["username"]);
 }
 
 // da sistemare la get del profilo

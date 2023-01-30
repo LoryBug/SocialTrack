@@ -7,7 +7,7 @@
                 <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar" class="rounded-circle me-2"
                     style="width: 38px; height: 38px; object-fit: cover" />
                 <div>
-                    <a class="m-0 fw-bold text-decoration-none text-black" href="#">
+                    <a class="m-0 fw-bold text-decoration-none text-black" href="myprofile.php">
                         <?php echo $_SESSION['username']; ?>
                     </a>
                 </div>

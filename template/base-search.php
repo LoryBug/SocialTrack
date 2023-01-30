@@ -49,7 +49,7 @@
         </div>
     </nav>
     <div class="container text-center border shadow mt-4 pt-4">
-        <?php require($templateParams["filter"]); ?>
+        <?php require($templateParams["lista"]); ?>
     </div>
     <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
         <a href="#" class="text-decoration-none link-light">

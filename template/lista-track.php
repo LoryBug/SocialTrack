@@ -103,14 +103,16 @@
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                            width: 40px;
-                                                                            height: 40px;
-                                                                            object-fit: cover;
-                                                                            " />
+                                                                                width: 40px;
+                                                                                height: 40px;
+                                                                                object-fit: cover;
+                                                                                " />
                                     </div>
                                     <!-- input -->
                                     <input type="hidden" id="trackID" name="trackID"
                                         value="<?php echo $Track["TrackID"] ?>">
+                                    <input type="hidden" id="userTrack" name="userTrack"
+                                        value="<?php echo $Track["Username"] ?>">
                                     <div class="container d-flex">
                                         <div class="row">
                                             <div class="col-sm-3">

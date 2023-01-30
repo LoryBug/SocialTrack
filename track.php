@@ -11,8 +11,10 @@ if (isset($_POST["textAreaTrack"])) {
 if (isset($_POST["reviewInput"])) {
     //var_dump($_POST["TrackInput"]);
     $nReviewID = $dbh->getReviewNewID()[0]["COUNT(ReviewID)+1"];
+    $notID = $dbh->getNotNewID()[0]["COUNT(NotID)+1"];
     $datetimeReview = date("Y/m/d H:i:s");
     $dbh->insertNewReview("$nReviewID", "$_POST[reviewInput]", "$datetimeReview","$_POST[trackVote]", "$_POST[trackID]", "$_SESSION[username]");
+    $dbh->setNotificaReview($notID, $nReviewID,$_POST["userTrack"]);
 }
 
 

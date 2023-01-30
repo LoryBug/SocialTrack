@@ -13,7 +13,7 @@ if (isset($_POST["CommentInput"])) {
     $notID = $dbh->getNotNewID()[0]["COUNT(NotID)+1"];
     $datetimeComment = date("Y/m/d H:i:s");
     $dbh->insertNewComment("$nCommentID", "$_POST[CommentInput]", "$datetimeComment", "$_POST[postID]",$_SESSION["username"]);
-    $dbh->setNotificaComment($notID, $nCommentID,$_SESSION["username"]);
+    $dbh->setNotificaComment($notID, $nCommentID,$_POST["userPost"]);
 }
 
 // da sistemare la get del profilo
@@ -25,7 +25,7 @@ if(isset($_GET["username"]) && $_GET["username"] != $_SESSION["username"]){
 $templateParams["titolo"] = "Socialtrack - Home";
 $templateParams["inserimento"] = "inserisci-post.php";
 
-//scelta ORDER BY filter
+//ORDER BY filter
 $orderBy="Più recente";
 if(isset($_POST["date"]))
 {

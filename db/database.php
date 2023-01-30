@@ -91,7 +91,16 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function getOlderTracks()
+    {
+        $stmt = $this->db->prepare("SELECT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
+        t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t 
+        WHERE u.Username = t.Username ORDER BY Track_timestamp ASC");
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
     public function getTrackNewID()
     {
@@ -121,6 +130,86 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    //-------------------------------------FILTER TRACK QUERY--------------------------------
+    public function getFilterType($type)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM user as u, track as t WHERE u.Username = t.Username AND t.Track_type = ?");
+        $stmt->bind_param("s", $type);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+    }
+    public function getFilterkm($km)
+    {
+        $kmMin = $km - 50;
+        $stmt = $this->db->prepare("SELECT * FROM user as u, track as t WHERE u.Username = t.Username AND 
+        t.Track_length BETWEEN ? AND ?");
+        $stmt->bind_param("ii", $kmMin, $km);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+    }
+    public function getFilterRegion($region)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM user as u, track as t WHERE u.Username = t.Username AND t.Region = ?");
+        $stmt->bind_param("s", $region);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+    }
+    //due valori
+    public function getFilterType_Region($type, $region)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM user as u, track as t WHERE u.Username = t.Username 
+        AND t.Region =? AND t.Track_type = ?");
+        $stmt->bind_param("ss", $region, $type);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function getFilterType_km($type, $km)
+    {
+        $kmMin = $km - 50;
+        $stmt = $this->db->prepare("SELECT * FROM user as u, track as t WHERE u.Username = t.Username AND t.Track_type = ? AND
+        t.Track_length BETWEEN ? AND ?");
+        $stmt->bind_param("sii", $type, $kmMin, $km);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+    }
+    public function getFilterkm_Region($km, $region)
+    {
+        $kmMin = $km - 50;
+        $stmt = $this->db->prepare("SELECT * FROM user as u, track as t WHERE u.Username = t.Username AND t.Region = ? AND
+        t.Track_length BETWEEN ? AND ?");
+        $stmt->bind_param("sii", $region, $kmMin, $km);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+    }
+    public function getFilteredtrack($type, $km, $region)
+    {
+        $kmMin = $km - 50;
+        $stmt = $this->db->prepare("SELECT * FROM user as u, track as t WHERE u.Username = t.Username AND t.Region = ? 
+        AND t.Track_type = ? AND t.Track_length BETWEEN ? AND ?");
+        $stmt->bind_param("ssii", $region,$type, $kmMin, $km);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     // ------------------------------------ REVIEW--------------------------------------------
     public function getReviewTrack($trackID)
     {
@@ -168,7 +257,7 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    
+
     public function getUser($username)
     {
         $stmt = $this->db->prepare("SELECT * FROM user WHERE Username = ?");

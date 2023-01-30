@@ -39,6 +39,7 @@ else{
     $templateParams["lista"] = "lista-older-post.php";
 }
 
+$templateParams["filterBar"] = "filter-bar-post.php";
 $templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
 $templateParams["nFollowers"] = $dbh->getNFollowers($_SESSION['username'])[0]["total"];
 $templateParams["nFollowing"] = $dbh->getNFollowing($_SESSION['username'])[0]["total"];

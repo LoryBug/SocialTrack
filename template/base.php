@@ -155,63 +155,9 @@
             <!--colonna a destra-->
             <!--hidden solo quando on sm display-->
             <div class="col-sm-2 border-start shadow rounded-2 bg-white mt-3 p-2 d-none d-sm-block align-self-start">
-                <!--Filter forms-->
-                <div class="rounded-3 bg-white m-2 p-2">
-                    <form>
-                        <h4>Filter</h4>
-                        <div class="form-floating my-2">
-                            <select class="form-select border-primary" id="Type"
-                                aria-label="Floating label select example">
-                                <option selected>Tutto</option>
-                                <option value="1">Road</option>
-                                <option value="2">Off-Road</option>
-                                <option value="3">Dual</option>
-                            </select>
-                            <label for="Type">Tipo</label>
-                        </div>
-                        <div class="form-floating my-2">
-                            <select class="form-select border-primary" id="Region"
-                                aria-label="Floating label select example">
-                                <option selected>Tutto</option>
-                                <option value="1">Nord</option>
-                                <option value="2">Centro</option>
-                                <option value="2">Sud</option>
-                            </select>
-                            <label for="Region">Regione</label>
-                        </div>
-                        <div class="form-floating my-2">
-                            <select class="form-select border-primary" id="kmFilter"
-                                aria-label="Floating label select example">
-                                <option selected>Tutto</option>
-                                <option value="1">0km - 50km</option>
-                                <option value="2">50km - 100km</option>
-                                <option value="3">100km - 150km</option>
-                                <option value="2">more 150km</option>
-                            </select>
-                            <label for="kmFilter">Lunghezza</label>
-                        </div>
-                        <button type="submit" class="btn btn-danger my-2">Filter <span
-                                class="bi bi-filter"></span></button>
-                    </form>
-                </div>
-                <!--Order by-->
-                <!--Filter forms-->
-                <div class="rounded-3 bg-white m-2 p-2">
-                    <form id="formOrderBy" action="index.php" method="post">
-                        <h4>Order by</h4>
-                        <div class="form-floating my-2">
-                            <select class="form-select border-primary" id="date" name="date"
-                                aria-label="Floating label select example">
-                                <option selected>Più recente</option>
-                                <option value="1">Meno recente</option>
-                            </select>
-                            <label for="Type">Data</label>
-                        </div>
-                        <button type="submit" class="btn btn-danger my-2" type="submit" value="Submit"
-                            Form="formOrderBy" id="inputOrder">Order <span
-                                class="bi bi-arrow-down-up"></span></button>
-                    </form>
-                </div>
+            <?php
+                require($templateParams["filterBar"]);
+                ?>
             </div>
             <!--fine colonna a destra-->
         </div>

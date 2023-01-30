@@ -20,9 +20,27 @@ if (isset($_POST["reviewInput"])) {
 
 $templateParams["titolo"] = "Socialtrack - track";
 $templateParams["inserimento"] = "inserisci-track.php";
-$templateParams["lista"] = "lista-track.php";
-$templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
 
+//ORDER BY filter
+$orderBy="Più recente";
+if(isset($_POST["date"]))
+{
+    $orderBy=$_POST["date"];
+}
+if($orderBy == "Più recente"){
+
+    $templateParams["lista"] = "lista-track.php";
+}
+else{
+    $templateParams["lista"] = "lista-older-track.php";
+}
+
+if(isset($_POST["kmFilter"]) || isset($_POST["regionFilter"]) || isset($_POST["typeFilter"])){
+    $templateParams["lista"] = "lista-filtered-track.php"; 
+}
+
+$templateParams["imgProfile"] = $dbh->getUserImg($_SESSION['username'])[0]["ProfileImg"];
+$templateParams["filterBar"] = "filter-bar-track.php";
 $templateParams["nFollowers"] = $dbh->getNFollowers($_SESSION['username'])[0]["total"];
 $templateParams["nFollowing"] = $dbh->getNFollowing($_SESSION['username'])[0]["total"];
 

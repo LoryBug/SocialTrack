@@ -128,7 +128,6 @@ class DatabaseHelper
 
     public function getNTrack($username)
     {
-
         $stmt = $this->db->prepare("SELECT COUNT(TrackID) FROM track WHERE Username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
@@ -136,6 +135,7 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
     //-------------------------------------FILTER TRACK QUERY--------------------------------
     public function getFilterType($type)
     {
@@ -244,7 +244,14 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
 
     }
+    public function getAvgrating($trackID){
+        $stmt = $this->db->prepare("SELECT AVG(r.Review_voto) as media FROM review as r, track as t WHERE r.TrackID = t.TrackID AND r.TrackID = ?");
+        $stmt->bind_param("i", $trackID); // i = integer
+        $stmt->execute();
+        $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     // ------------------------------------ USER --------------------------------------------
     public function getAllUser()
     {

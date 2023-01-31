@@ -14,7 +14,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
 }
 
 // richiamo la query di insert nuovo utente con le variabili di sessione prese dal form di registrazione
-//if per controlloo se utente esiste o meno su attrivuto username
+//if per controllo se utente esiste o meno su attrivuto username
 
 if(isset($_POST["reg_username"])){
     //insert e check se esistono nel db

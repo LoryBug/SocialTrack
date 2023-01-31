@@ -43,6 +43,11 @@
                     <li class="list-group-item"><strong>Region:</strong>
                         <?php echo $Track["Region"]; ?>
                     </li>
+                    <?php $media = (int) $dbh->getAvgrating($Track["TrackID"])[0]["media"]; ?>
+                    <li class="list-group-item">
+                        <strong> Voto medio:</strong>
+                        <?php echo $media; ?> /5
+                    </li>
                 </ul>
                 <hr>
                 <!-- text content -->
@@ -62,15 +67,15 @@
                         <!--button Comment and Download-->
                         <div class="btn-group container-fluid" role="group" aria-label="Basic outlined example">
                             <button type="button " class="btn btn-outline-primary" data-bs-toggle="collapse"
-                                data-bs-target="#collapsePost<?php echo $Track["TrackID"]?>" aria-expanded="false"
-                                aria-controls="collapsePost<?php echo $Track["TrackID"]?>">Review</button>
+                                data-bs-target="#collapsePost<?php echo $Track["TrackID"] ?>" aria-expanded="false"
+                                aria-controls="collapsePost<?php echo $Track["TrackID"] ?>">Review</button>
                             <a href="#" download="<?php echo $Track["FileGPX"]; ?>">
                                 <button type="button" class="btn btn-outline-danger">Download</button>
                             </a>
                         </div>
                         <!-- review expand -->
-                        <div id="collapsePost<?php echo $Track["TrackID"]?>" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapsePost<?php echo $Track["TrackID"] ?>" class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <hr />
                             <div class="accordion-body">
                                 <!-- review -->
@@ -103,10 +108,10 @@
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                                width: 40px;
-                                                                                height: 40px;
-                                                                                object-fit: cover;
-                                                                                " />
+                                                                                        width: 40px;
+                                                                                        height: 40px;
+                                                                                        object-fit: cover;
+                                                                                        " />
                                     </div>
                                     <!-- input -->
                                     <input type="hidden" id="trackID" name="trackID"

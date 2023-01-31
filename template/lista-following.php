@@ -20,8 +20,8 @@
                 <?php if ($Following["FOL_Username"] == $_SESSION["username"]): ?>
 
                 <?php else: ?>
-                    <!--- il problema è nella call di questa funzione , da problemi su ?FOL_Username? undefined key-->
-                    <?php if (in_array($Following["FOL_Username"], multiDimArrayToArray($templateParams["session_follower"]))): ?>
+                    
+                    <?php if (in_array($Following["FOL_Username"], multiDimArrayToArray($templateParams["session_following"]))): ?>
                         <form id="formUnfollowlist_f" action="#" method="post">
                             <input type="hidden" id="following_username" name="following_username"
                                 value="<?php echo $Following["FOL_Username"]; ?>">

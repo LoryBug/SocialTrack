@@ -17,13 +17,25 @@
                     </div>
                 </div>
 
-                <?php if (in_array($Following["FOL_Username"], multiDimArrayToArray($templateParams["session_following"]))): ?>
-                    <form id="formUnfollowlist_f" action="#" method="post">
-                        <input type="hidden" id="following_username" name="following_username"
-                            value="<?php echo $Following["FOL_Username"]; ?>">
-                        <input class="btn btn-outline-primary" type="submit" name="unfollowlist_following" value="Unfollow"
-                            form="formUnfollowlist_f">
-                    </form>
+                <?php if ($Following["FOL_Username"] == $_SESSION["username"]): ?>
+
+                <?php else: ?>
+                    
+                    <?php if (in_array($Following["FOL_Username"], multiDimArrayToArray($templateParams["session_following"]))): ?>
+                        <form id="formUnfollowlist_f" action="#" method="post">
+                            <input type="hidden" id="following_username" name="following_username"
+                                value="<?php echo $Following["FOL_Username"]; ?>">
+                            <input class="btn btn-outline-primary" type="submit" name="unfollowlist_following" value="Unfollow"
+                                form="formUnfollowlist_f">
+                        </form>
+                    <?php else: ?>
+                        <form id="formFollowlist_f" action="#" method="post">
+                            <input type="hidden" id="following_username" name="following_username"
+                                value="<?php echo $Following["FOL_Username"]; ?>">
+                            <input class="btn btn-primary" type="submit" name="followlist_following" value="Follow"
+                                form="formFollowlist_f">
+                        </form>
+                    <?php endif; ?>
                 <?php endif; ?>
 
             </div>

@@ -37,48 +37,23 @@ if (isset($templateParams["profile"])) {
 }
 if (isset($_POST["unfollowlist"]) && isset($_POST["follower_username"])) {
     $dbh->deleteFollow($_SESSION["username"], $_POST["follower_username"]);
-    // devo capire come prendere il nome dell'utente che sto seguendo
 
 }
 if (isset($_POST["followlist"]) && isset($_POST["follower_username"])) {
     $dbh->insertNewFollow($_SESSION["username"], $_POST["follower_username"]);
+    // qui va inserita la notifica di follow, 
+    //bisogna inserire come user della notifica $_POST["follower_username"]
 }
-//da guardare il 
+
 if (isset($_POST["unfollowlist_following"]) && isset($_POST["following_username"])) {
     $dbh->deleteFollow($_SESSION["username"], $_POST["following_username"]);
 }
-
-
-
-//-----------------------------------------------------------------------------
-/*
-if (isset($templateParams["profile"]) && $templateParams["profile"] != $_SESSION["username"]) {
-    //cavo followers da lista follower
-    if (isset($_POST["unfollowlist"])) {
-        //$dbh->deleteFollow($Follower["Username"], $_SESSION["username"]);
-    }
-    if (isset($_POST["followlist"])) {
-        //$dbh->insertNewFollow($Follower["Username"], $_SESSION["username"]);
-    }
-} elseif (!isset($templateParams["profile"])){
-    //cavo followers da lista follower
-    if (isset($_POST["unfollowlist"])) {
-        $dbh->deleteFollow($Follower["Username"], $_SESSION["username"]);
-    }
-    if (isset($_POST["followlist"])) {
-        $dbh->insertNewFollow($Follower["Username"], $_SESSION["username"]);
-    }
-  
+if (isset($_POST["followlist_following"]) && isset($_POST["following_username"])) {
+    $dbh->insertNewFollow($_SESSION["username"], $_POST["following_username"]);
+    // qui va inserita la notifica di follow, 
+    //bisogna inserire come user della notifica $_POST["follower_username"]
 }
-else{
-    if (isset($_POST["unfollowlist"])) {
-        $dbh->deleteFollow($_SESSION["username"],$Follower["Username"]);
-    }
-    if (isset($_POST["followlist"])) {
-        $dbh->insertNewFollow($_SESSION["username"],$Follower["Username"]);
-    }
 
-}*/
 
 //---------------------------------------------------------------------------------
 if (isset($_GET["action"]) && $_GET["action"] == "upd") {

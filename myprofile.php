@@ -35,8 +35,17 @@ if (isset($templateParams["profile"])) {
     }
 
 }
-
+//-----------------------------------------------------------------------------
+/*
 if (isset($templateParams["profile"]) && $templateParams["profile"] != $_SESSION["username"]) {
+    //cavo followers da lista follower
+    if (isset($_POST["unfollowlist"])) {
+        //$dbh->deleteFollow($Follower["Username"], $_SESSION["username"]);
+    }
+    if (isset($_POST["followlist"])) {
+        //$dbh->insertNewFollow($Follower["Username"], $_SESSION["username"]);
+    }
+} elseif (!isset($templateParams["profile"])){
     //cavo followers da lista follower
     if (isset($_POST["unfollowlist"])) {
         $dbh->deleteFollow($Follower["Username"], $_SESSION["username"]);
@@ -44,17 +53,19 @@ if (isset($templateParams["profile"]) && $templateParams["profile"] != $_SESSION
     if (isset($_POST["followlist"])) {
         $dbh->insertNewFollow($Follower["Username"], $_SESSION["username"]);
     }
-} else {
-    //cavo followers da lista follower
+  
+}
+else{
     if (isset($_POST["unfollowlist"])) {
         $dbh->deleteFollow($_SESSION["username"],$Follower["Username"]);
     }
     if (isset($_POST["followlist"])) {
         $dbh->insertNewFollow($_SESSION["username"],$Follower["Username"]);
     }
-}
 
+}*/
 
+//---------------------------------------------------------------------------------
 if (isset($_GET["action"]) && $_GET["action"] == "upd") {
     $dbh->updateNotifica($_SESSION['username']);
     header("Location: myprofile.php");

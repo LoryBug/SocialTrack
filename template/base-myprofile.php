@@ -74,40 +74,40 @@
                             </a>
                             <?php if (isset($templateParams["profile"]) && $templateParams["profile"] != $_SESSION["username"])
                             : ?>
-                                <?php if ($_SESSION["username"] == $Follower["Username"]): ?>
 
-                                    <!-------manca il controllo su utente diverso da se stesso penso da fare in un altro if------------------>
-                                    <?php if (in_array($templateParams["profile"], multiDimArrayToArray($templateParams["user_following"]))): ?>
-                                        <form id="formUnfollow" action="#" method="post">
-                                            <input class="btn btn-outline-primary" type="submit" name="unfollow" value="Unfollow"
-                                                form="formUnfollow">
-                                        </form>
 
-                                    <?php else: ?>
-                                        <form id="formFollow" action="#" method="post">
+                                <!-------manca il controllo su utente diverso da se stesso penso da fare in un altro if------------------>
+                                <?php if (in_array($templateParams["profile"], multiDimArrayToArray($templateParams["user_following"]))): ?>
+                                    <form id="formUnfollow" action="#" method="post">
+                                        <input class="btn btn-outline-primary" type="submit" name="unfollow" value="Unfollow"
+                                            form="formUnfollow">
+                                    </form>
 
-                                            <input class="btn btn-primary" type="submit" name="follow" value="Follow"
-                                                form="formFollow">
-
-                                        </form>
-                                    <?php endif; ?>
                                 <?php else: ?>
-                                    <?php if (in_array($Follower["Username"], multiDimArrayToArray($templateParams["user_following"]))): ?>
-                                        <form id="formUnfollow" action="#" method="post">
-                                            <input class="btn btn-outline-primary" type="submit" name="unfollow" value="Unfollow"
-                                                form="formUnfollow">
-                                        </form>
+                                    <form id="formFollow" action="#" method="post">
 
-                                    <?php else: ?>
-                                        <form id="formFollow" action="#" method="post">
+                                        <input class="btn btn-primary" type="submit" name="follow" value="Follow"
+                                            form="formFollow">
 
-                                            <input class="btn btn-primary" type="submit" name="follow" value="Follow"
-                                                form="formFollow">
+                                    </form>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <?php if (in_array($templateParams["profile"], multiDimArrayToArray($templateParams["user_following"]))): ?>
+                                    <form id="formUnfollow" action="#" method="post">
+                                        <input class="btn btn-outline-primary" type="submit" name="unfollow" value="Unfollow"
+                                            form="formUnfollow">
+                                    </form>
 
-                                        </form>
-                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <form id="formFollow" action="#" method="post">
+
+                                        <input class="btn btn-primary" type="submit" name="follow" value="Follow"
+                                            form="formFollow">
+
+                                    </form>
                                 <?php endif; ?>
                             <?php endif; ?>
+
                         </div>
                         <hr>
                         <nav class="nav nav-tabs" id="nav-tab" role="tablist">

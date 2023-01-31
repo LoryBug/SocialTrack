@@ -82,6 +82,7 @@ if (isset($_GET["user"]) && $_GET["user"] != $_SESSION['username']) {
     $templateParams["notifiche"] = "lista-notifiche.php";
     $templateParams["user_following"] = $dbh->getUserFollowing($templateParams["username"]);
     $templateParams["user_follower"] = $dbh->getUserFollowers($templateParams["username"]);
+    $templateParams["session_following"] = $dbh->getUserFollowing($_SESSION['username']);
 } elseif (isset($_GET["username"]) && $_GET["username"] == $_SESSION['username']) {
 
     $templateParams["username"] = $_SESSION['username'];

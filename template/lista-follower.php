@@ -17,25 +17,26 @@
                     </div>
                 </div>
                 <!---funzioni di follow and unfollow da cambiare il primo if non è profile ma utente della riga-->
-                <?php if (isset($templateParams["profile"]) && $templateParams["profile"] != $_SESSION["username"])
-                : ?>
-                    <?php if ($_SESSION["username"] == $Follower["Username"]): ?>
 
-                    <?php else: ?>
-                        <!---manca controllo sul non seguire se stesso-->
-                        <?php if (in_array($Follower["Username"], multiDimArrayToArray($templateParams["user_following"]))): ?>
-                            <form id="formUnfollowlist" action="#" method="post">
-                                <input class="btn btn-outline-primary" type="submit" name="unfollowlist" value="Unfollow"
-                                    form="formUnfollowlist">
-                            </form>
 
-                        <?php else: ?>
-                            <form id="formFollowlist" action="#" method="post">
-                                <input class="btn btn-primary" type="submit" name="followlist" value="Follow" form="formFollowlist">
-                            </form>
-                        <?php endif; ?>
-                    <?php endif; ?>
+                <!---manca controllo sul non seguire se stesso-->
+                <?php if (in_array($Follower["Username"], multiDimArrayToArray($templateParams["session_following"]))): ?>
+                    <form id="formUnfollowlist" action="#" method="post">
+                        <input type="hidden" id="follower_username" name="follower_username"
+                            value="<?php echo $Follower["Username"]; ?>">
+                        <input class="btn btn-outline-primary" type="submit" name="unfollowlist" value="Unfollow"
+                            form="formUnfollowlist">
+                    </form>
+
+                <?php else: ?>
+                    <form id="formFollowlist" action="#" method="post">
+                        <input type="hidden" id="follower_username" name="follower_username"
+                            value="<?php echo $Follower["Username"]; ?>">
+                        <input class="btn btn-primary" type="submit" name="followlist" value="Follow" form="formFollowlist">
+                    </form>
                 <?php endif; ?>
+
+
 
 
 

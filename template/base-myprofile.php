@@ -82,13 +82,10 @@
                                         <input class="btn btn-outline-primary" type="submit" name="unfollow" value="Unfollow"
                                             form="formUnfollow">
                                     </form>
-
                                 <?php else: ?>
                                     <form id="formFollow" action="#" method="post">
-
                                         <input class="btn btn-primary" type="submit" name="follow" value="Follow"
                                             form="formFollow">
-
                                     </form>
                                 <?php endif; ?>
                             <?php endif; ?>

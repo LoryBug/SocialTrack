@@ -1,5 +1,5 @@
 <!--OLDER TRACK-->
-<?php foreach ($dbh->getOlderTracks() as $Track): ?>
+<?php foreach ($dbh->getOlderTracks($_SESSION['username']) as $Track): ?>
     <!--Post Card-->
     <div class="bg-white p-4 rounded shadow mt-3 container">
         <!-- avatar -->

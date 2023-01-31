@@ -2,6 +2,7 @@
 <div class="rounded-3 bg-white m-2 p-2">
     <form id="formTracFilter" action="track.php" method="post">
         <h4>Filter</h4>
+        <strong>Tutti i post disponibili</strong>
         <div class="form-floating my-2">
             <select class="form-select border-primary" id="typeFilter" name="typeFilter" aria-label="Floating label select example">
                 <option selected>Tutto</option>

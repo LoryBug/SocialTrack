@@ -1,6 +1,6 @@
 <!--LISTA OLDER POST (ORDER)-->
 <!--post-->
-<?php foreach ($dbh->getOlderPosts() as $Post): ?>
+<?php foreach ($dbh->getOlderPosts($_SESSION['username']) as $Post): ?>
     <!--Post Card-->
     <div class="bg-white p-4 rounded shadow mt-3 container">
         <!-- avatar -->

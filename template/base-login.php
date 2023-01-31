@@ -30,7 +30,7 @@
                 <form action="login.php" method="post">
 
                     <h2 class="text-center">Login</h2>
-                    <input type="username" class="form-control my-3" placeholder="Usermame" name="username"
+                    <input type="username" class="form-control my-3" placeholder="Username" name="username"
                         id="username">
                     <label for="username" class="form-label" hidden>username</label>
                     <input type="password" class="form-control my-3" placeholder="Password" name="password"
@@ -92,7 +92,7 @@
                                         </div>
 
                                         <!-- username,email e pass -->
-                                        <input type="username" class="form-control my-3" placeholder="Usermame"
+                                        <input type="username" class="form-control my-3" placeholder="Username"
                                             name="reg_username" id="reg_username">
                                         <input type="email" class="form-control my-3" placeholder="Email address"
                                             name="reg_email" id="reg_email">

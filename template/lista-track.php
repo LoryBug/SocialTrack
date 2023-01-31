@@ -1,5 +1,5 @@
 <!--TRACK-->
-<?php foreach ($dbh->getLatestTracks() as $Track): ?>
+<?php foreach ($dbh->getLatestTracks($_SESSION['username']) as $Track): ?>
     <!--Post Card-->
     <div class="bg-white p-4 rounded shadow mt-3 container">
         <!-- avatar -->

@@ -5,7 +5,7 @@ $regione=$_POST["regionFilter"];
 ?>
 
 <?php if($tipo=="Tutto" && $km=="Tutto"&& $regione=="Tutto"){
-    $lista = $dbh->getLatestTracks();
+    $lista = $dbh->getLatestTracks($_SESSION['username']);
 }
 #un valore 
 elseif ($tipo!="Tutto" && $km=="Tutto"&& $regione=="Tutto") {

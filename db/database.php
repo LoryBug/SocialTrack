@@ -13,20 +13,24 @@ class DatabaseHelper
     }
 
     // ------------------------------------ POST --------------------------------------------
-    public function getLatestPosts()
+    public function getLatestPosts($username)
     {
-        $stmt = $this->db->prepare("SELECT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg
-         FROM user as u, post as p WHERE u.Username = p.Username ORDER BY Post_timestamp DESC");
+        $stmt = $this->db->prepare("SELECT DISTINCT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg, f.FOL_Username
+        FROM user as u, post as p, follow as f WHERE f.Username = u.Username AND u.Username = p.Username AND f.FOL_Username = ?
+         ORDER BY Post_timestamp DESC");
+        $stmt->bind_param("s", $username); 
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getOlderPosts()
+    public function getOlderPosts($username)
     {
-        $stmt = $this->db->prepare("SELECT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg
-        FROM user as u, post as p WHERE u.Username = p.Username ORDER BY Post_timestamp ASC");
+        $stmt = $this->db->prepare("SELECT DISTINCT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg, f.FOL_Username
+        FROM user as u, post as p, follow as f WHERE f.Username = u.Username AND u.Username = p.Username AND f.FOL_Username = ?
+         ORDER BY Post_timestamp ASC");
+        $stmt->bind_param("s", $username); 
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -81,21 +85,23 @@ class DatabaseHelper
     }
 
     // ------------------------------------ TRACK --------------------------------------------
-    public function getLatestTracks()
+    public function getLatestTracks($username)
     {
         $stmt = $this->db->prepare("SELECT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
-         t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t 
-         WHERE u.Username = t.Username ORDER BY Track_timestamp DESC");
+         t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t, follow as f 
+         WHERE f.Username = u.Username AND u.Username = t.Username AND f.FOL_Username = ? ORDER BY Track_timestamp DESC");
+        $stmt->bind_param("s", $username); 
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    public function getOlderTracks()
+    public function getOlderTracks($username)
     {
         $stmt = $this->db->prepare("SELECT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
-        t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t 
-        WHERE u.Username = t.Username ORDER BY Track_timestamp ASC");
+        t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t, follow as f 
+        WHERE f.Username = u.Username AND u.Username = t.Username AND f.FOL_Username = ? ORDER BY Track_timestamp ASC");
+        $stmt->bind_param("s", $username); 
         $stmt->execute();
         $result = $stmt->get_result();
 

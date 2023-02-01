@@ -43,6 +43,8 @@ if (isset($_POST["followlist"]) && isset($_POST["follower_username"])) {
     $dbh->insertNewFollow($_SESSION["username"], $_POST["follower_username"]);
     // qui va inserita la notifica di follow, 
     //bisogna inserire come user della notifica $_POST["follower_username"]
+    $notID = $dbh->getNotNewID()[0]["COUNT(NotID)+1"];
+    $dbh->setNotificaFollow($notID, $_SESSION["username"],$_POST["follower_username"]);
 }
 
 if (isset($_POST["unfollowlist_following"]) && isset($_POST["following_username"])) {
@@ -52,6 +54,8 @@ if (isset($_POST["followlist_following"]) && isset($_POST["following_username"])
     $dbh->insertNewFollow($_SESSION["username"], $_POST["following_username"]);
     // qui va inserita la notifica di follow, 
     //bisogna inserire come user della notifica $_POST["follower_username"]
+    $notID = $dbh->getNotNewID()[0]["COUNT(NotID)+1"];
+    $dbh->setNotificaFollow($notID, $_SESSION["username"],$_POST["following_username"]);
 }
 
 

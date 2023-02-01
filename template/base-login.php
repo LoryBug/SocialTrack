@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <!--bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -92,12 +93,34 @@
                                         </div>
 
                                         <!-- username,email e pass -->
-                                        <input type="username" class="form-control my-3" placeholder="Username"
-                                            name="reg_username" id="reg_username">
-                                        <input type="email" class="form-control my-3" placeholder="Email address"
-                                            name="reg_email" id="reg_email">
-                                        <input type="password" class="form-control my-3" placeholder="New password"
-                                            name="reg_password" id="reg_password">
+                                        <div class="row">
+                                            <input type="username" class="form-control my-3" placeholder="Username"
+                                                name="reg_username" id="reg_username">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <input type="email" class="form-control my-3"
+                                                    placeholder="Email address" name="reg_email" id="reg_email">
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <span
+                                                    class="bi bi-info-circle"
+                                                    data-bs-toggle="popover" data-bs-content="Username non deve contenere spazi
+                                                    o caratteri speciali"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <input type="password" class="form-control my-3"
+                                                    placeholder="New password" name="reg_password" id="reg_password">
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <span
+                                                    class="bi bi-info-circle position-absolute top-50 start-80 translate-middle"
+                                                    data-bs-toggle="popover" data-bs-content="La password deve contenere almeno 8 caratteri
+                                                e almeno 2 caratteri speciali"></span>
+                                            </div>
+                                        </div>
 
                                         <!-- Regione -->
                                         <div class="row my-3">

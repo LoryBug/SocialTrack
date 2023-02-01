@@ -407,14 +407,14 @@ class DatabaseHelper
         $stmt->bind_param("sss", $notID, $reviewID, $username);
         return $stmt->execute();
     }
-
-    //da riguardare---------------------------------------------------------
-    public function setNotificaFollow($username)
+    public function setNotificaFollow($notID, $fol_username, $username)
     {
-        $stmt = $this->db->prepare("INSERT INTO notifica(Username, Checked, Notific_text, Notific_type) VALUES (?, ?, 0, 'ha iniziato a seguirti', 'follow')");
-        $stmt->bind_param("s", $username);
+        $stmt = $this->db->prepare("INSERT INTO notifica(NotID, CommentID, Notific_type, ReviewID, Notific_text, Checked, Username) 
+        VALUES (?, NULL, ?, NULL , 'ha iniziato a seguirti', 0, ?)");
+        $stmt->bind_param("iss", $notID, $fol_username, $username);
         return $stmt->execute();
     }
+    
     public function getNotificaPost($username)
     {
         $stmt = $this->db->prepare("SELECT post.Username as Post_username, notifica.NotID, notifica.Checked, notifica.Notific_text, notifica.Username AS Notific_username,
@@ -432,6 +432,15 @@ class DatabaseHelper
          notifica.Username AS Notific_username, review.Username as Review_username, user.ProfileImg AS Review_Img 
          FROM notifica,review, user,track WHERE notifica.ReviewID=review.ReviewID AND review.Username = user.Username 
          AND notifica.Username = ? AND track.TrackID = review.TrackID;");
+        $stmt->bind_param("s", $username); // s = string
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+    }
+    public function getNotificaFollow($username)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM notifica WHERE Username = ?;");
         $stmt->bind_param("s", $username); // s = string
         $stmt->execute();
         $result = $stmt->get_result();

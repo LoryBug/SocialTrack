@@ -20,17 +20,17 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active rounded-3">
-                <img src="upload/imola_logo.jpg" class="d-block w-100" alt="circuito imola" width="150" height="250">
+                <img src="upload/Imola_logo.jpg" class="d-block w-100" alt="circuito imola" width="150" height="200">
                 <hr>
                 <strong>Imola 5 marzo 2023 15:00</strong>
             </div>
             <div class="carousel-item rounded-3">
-                <img src="upload/mugello_logo.png" class="d-block w-100" alt="mugello logo" width="150" height="250">
+                <img src="upload/mugello_logo.png" class="d-block w-100" alt="mugello logo" width="150" height="200">
                 <hr>
                 <strong>Mugello 23 aprile 2023 16:30</strong>
             </div>
             <div class="carousel-item rounded-3">
-                <img src="upload/ads_logo.png" class="d-block w-100" alt="ads image" width="150" height="250">
+                <img src="upload/ads_logo.png" class="d-block w-100" alt="ads image" width="150" height="200">
                 <hr>
                 <strong>Compra subito con i saldi!!</strong>
             </div>

@@ -1,6 +1,18 @@
 <!--LISTA OLDER POST (ORDER)-->
 <!--post-->
-<?php foreach ($dbh->getOlderPosts($_SESSION['username']) as $Post): ?>
+<?php $listaPost = $dbh->getOlderPosts($_SESSION['username']);
+if (count($listaPost) == 0) { ?>
+    <div class="col sm-7 my-4 border bg-success bg-opacity-25 shadow-sm rounded-3">
+        <p class="mt-3">
+            <strong>Benvenuto
+                <?php echo $_SESSION['username'] ?>
+            </strong>
+            Inizia a seguire nuovi utenti per vedere post e tracciati.
+        </p>
+    </div>
+<?php } ?>
+
+<?php foreach ($listaPost as $Post): ?>
     <!--Post Card-->
     <div class="bg-white p-4 rounded shadow mt-3 container">
         <!-- avatar -->

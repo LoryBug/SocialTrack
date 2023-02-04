@@ -1,5 +1,17 @@
 <!--post-->
-<?php foreach ($dbh->getLatestPosts($_SESSION['username']) as $Post): ?>
+<?php $listaPost = $dbh->getLatestPosts($_SESSION['username']);
+if (count($listaPost) == 0) { ?>
+    <div class="col sm-7 my-4 border bg-success bg-opacity-25 shadow-sm rounded-3">
+        <p class="mt-3">
+            <strong>Benvenuto
+                <?php echo $_SESSION['username'] ?>
+            </strong>
+            Inizia a seguire nuovi utenti per vedere post e tracciati.
+        </p>
+    </div>
+<?php } ?>
+
+<?php foreach ($listaPost as $Post): ?>
     <!--Post Card-->
     <div class="bg-white p-4 rounded shadow mt-3 container">
         <!-- avatar -->
@@ -9,8 +21,9 @@
                     style="width: 38px; height: 38px; object-fit: cover" />
                 <div>
                     <p class="m-0 fw-bold">
-                        <a href="myprofile.php?user=<?php echo $Post["Username"]; ?>" class="text-decoration-none text-dark"><?php echo $Post["Username"]; ?></a>
-                        
+                        <a href="myprofile.php?user=<?php echo $Post["Username"]; ?>"
+                            class="text-decoration-none text-dark"><?php echo $Post["Username"]; ?></a>
+
                     </p>
                     <span class="text-muted fs-7">
                         <?php echo $Post["Post_timestamp"]; ?>
@@ -47,16 +60,16 @@
                         <!--button Comment-->
                         <div class="d-grid gap-2 py-4">
                             <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapsePost<?php echo $Post["PostID"]?>" aria-expanded="false" 
-                                aria-controls="collapsePost<?php echo $Post["PostID"]?>">
+                                data-bs-target="#collapsePost<?php echo $Post["PostID"] ?>" aria-expanded="false"
+                                aria-controls="collapsePost<?php echo $Post["PostID"] ?>">
                                 <i class="fas fa-comment-alt me-2"></i>
                                 Commenta ...
                             </button>
 
                         </div>
                         <!-- comment expand -->
-                        <div id="collapsePost<?php echo $Post["PostID"]?>" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapsePost<?php echo $Post["PostID"] ?>" class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <hr />
                             <div class="accordion-body">
                                 <!-- comment 1 -->
@@ -89,16 +102,17 @@
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                                            width: 40px;
-                                                                                            height: 40px;
-                                                                                            object-fit: cover;
-                                                                                          " />
+                                                                                                width: 40px;
+                                                                                                height: 40px;
+                                                                                                object-fit: cover;
+                                                                                              " />
                                     </div>
                                     <!-- input -->
-                                    <input type="hidden" id="userPost" name="userPost" value="<?php echo $Post["Username"] ?>">
+                                    <input type="hidden" id="userPost" name="userPost"
+                                        value="<?php echo $Post["Username"] ?>">
                                     <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"] ?>">
-                                    <input type="text" class="form-control border shadow-sm rounded-pill bg-gray" id="CommentInput"
-                                        name="CommentInput" placeholder="Write a comment" />
+                                    <input type="text" class="form-control border shadow-sm rounded-pill bg-gray"
+                                        id="CommentInput" name="CommentInput" placeholder="Write a comment" />
                                 </form>
                                 <!-- end -->
                             </div>

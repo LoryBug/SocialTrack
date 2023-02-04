@@ -19,7 +19,7 @@
 <body>
     <!--login-->
     <!--due colonne-->
-    <div class="container d-flex flex-column flex-lg-row justify-content-evenly mt-5 pt-5">
+    <div class="container d-flex flex-column flex-lg-row justify-content-evenly mt-3 mb-5 py-5">
         <!--heading-->
         <div class="text center text-lg-start mt-lg-5 pt-lg-5">
             <h1 class="fw-bold fs-0 ">Social Track</h1>
@@ -73,7 +73,7 @@
                                 <div class="modal-header">
                                     <div>
                                         <h2 class="modal-title" id="createModalLabel">Sign-up</h2>
-                                        <p class="text-muted fs-7">It's fast like your bike</p>
+                                        <p class="text-muted fs-7">Iscriviti subito!! è veloce come la tua moto.</p>
                                     </div>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
@@ -81,62 +81,62 @@
                                 <!-- body -->
                                 <div class="modal-body">
                                     <form action="login.php" method="post" id="registration_form">
-                                        <!-- name -->
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <input type="text" class="form-control" placeholder="Nome">
+                                        <div class="container">
+                                            <!--nome cognome-->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input type="text" class="form-control" placeholder="Nome">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="text" class="form-control" placeholder="Cognome">
+                                                </div>
                                             </div>
-                                            <div class="col">
-                                                <input type="text" class="form-control" placeholder="Cognome">
-                                            </div>
-                                        </div>
-
-                                        <!-- username,email e pass -->
-                                        <div class="row">
-                                            <input type="username" class="form-control my-3" placeholder="Username"
-                                                name="reg_username" id="reg_username">
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <input type="email" class="form-control my-3"
-                                                    placeholder="Email address" name="reg_email" id="reg_email">
-                                            </div>
-                                            <div class="col-sm-1">
-                                                <span
-                                                    class="bi bi-info-circle"
-                                                    data-bs-toggle="popover" data-bs-content="Username non deve contenere spazi
+                                            <!-- username,email e pass -->
+                                            <div class="row my-3">
+                                                <div class="col-sm-11">
+                                                    <input type="username" class="form-control"
+                                                        placeholder="Username" name="reg_username" id="reg_username">
+                                                </div>
+                                                <div class="col-sm-1 mt-1">
+                                                    <span class="bi bi-info-circle" data-bs-toggle="popover"
+                                                        data-bs-content="Username non deve contenere spazi
                                                     o caratteri speciali"></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <input type="password" class="form-control my-3"
-                                                    placeholder="New password" name="reg_password" id="reg_password">
+                                            <div class="row my-3">
+                                                <div class="col">
+                                                    <input type="email" class="form-control"
+                                                        placeholder="Email address" name="reg_email" id="reg_email">
+                                                </div>
                                             </div>
-                                            <div class="col-sm-1">
-                                                <span
-                                                    class="bi bi-info-circle position-absolute top-50 start-80 translate-middle"
-                                                    data-bs-toggle="popover" data-bs-content="La password deve contenere almeno 8 caratteri
+                                            <div class="row my-3">
+                                                <div class="col-sm-11">
+                                                    <input type="password" class="form-control"
+                                                        placeholder="New password" name="reg_password"
+                                                        id="reg_password">
+                                                </div>
+                                                <div class="col-sm-1 mt-1">
+                                                    <span
+                                                        class="bi bi-info-circle"
+                                                        data-bs-toggle="popover" data-bs-content="La password deve contenere almeno 8 caratteri
                                                 e almeno 2 caratteri speciali"></span>
+                                                </div>
                                             </div>
-                                        </div>
-
-                                        <!-- Regione -->
-                                        <div class="row my-3">
-                                            <span class="text-muted fs-7">
-                                                Regione
-                                            </span>
-                                            <div class="col">
-                                                <select class="form-select">
-                                                    <option value="1">Nord</option>
-                                                    <option value="2">Centro</option>
-                                                    <option value="3">Sud</option>
-                                                </select>
+                                            <!-- Regione -->
+                                            <div class="row my-3">
+                                                <span class="text-muted fs-7">
+                                                    Regione
+                                                </span>
+                                                <div class="col">
+                                                    <select class="form-select">
+                                                        <option value="1">Nord</option>
+                                                        <option value="2">Centro</option>
+                                                        <option value="3">Sud</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <!-- disclaimer -->
+                                        </div>
 
                                         <!-- button footer-->
                                         <div class="text-center mt-3">

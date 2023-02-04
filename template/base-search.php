@@ -40,9 +40,9 @@
                                 class="bi bi-person"></span></a>
                     </li>
                 </ul>
-                <form class="d-flex" method="get" action="search.php" 
-                name="formSearchUser" id="formSearchUser">
-                    <input class="form-control me-2" type="search" name="filter" placeholder="Search" aria-label="Search">
+                <form class="d-flex" method="get" action="search.php" name="formSearchUser" id="formSearchUser">
+                    <input class="form-control me-2" type="search" name="filter" placeholder="Search"
+                        aria-label="Search">
                     <button class="btn btn-light" type="submit" form="formSearchUser"><span
                             class="bi bi-search"></span></button>
                 </form>
@@ -52,7 +52,7 @@
     <div class="container text-center border shadow mt-4 p-4">
         <?php require($templateParams["lista"]); ?>
     </div>
-    <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
+    <footer class="p-4 bg-dark text-white text-center pt-3">
         <a href="#" class="text-decoration-none link-light">
             <h3>SocialTrack</h3>
         </a>

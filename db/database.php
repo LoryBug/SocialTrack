@@ -440,7 +440,8 @@ class DatabaseHelper
     }
     public function getNotificaFollow($username)
     {
-        $stmt = $this->db->prepare("SELECT * FROM notifica WHERE Username = ?;");
+        $stmt = $this->db->prepare("SELECT Notific_text, Notific_type, Checked, NotID, ProfileImg as User_Img 
+        FROM notifica as n, user as u WHERE n.Username = ? and n.Notific_type = u.Username;");
         $stmt->bind_param("s", $username); // s = string
         $stmt->execute();
         $result = $stmt->get_result();

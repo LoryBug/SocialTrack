@@ -15,6 +15,13 @@
                         <?php echo $Post["Post_timestamp"]; ?>
                     </span>
                 </div>
+                <button class="btn btn-danger rounded-3 content-justify-end" >
+                    Elimina
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+            <div class="col-sm-5">
+                
             </div>
         </div>
         <!-- Content -->
@@ -46,16 +53,16 @@
                         <!--button Comment-->
                         <div class="d-grid gap-2 py-4">
                             <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapsePost<?php echo $Post["PostID"]?>" aria-expanded="false"
-                                aria-controls="collapsePost<?php echo $Post["PostID"]?>">
+                                data-bs-target="#collapsePost<?php echo $Post["PostID"] ?>" aria-expanded="false"
+                                aria-controls="collapsePost<?php echo $Post["PostID"] ?>">
                                 <i class="fas fa-comment-alt me-2"></i>
                                 Commenta ...
                             </button>
 
                         </div>
                         <!-- comment expand -->
-                        <div id="collapsePost<?php echo $Post["PostID"]?>" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapsePost<?php echo $Post["PostID"] ?>" class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <hr />
                             <div class="accordion-body">
                                 <!-- comment 1 -->
@@ -88,15 +95,15 @@
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                                            width: 40px;
-                                                                                            height: 40px;
-                                                                                            object-fit: cover;
-                                                                                          " />
+                                                                                                width: 40px;
+                                                                                                height: 40px;
+                                                                                                object-fit: cover;
+                                                                                              " />
                                     </div>
                                     <!-- input -->
                                     <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"] ?>">
-                                    <input type="text" class="form-control border shadow-sm rounded-pill bg-gray" id="CommentInput"
-                                        name="CommentInput" placeholder="Write a comment" />
+                                    <input type="text" class="form-control border shadow-sm rounded-pill bg-gray"
+                                        id="CommentInput" name="CommentInput" placeholder="Write a comment" />
                                 </form>
                                 <!-- end -->
                             </div>

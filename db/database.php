@@ -318,12 +318,12 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function insertNewUser($username, $password, $email)
+    public function insertNewUser($username, $password, $salt, $email)
     {
 
-        $stmt = $this->db->prepare("INSERT INTO user(Username, User_password, Email, nFollower, nFollow, ProfileImg)
-         VALUES (?, ?, ?,0,0, 'upload/login-default.jpg')");
-        $stmt->bind_param("sss", $username, $password, $email);
+        $stmt = $this->db->prepare("INSERT INTO user(Username, User_password, Salt, Email, nFollower, nFollow, ProfileImg)
+         VALUES (?, ?, ?, ?,0,0, 'upload/login-default.jpg')");
+        $stmt->bind_param("ssss", $username, $password, $salt, $email);
         return $stmt->execute();
     }
 

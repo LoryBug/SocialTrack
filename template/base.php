@@ -56,7 +56,7 @@
     <!--visible solo quando sm-->
     <div class="row d-block d-sm-none">
         <p>
-            <button class="btn btn-danger rounded-circle border shadow m-2" type="button" data-bs-toggle="collapse"
+            <button class="btn btn-danger mx-0 rounded-circle border shadow m-2" type="button" data-bs-toggle="collapse"
                 data-bs-target="#FilterButton" aria-expanded="false" aria-controls="FilterButton">
                 <img src="upload/Filter_icon.png" width="25" height="30" alt="button filter">
             </button>

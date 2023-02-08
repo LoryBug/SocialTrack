@@ -54,11 +54,11 @@
 
     <!--Filter Button-->
     <!--visible solo quando sm-->
-    <div class="row d-block d-sm-none">
-        <p>
-            <button class="btn btn-danger mx-0 rounded-circle border shadow m-2" type="button" data-bs-toggle="collapse"
+    <div class="row d-block mx-0 d-sm-none">
+        <p class = "my-0 mt-1">
+            <button class="btn btn-danger border rounded-circle shadow" type="button" data-bs-toggle="collapse"
                 data-bs-target="#FilterButton" aria-expanded="false" aria-controls="FilterButton">
-                <img src="upload/Filter_icon.png" width="25" height="30" alt="button filter">
+                <img src="upload/Filter_icon.png" width="20" height="25" alt="button filter">
             </button>
         </p>
         <div class="collapse" id="FilterButton">

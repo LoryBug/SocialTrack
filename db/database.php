@@ -16,7 +16,7 @@ class DatabaseHelper
     public function getLatestPosts($username)
     {
         $stmt = $this->db->prepare("SELECT DISTINCT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg, f.FOL_Username
-        FROM user as u, post as p, follow as f WHERE f.Username = u.Username AND u.Username = p.Username AND f.FOL_Username = ?
+        FROM user as u, post as p, follow as f WHERE f.FOL_Username = p.Username AND f.Username = ?
          ORDER BY Post_timestamp DESC");
         $stmt->bind_param("s", $username); 
         $stmt->execute();
@@ -28,7 +28,7 @@ class DatabaseHelper
     public function getOlderPosts($username)
     {
         $stmt = $this->db->prepare("SELECT DISTINCT p.PostID, p.Post_timestamp, p.Post_text, p.Post_image, p.Username, u.ProfileImg, f.FOL_Username
-        FROM user as u, post as p, follow as f WHERE f.Username = u.Username AND u.Username = p.Username AND f.FOL_Username = ?
+        FROM user as u, post as p, follow as f WHERE f.FOL_Username = p.Username AND f.Username = ?
          ORDER BY Post_timestamp ASC");
         $stmt->bind_param("s", $username); 
         $stmt->execute();
@@ -89,7 +89,8 @@ class DatabaseHelper
     {
         $stmt = $this->db->prepare("SELECT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
          t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t, follow as f 
-         WHERE f.Username = u.Username AND u.Username = t.Username AND f.FOL_Username = ? ORDER BY Track_timestamp DESC");
+         WHERE f.FOL_Username = t.Username AND f.Username = ?
+         ORDER BY Track_timestamp DESC");
         $stmt->bind_param("s", $username); 
         $stmt->execute();
         $result = $stmt->get_result();
@@ -100,7 +101,8 @@ class DatabaseHelper
     {
         $stmt = $this->db->prepare("SELECT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
         t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t, follow as f 
-        WHERE f.Username = u.Username AND u.Username = t.Username AND f.FOL_Username = ? ORDER BY Track_timestamp ASC");
+        WHERE f.FOL_Username = t.Username AND f.Username = ?
+        ORDER BY Track_timestamp ASC");
         $stmt->bind_param("s", $username); 
         $stmt->execute();
         $result = $stmt->get_result();
@@ -253,9 +255,10 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     // ------------------------------------ USER --------------------------------------------
-    public function getAllUser()
+    public function getAllUser($username)
     {
-        $stmt = $this->db->prepare("SELECT Username, Email, ProfileImg FROM user");
+        $stmt = $this->db->prepare("SELECT Username, Email, ProfileImg FROM user WHERE Username != ?");
+        $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
 

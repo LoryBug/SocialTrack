@@ -92,7 +92,7 @@ class DatabaseHelper
     // ------------------------------------ TRACK --------------------------------------------
     public function getLatestTracks($username)
     {
-        $stmt = $this->db->prepare("SELECT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
+        $stmt = $this->db->prepare("SELECT DISTINCT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
          t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t, follow as f 
          WHERE f.FOL_Username = t.Username AND f.Username = ?
          ORDER BY Track_timestamp DESC");
@@ -104,7 +104,7 @@ class DatabaseHelper
     }
     public function getOlderTracks($username)
     {
-        $stmt = $this->db->prepare("SELECT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
+        $stmt = $this->db->prepare("SELECT DISTINCT t.TrackID, t.Text_description, t.Track_type, t.Track_length,
         t.Region, t.FileGPX, t.Track_image, t.Track_timestamp, t.Username, u.ProfileImg FROM user as u, track as t, follow as f 
         WHERE f.FOL_Username = t.Username AND f.Username = ?
         ORDER BY Track_timestamp ASC");

@@ -49,10 +49,10 @@
             </div>
         </div>
     </nav>
-    <div class="container text-center border shadow mt-4 p-4">
+    <div class="container text-center border shadow my-4 p-4">
         <?php require($templateParams["lista"]); ?>
     </div>
-    <footer class="p-4 bg-dark text-white text-center pt-3">
+    <footer class="p-4 bg-dark text-white text-center mt-4 pt-3">
         <a href="#" class="text-decoration-none link-light">
             <h3>SocialTrack</h3>
         </a>

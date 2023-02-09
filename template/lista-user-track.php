@@ -15,6 +15,17 @@
                         <?php echo $Track["Track_timestamp"]; ?>
                     </span>
                 </div>
+                <div class="col sm-6"></div>
+                <?php if ($Post["Username"] == $_SESSION["username"]) { ?>
+                    <form action="#" method="post" name="" id="">
+                    <input type="hidden" id="" name="">
+                    <button class="btn btn-danger rounded-3 content-justify-end" id="" name="" 
+                        form="">
+                        Elimina
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    </form>
+                <?php } ?>
             </div>
         </div>
         <!-- Content -->

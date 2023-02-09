@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <?php if (in_array($user["Username"], multiDimArrayToArray($templateParams["session_following"]))): ?>
-                        <form id="formUnfollow_search" action="search.php" method="post">
+                        <form id="formUnfollow_search" action="#" method="post">
                             <input type="hidden" id="follower_username" name="follower_username"
                                 value="<?php echo $user["Username"]; ?>">
                             <input class="btn btn-outline-primary" type="submit" id="unfollowlist" name="unfollowlist" value="Unfollow"
@@ -27,7 +27,7 @@
                         </form>
 
                     <?php else: ?>
-                        <form id="formFollow_search" action="search.php" method="post">
+                        <form id="formFollow_search" action="#" method="post">
                             <input type="hidden" id="follower_username" name="follower_username"
                                 value="<?php echo $user["Username"]; ?>">
                             <input class="btn btn-primary" type="submit" id="followlist" name="followlist" value="Follow"

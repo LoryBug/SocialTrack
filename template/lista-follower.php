@@ -36,11 +36,6 @@
                         </form>
                     <?php endif; ?>
                 <?php endif; ?>
-
-
-
-
-
             </div>
         </div>
 

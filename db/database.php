@@ -53,6 +53,13 @@ class DatabaseHelper
         $stmt->bind_param("sssss", $postID, $post_timestamp, $post_text, $post_image, $username);
         return $stmt->execute();
     }
+    public function deletePost($postID){
+        $stmt = $this->db->prepare("DELETE FROM post WHERE PostID = ?");
+        $stmt->bind_param("s", $postID); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
     // ------------------------------------ COMMENT--------------------------------------------
     public function getCommentPost($postID)

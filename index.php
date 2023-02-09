@@ -1,9 +1,10 @@
 <?php
 require_once("bootstrap.php");
 
+//insert new post
 if (isset($_POST["textAreaPost"])) {
-    //var_dump($_POST["textAreaPost"]);
-    $nPostID = $dbh->getPostNewID()[0]["COUNT(PostID)+1"];
+    $nPostID = strval(date("H:i:s"));
+    //$nPostID = $dbh->getPostNewID()[0]["COUNT(PostID)+1"];
     $datetimePost = date("Y/m/d H:i:s");
     $dbh->insertNewPost("$nPostID", "$datetimePost", "$_POST[textAreaPost]", "upload/$_POST[ImgInput]", $_SESSION["username"]);
 }
@@ -16,7 +17,6 @@ if (isset($_POST["CommentInput"])) {
     $dbh->setNotificaComment($notID, $nCommentID,$_POST["userPost"]);
 }
 
-// da sistemare la get del profilo
 if(isset($_GET["username"]) && $_GET["username"] != $_SESSION["username"]){
     $dbh->updateNotifica($_SESSION['username']);
     header("Location: myprofile.php");

@@ -4,8 +4,6 @@ $templateParams["titolo"] = "Socialtrack - search";
 
 
 $templateParams["lista"] = "lista-All-user.php";
-$templateParams["session_following"] = $dbh->getUserFollowing($_SESSION['username']);
-
 
 if (isset($_POST["followlist"])) {
     //var_dump( $_POST["follower_username"]);
@@ -18,6 +16,7 @@ if (isset($_POST["unfollowlist"])) {
     $dbh->deleteFollow($_SESSION["username"], $_POST["follower_username"]);
 }
 
+$templateParams["session_following"] = $dbh->getUserFollowing($_SESSION['username']);
 
 
 

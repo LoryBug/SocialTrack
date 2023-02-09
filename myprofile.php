@@ -44,6 +44,10 @@ if (isset($_POST["followlist_following"]) && isset($_POST["following_username"])
     $dbh->setNotificaFollow($notID, $_SESSION["username"],$_POST["following_username"]);
 }
 
+if(isset($_POST["deletePostButton"])){
+    //var_dump($_POST["deletePostID"]);
+    $dbh->deletePost($_POST["deletePostID"]);
+}
 
 //---------------------------------------------------------------------------------
 if (isset($_GET["action"]) && $_GET["action"] == "upd") {

@@ -15,13 +15,19 @@
                         <?php echo $Post["Post_timestamp"]; ?>
                     </span>
                 </div>
-                <button class="btn btn-danger rounded-3 content-justify-end" >
-                    Elimina
-                    <i class="bi bi-trash"></i>
-                </button>
+                <?php if ($Post["Username"] == $_SESSION["username"]) { ?>
+                    <form action="#" method="post" name="deletePostForm<?php echo $Post["PostID"]?>" id="deletePostForm<?php echo $Post["PostID"]?>">
+                    <input type="hidden" id="deletPostID" name="deletePostID" value="<?php echo $Post["PostID"] ?>">
+                    <button class="btn btn-danger rounded-3 content-justify-end" id="deletePostButton" name="deletePostButton" 
+                        form="deletePostForm<?php echo $Post["PostID"]?>">
+                        Elimina
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    </form>
+                <?php } ?>
             </div>
             <div class="col-sm-5">
-                
+
             </div>
         </div>
         <!-- Content -->
@@ -95,10 +101,10 @@
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                                                width: 40px;
-                                                                                                height: 40px;
-                                                                                                object-fit: cover;
-                                                                                              " />
+                                                                                                            width: 40px;
+                                                                                                            height: 40px;
+                                                                                                            object-fit: cover;
+                                                                                                          " />
                                     </div>
                                     <!-- input -->
                                     <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"] ?>">

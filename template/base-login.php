@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!--main css-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
     <title>
         <?php echo $templateParams["titolo"]; ?>
     </title>
@@ -24,6 +24,7 @@
         <div class="text center text-lg-start mt-lg-5 pt-lg-5">
             <h1 class="fw-bold fs-0 ">Social Track</h1>
             <p class="w-75 mx-auto mx-lg-0 fs-4 text-primary">Il Social Network nato per i biker e ideato da biker</p>
+            <img class= "d-none d-sm-block" src="upload/moto-login.png" alt="icon-socialtrack">
         </div>
         <!--form-->
         <div style="max-width: 28 rem; width: 100%;">

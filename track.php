@@ -46,5 +46,7 @@ $templateParams["nFollowing"] = $dbh->getNFollowing($_SESSION['username'])[0]["t
 
 $templateParams["nTracks"] = $dbh->getNTrack($_SESSION['username'])[0]["COUNT(TrackID)"];
 
+$templateParams["notificNotSeen"] = $dbh->getNotificNotSeen($_SESSION['username'])[0]["notificCount"];
+
 require("template/base.php");
 ?>

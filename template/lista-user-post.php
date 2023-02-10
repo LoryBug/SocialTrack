@@ -18,7 +18,7 @@
                 <div class="col sm-6"></div>
                 <?php if ($Post["Username"] == $_SESSION["username"]) { ?>
                     <form action="#" method="post" name="deletePostForm<?php echo $Post["PostID"]?>" id="deletePostForm<?php echo $Post["PostID"]?>">
-                    <input type="hidden" id="deletPostID" name="deletePostID" value="<?php echo $Post["PostID"] ?>">
+                    <input type="hidden" id="deletePostID" name="deletePostID" value="<?php echo $Post["PostID"] ?>">
                     <button class="btn btn-danger rounded-3 content-justify-end" id="deletePostButton" name="deletePostButton" 
                         form="deletePostForm<?php echo $Post["PostID"]?>">
                         Elimina

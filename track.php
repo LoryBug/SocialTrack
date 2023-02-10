@@ -2,8 +2,8 @@
 require_once("bootstrap.php");
 
 if (isset($_POST["textAreaTrack"])) {
-    $nTrackID = strval(date("H:i:s"));
-    //$nTrackID = $dbh->getTrackNewID()[0]["COUNT(TrackID)+1"];
+    $nTrackID = $dbh->getTrackNewID()[0]["TrackID"];
+    $nTrackID = $nTrackID + 1;
     $datetimeTrack = date("Y/m/d H:i:s");
     $dbh->insertNewTrack("$nTrackID", "$_POST[textAreaTrack]", "$_POST[typeTrack]",
     "$datetimeTrack","$_POST[lengthTrack]", "$_POST[RegionTrack]","upload/$_POST[GPXInput]","upload/$_POST[ImgInput]", $_SESSION["username"]);

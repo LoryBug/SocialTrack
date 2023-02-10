@@ -39,7 +39,7 @@ class DatabaseHelper
 
     public function getPostNewID()
     {
-        $stmt = $this->db->prepare("SELECT COUNT(PostID)+1 FROM post");
+        $stmt = $this->db->prepare("SELECT PostID FROM post ORDER BY Post_timestamp DESC LIMIT 1");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -117,7 +117,7 @@ class DatabaseHelper
 
     public function getTrackNewID()
     {
-        $stmt = $this->db->prepare("SELECT COUNT(TrackID)+1 FROM track");
+        $stmt = $this->db->prepare("SELECT TrackID FROM track ORDER BY Track_timestamp DESC LIMIT 1");
         $stmt->execute();
         $result = $stmt->get_result();
 

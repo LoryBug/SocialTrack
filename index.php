@@ -3,8 +3,9 @@ require_once("bootstrap.php");
 
 //insert new post
 if (isset($_POST["textAreaPost"])) {
-    $nPostID = strval(date("H:i:s"));
-    //$nPostID = $dbh->getPostNewID()[0]["COUNT(PostID)+1"];
+    $nPostID = $dbh->getPostNewID()[0]["PostID"];
+    $nPostID = $nPostID + 1;
+    //var_dump($nPostID);
     $datetimePost = date("Y/m/d H:i:s");
     $dbh->insertNewPost("$nPostID", "$datetimePost", "$_POST[textAreaPost]", "upload/$_POST[ImgInput]", $_SESSION["username"]);
 }
@@ -13,11 +14,11 @@ if (isset($_POST["CommentInput"])) {
     $nCommentID = $dbh->getCommentNewID()[0]["COUNT(CommentID)+1"];
     $notID = $dbh->getNotNewID()[0]["COUNT(NotID)+1"];
     $datetimeComment = date("Y/m/d H:i:s");
-    $dbh->insertNewComment("$nCommentID", "$_POST[CommentInput]", "$datetimeComment", "$_POST[postID]",$_SESSION["username"]);
-    $dbh->setNotificaComment($notID, $nCommentID,$_POST["userPost"]);
+    $dbh->insertNewComment("$nCommentID", "$_POST[CommentInput]", "$datetimeComment", "$_POST[postID]", $_SESSION["username"]);
+    $dbh->setNotificaComment($notID, $nCommentID, $_POST["userPost"]);
 }
 
-if(isset($_GET["username"]) && $_GET["username"] != $_SESSION["username"]){
+if (isset($_GET["username"]) && $_GET["username"] != $_SESSION["username"]) {
     $dbh->updateNotifica($_SESSION['username']);
     header("Location: myprofile.php");
 }
@@ -26,16 +27,14 @@ $templateParams["titolo"] = "Socialtrack - Home";
 $templateParams["inserimento"] = "inserisci-post.php";
 
 //ORDER BY filter
-$orderBy="Più recente";
-if(isset($_POST["date"]))
-{
-    $orderBy=$_POST["date"];
+$orderBy = "Più recente";
+if (isset($_POST["date"])) {
+    $orderBy = $_POST["date"];
 }
-if($orderBy == "Più recente"){
+if ($orderBy == "Più recente") {
 
     $templateParams["lista"] = "lista-post.php";
-}
-else{
+} else {
     $templateParams["lista"] = "lista-older-post.php";
 }
 

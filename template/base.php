@@ -104,10 +104,16 @@
                 class="col-sm-3 border-end shadow rounded-2 bg-white mt-3 p-3 d-none d-sm-block d-flex align-self-start">
                 <!--my avatar-->
                 <div class="rounded-3 bg-white m-2 p-3">
-                    <a href="myprofile.php" class="text-decoration-none link-light">
+                    <a href="myprofile.php" class="text-decoration-none link-light" >
                         <h3 class="text-danger">My Profile</h3>
-                        <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle" height="55"
+                        <!-- if per bordo colorato se presenti notifiche -->
+                        <?php if (($templateParams["notificNotSeen"])>=1): ?>
+                            <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle border border-danger border-3" height="55"
                             width="55" alt="Avatar">
+                        <?php else: ?>
+                            <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle" height="55"
+                            width="55" alt="Avatar">
+                        <?php endif; ?>
                     </a>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item mt-2">Follower

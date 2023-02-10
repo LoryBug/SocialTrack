@@ -392,6 +392,15 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     //----------------------------------NOTIFICHE---------------------------
+
+    public function getNotificNotSeen($username)
+    {
+        $stmt = $this->db->prepare(("SELECT COUNT(NotID) as notificCount from notifica where Checked = 0 and Username = ?"));
+        $stmt->bind_param('s',$username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     public function getNotNewID()
     {
         $stmt = $this->db->prepare("SELECT COUNT(NotID)+1 FROM notifica");

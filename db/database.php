@@ -81,7 +81,7 @@ class DatabaseHelper
 
     public function getCommentNewID()
     {
-        $stmt = $this->db->prepare("SELECT COUNT(CommentID)+1 FROM comment");
+        $stmt = $this->db->prepare("SELECT CommentID FROM comment ORDER BY Comment_date DESC LIMIT 1");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -418,7 +418,7 @@ class DatabaseHelper
     }
     public function getNotNewID()
     {
-        $stmt = $this->db->prepare("SELECT COUNT(NotID)+1 FROM notifica");
+        $stmt = $this->db->prepare("SELECT NotID FROM `notifica` ORDER BY NotID DESC LIMIT 1");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -429,14 +429,14 @@ class DatabaseHelper
     {
         $stmt = $this->db->prepare("INSERT INTO notifica(NotID, CommentID, Notific_type, ReviewID, Notific_text, Checked, Username) 
         VALUES (?, ?, 'comment', NULL , 'ha commentato il tuo post', 0, ?)");
-        $stmt->bind_param("sss", $notID, $commentID, $username);
+        $stmt->bind_param("iss", $notID, $commentID, $username);
         return $stmt->execute();
     }
     public function setNotificaReview($notID, $reviewID, $username)
     {
         $stmt = $this->db->prepare("INSERT INTO notifica(NotID, CommentID, Notific_type, ReviewID, Notific_text, Checked, Username) 
         VALUES (?, NULL, 'review', ? , 'ha recensito il tuo track', 0, ?)");
-        $stmt->bind_param("sss", $notID, $reviewID, $username);
+        $stmt->bind_param("iss", $notID, $reviewID, $username);
         return $stmt->execute();
     }
     public function setNotificaFollow($notID, $fol_username, $username)

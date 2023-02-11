@@ -8,7 +8,8 @@ $templateParams["lista"] = "lista-All-user.php";
 if (isset($_POST["followlist"])) {
     //var_dump( $_POST["follower_username"]);
     $dbh->insertNewFollow($_SESSION["username"],$_POST["follower_username"]);
-    $notID = $dbh->getNotNewID()[0]["COUNT(NotID)+1"];
+    $notID = $dbh->getNotNewID()[0]["NotID"];
+    $notID = $notID +1;
     $dbh->setNotificaFollow($notID, $_SESSION["username"],$_POST["follower_username"]);
 }
 

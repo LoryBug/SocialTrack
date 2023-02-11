@@ -10,7 +10,8 @@ if (isset($_POST["textAreaTrack"])) {
 }
 if (isset($_POST["reviewInput"])) {
     //var_dump($_POST["TrackInput"]);
-    $nReviewID = $dbh->getReviewNewID()[0]["COUNT(ReviewID)+1"];
+    $nReviewID = $dbh->getReviewNewID()[0]["ReviewID"];
+    $nReviewID = $nReviewID +1;
     $notID = $dbh->getNotNewID()[0]["NotID"];
     $notID = $notID +1;
     $datetimeReview = date("Y/m/d H:i:s");

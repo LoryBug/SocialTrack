@@ -153,7 +153,7 @@ elseif ($tipo!="Tutto" && $km!="Tutto"&& $regione!="Tutto") {
                                             <div class="col-sm-3">
                                                 <input type="number"
                                                     class="form-control border col-1 shadow-sm rounded-pill" id="trackVote"
-                                                    name="trackVote" placeholder="Voto">
+                                                    name="trackVote" placeholder="Voto" min="1" max="5">
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control border shadow-sm rounded-pill"

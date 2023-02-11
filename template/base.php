@@ -41,10 +41,15 @@
                         <a class="nav-link text-white" href="myprofile.php">My Account <span
                                 class="bi bi-person"></span></a>
                     </li>
+                    <li class class="nav-item">
+                        <a href="logout.php" class="nav-link text-white">Logout <span
+                                    class="bi bi-sign-stop"></span>
+                        </a>
+                    </li>
                 </ul>
-                <form class="d-flex" method="get" action="search.php" 
-                name="formSearchUser" id="formSearchUser">
-                    <input class="form-control me-2" type="search" name="filter" placeholder="Search" aria-label="Search">
+                <form class="d-flex" method="get" action="search.php" name="formSearchUser" id="formSearchUser">
+                    <input class="form-control me-2" type="search" name="filter" placeholder="Search"
+                        aria-label="Search">
                     <button class="btn btn-light" type="submit" form="formSearchUser"><span
                             class="bi bi-search"></span></button>
                 </form>
@@ -55,7 +60,7 @@
     <!--Filter Button-->
     <!--visible solo quando sm-->
     <div class="row d-block mx-0 d-sm-none">
-        <p class = "my-0 mt-1">
+        <p class="my-0 mt-1">
             <button class="btn btn-danger border rounded-circle shadow" type="button" data-bs-toggle="collapse"
                 data-bs-target="#FilterButton" aria-expanded="false" aria-controls="FilterButton">
                 <img src="upload/Filter_icon.png" width="20" height="25" alt="button filter">
@@ -104,15 +109,15 @@
                 class="col-sm-3 border-end shadow rounded-2 bg-white mt-3 p-3 d-none d-sm-block d-flex align-self-start">
                 <!--my avatar-->
                 <div class="rounded-3 bg-white m-2 p-3">
-                    <a href="myprofile.php" class="text-decoration-none link-light" >
+                    <a href="myprofile.php" class="text-decoration-none link-light">
                         <h3 class="text-danger">My Profile</h3>
                         <!-- if per bordo colorato se presenti notifiche -->
-                        <?php if (($templateParams["notificNotSeen"])>=1): ?>
-                            <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle border border-danger border-3" height="55"
-                            width="55" alt="Avatar">
+                        <?php if (($templateParams["notificNotSeen"]) >= 1): ?>
+                            <img src="<?php echo $templateParams['imgProfile']; ?>"
+                                class="rounded-circle border border-danger border-3" height="55" width="55" alt="Avatar">
                         <?php else: ?>
                             <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle" height="55"
-                            width="55" alt="Avatar">
+                                width="55" alt="Avatar">
                         <?php endif; ?>
                     </a>
                     <ul class="list-group list-group-flush">
@@ -161,7 +166,7 @@
             <!--colonna a destra-->
             <!--hidden solo quando on sm display-->
             <div class="col-sm-2 border-start shadow rounded-2 bg-white mt-3 p-2 d-none d-sm-block align-self-start">
-            <?php
+                <?php
                 require($templateParams["filterBar"]);
                 ?>
             </div>

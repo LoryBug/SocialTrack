@@ -39,6 +39,10 @@
                         <a class="nav-link text-white" href="myprofile.php">My Account <span
                                 class="bi bi-person"></span></a>
                     </li>
+                    <li class class="nav-item">
+                        <a href="logout.php" class="nav-link text-white">Logout <span class="bi bi-sign-stop"></span>
+                        </a>
+                    </li>
                 </ul>
                 <form class="d-flex" method="get" action="search.php" name="formSearchUser" id="formSearchUser">
                     <input class="form-control me-2" type="search" name="filter" placeholder="Search"

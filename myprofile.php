@@ -46,6 +46,7 @@ if (isset($_POST["followlist_following"]) && isset($_POST["following_username"])
     $dbh->setNotificaFollow($notID, $_SESSION["username"], $_POST["following_username"]);
 }
 
+//DELETE post
 if (isset($_POST["deletePostButton"])) {
     //var_dump(count($dbh->getCommentPost($_POST["deletePostID"])));
     if (count($dbh->getCommentPost($_POST["deletePostID"])) != 0) {
@@ -55,6 +56,17 @@ if (isset($_POST["deletePostButton"])) {
         endforeach;
     }
     $dbh->deletePost($_POST["deletePostID"]);
+}
+//DELETE track
+if (isset($_POST["deleteTrackButton"])) {
+    if (count($dbh->getReviewTrack($_POST["deleteTrackID"])) != 0) {
+        //var_dump(count($dbh->getReviewTrack($_POST["deleteTrackID"])));
+        foreach ($dbh->getReviewTrack($_POST["deleteTrackID"]) as $review):
+           $dbh->deleteNotificaReview($review["ReviewID"]);
+           $dbh->deleteReview($review["ReviewID"]);
+        endforeach;
+    }
+    $dbh->deleteTrack($_POST["deleteTrackID"]);
 }
 
 //---------------------------------------------------------------------------------

@@ -149,6 +149,11 @@ class DatabaseHelper
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function deleteTrack($trackID){
+        $stmt = $this->db->prepare("DELETE FROM track WHERE TrackID = ?");
+        $stmt->bind_param("i", $trackID); 
+        return $stmt->execute();
+    }
 
     //-------------------------------------FILTER TRACK QUERY--------------------------------
     public function getFilterType($type)
@@ -265,6 +270,13 @@ class DatabaseHelper
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function deleteReview($reviewID)
+    {
+        $stmt = $this->db->prepare("DELETE FROM review WHERE ReviewID = ?");
+        $stmt->bind_param("s", $reviewID); 
+        return $stmt->execute();
     }
     // ------------------------------------ USER --------------------------------------------
     public function getAllUser($username)
@@ -490,6 +502,11 @@ class DatabaseHelper
     public function deleteNotifica($commentID){
         $stmt = $this->db->prepare("DELETE FROM notifica WHERE CommentID = ?");
         $stmt->bind_param("s", $commentID); 
+        return $stmt->execute();
+    }
+    public function deleteNotificaReview($reviewID){
+        $stmt = $this->db->prepare("DELETE FROM notifica WHERE ReviewID = ?");
+        $stmt->bind_param("s", $reviewID); 
         return $stmt->execute();
     }
 

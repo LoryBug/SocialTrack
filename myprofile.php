@@ -30,7 +30,7 @@ if (isset($_POST["followlist"]) && isset($_POST["follower_username"])) {
     // qui va inserita la notifica di follow, 
     //bisogna inserire come user della notifica $_POST["follower_username"]
     $notID = $dbh->getNotNewID()[0]["COUNT(NotID)+1"];
-    $dbh->setNotificaFollow($notID, $_SESSION["username"],$_POST["follower_username"]);
+    $dbh->setNotificaFollow($notID, $_SESSION["username"], $_POST["follower_username"]);
 }
 
 if (isset($_POST["unfollowlist_following"]) && isset($_POST["following_username"])) {
@@ -41,11 +41,17 @@ if (isset($_POST["followlist_following"]) && isset($_POST["following_username"])
     // qui va inserita la notifica di follow, 
     //bisogna inserire come user della notifica $_POST["follower_username"]
     $notID = $dbh->getNotNewID()[0]["COUNT(NotID)+1"];
-    $dbh->setNotificaFollow($notID, $_SESSION["username"],$_POST["following_username"]);
+    $dbh->setNotificaFollow($notID, $_SESSION["username"], $_POST["following_username"]);
 }
 
-if(isset($_POST["deletePostButton"])){
-    //var_dump($_POST["deletePostID"]);
+if (isset($_POST["deletePostButton"])) {
+    //var_dump(count($dbh->getCommentPost($_POST["deletePostID"])));
+    if (count($dbh->getCommentPost($_POST["deletePostID"])) != 0) {
+        foreach ($dbh->getCommentPost($_POST["deletePostID"]) as $comment):
+            $dbh->deleteNotifica($comment["CommentID"]);
+            $dbh->deleteComment($comment["CommentID"]);
+        endforeach;
+    }
     $dbh->deletePost($_POST["deletePostID"]);
 }
 

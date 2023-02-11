@@ -17,10 +17,10 @@
                 </div>
                 <div class="col sm-6"></div>
                 <?php if ($Track["Username"] == $_SESSION["username"]) { ?>
-                    <form action="#" method="post" name="deleteTrackForm" id="deleteTrackForm">
-                    <input type="hidden" id="deleteTrackID" name="deleteTrackID" value="<?php echo $Post["TrackID"] ?>">
+                    <form action="#" method="post" name="deleteTrackForm<?php echo $Track["TrackID"]?>" id="deleteTrackForm<?php echo $Track["TrackID"]?>">
+                    <input type="hidden" id="deleteTrackID" name="deleteTrackID" value="<?php echo $Track["TrackID"] ?>">
                     <button class="btn btn-danger rounded-3 content-justify-end" id="deleteTrackButton" name="deleteTrackButton" 
-                        form="deleteTrackForm">
+                        form="deleteTrackForm<?php echo $Track["TrackID"]?>">
                         Elimina
                         <i class="bi bi-trash"></i>
                     </button>

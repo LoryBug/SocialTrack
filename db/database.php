@@ -55,7 +55,7 @@ class DatabaseHelper
     }
     public function deletePost($postID){
         $stmt = $this->db->prepare("DELETE FROM post WHERE PostID = ?");
-        $stmt->bind_param("s", $postID); 
+        $stmt->bind_param("i", $postID); 
         return $stmt->execute();
     }
 
@@ -89,6 +89,13 @@ class DatabaseHelper
 
     }
     
+    public function deleteComment($commentID)
+    {
+        $stmt = $this->db->prepare("DELETE FROM comment WHERE CommentID = ?");
+        $stmt->bind_param("s", $commentID); 
+        return $stmt->execute();
+    }
+
     // ------------------------------------ TRACK --------------------------------------------
     public function getLatestTracks($username)
     {
@@ -477,6 +484,12 @@ class DatabaseHelper
     {
         $stmt = $this->db->prepare("UPDATE notifica SET Checked = 1 WHERE Username = ? AND Checked = 0");
         $stmt->bind_param("s", $username); // s = string
+        return $stmt->execute();
+    }
+
+    public function deleteNotifica($commentID){
+        $stmt = $this->db->prepare("DELETE FROM notifica WHERE CommentID = ?");
+        $stmt->bind_param("s", $commentID); 
         return $stmt->execute();
     }
 

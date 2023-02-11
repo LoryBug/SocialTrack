@@ -93,8 +93,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                 <?php endforeach; ?>
                                 <!-- create comment -->
                                 <form class="d-flex my-1" id="formNewComment" action="myprofile.php" method="post">

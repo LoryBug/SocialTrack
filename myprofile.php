@@ -117,7 +117,5 @@ if (isset($_GET["user"]) && $_GET["user"] != $_SESSION['username']) {
     $templateParams["session_follower"] = $dbh->getUserFollowers($_SESSION['username']);
 
 }
-
-
 require("template/base-myprofile.php");
 ?>

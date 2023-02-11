@@ -256,7 +256,7 @@ class DatabaseHelper
 
     public function getReviewNewID()
     {
-        $stmt = $this->db->prepare("SELECT COUNT(ReviewID)+1 FROM review");
+        $stmt = $this->db->prepare("SELECT ReviewID FROM review ORDER BY Review_timestamp DESC LIMIT 1");
         $stmt->execute();
         $result = $stmt->get_result();
 

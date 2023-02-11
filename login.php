@@ -33,7 +33,7 @@ if (isset($_POST["reg_username"])) {
     //insert e check se esistono nel db
     $defaultImgPath = "upload\login-default.jpg";
     $dbh->insertNewUser($_POST["reg_username"], $password, $random_salt, $_POST["reg_email"]);
-    $login_result = $dbh->checkLogin($_POST["reg_username"], $password);
+    $login_result = $dbh->checkPassword($_POST["reg_username"], $password);
 
     registerLoggedUser($login_result[0]);
 }

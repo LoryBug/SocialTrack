@@ -24,7 +24,8 @@
         <div class="text center text-lg-start mt-lg-5 pt-lg-5">
             <h1 class="fw-bold fs-0 ">Social Track</h1>
             <p class="w-75 mx-auto mx-lg-0 fs-4 text-primary">Il Social Network nato per i biker e ideato da biker</p>
-            <img class= "d-none d-sm-block" src="upload/moto-login.png" alt="icon-socialtrack">
+            <img class= "d-none d-sm-block" src="upload/moto-login 2.png" alt="icon-socialtrack" target="redMoto">
+            <img class= "d-none d-sm-block" src="upload/moto-login.png" alt="icon-socialtrack" target="blueMoto">
         </div>
         <!--form-->
         <div style="max-width: 28 rem; width: 100%;">

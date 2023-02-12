@@ -1,5 +1,5 @@
 /*animazione relativa al login*/
-img {
+img[target=redMoto]{
     width: 80px;
     height: 80px;
     position: relative;
@@ -16,4 +16,22 @@ img {
     50%  { left:265px; top:-220px;}
     75%  { left:-80px; top:-220px;}
     100% { left:-80px; top:-30px;}
+  }
+  img[target=blueMoto]{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    animation-name: motoBlue;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  } 
+  @keyframes motoBlue {
+    0%   { left:-80px; top:-110px;}
+    25%  { left:265px; top:-110px;}
+    50%  { left:265px; top:-220px;}
+    75%  { left:-80px; top:-220px;}
+    100% { left:-80px; top:-110px;}
   }

@@ -1,9 +1,26 @@
 <?php
 require_once("bootstrap.php");
-
-
 $templateParams["titolo"] = "Socialtrack - Mio Profilo";
 
+if (isset($_POST["CommentInput"])) {
+    //  var_dump($notID);
+    $nCommentID = $dbh->getCommentNewID()[0]["CommentID"];
+    $nCommentID = $nCommentID + 1; 
+
+    $notID = $dbh->getNotNewID()[0]["NotID"];
+    $notID = $notID +1;
+    $datetimeComment = date("Y/m/d H:i:s");
+    $dbh->insertNewComment("$nCommentID", "$_POST[CommentInput]", "$datetimeComment", "$_POST[postID]", $_SESSION["username"]);
+}
+if (isset($_POST["reviewInput"])) {
+    //var_dump($_POST["TrackInput"]);
+    $nReviewID = $dbh->getReviewNewID()[0]["ReviewID"];
+    $nReviewID = $nReviewID +1;
+    $notID = $dbh->getNotNewID()[0]["NotID"];
+    $notID = $notID +1;
+    $datetimeReview = date("Y/m/d H:i:s");
+    $dbh->insertNewReview("$nReviewID", "$_POST[reviewInput]", "$datetimeReview","$_POST[trackVote]", "$_POST[trackID]", "$_SESSION[username]");
+}
 
 if (isset($_GET["user"])) {
     $templateParams["profile"] = $_GET["user"];

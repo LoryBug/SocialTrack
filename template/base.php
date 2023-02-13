@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
-                <h3>Socialtrack</h3>
+                <strong class="fs-3">Socialtrack</strong>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -49,7 +49,8 @@
                 </ul>
                 <form class="d-flex" method="get" action="search.php" name="formSearchUser" id="formSearchUser">
                     <input class="form-control me-2" type="search" name="filter" placeholder="Search"
-                        aria-label="Search">
+                        aria-label="Search" id="search">
+                        <label for="search" class="input" hidden>search</label>
                     <button class="btn btn-light" type="submit" form="formSearchUser"><span
                             class="bi bi-search"></span></button>
                 </form>
@@ -88,12 +89,12 @@
                         <label for="Region">Select Region</label>
                     </div>
                     <div class="form-floating my-2">
-                        <select class="form-select" id="kmFilter" aria-label="Floating label select example">
+                        <select class="form-select" id="kmFilter1" aria-label="Floating label select example">
                             <option selected>0km - 50km</option>
                             <option value="1">50km - 100km</option>
                             <option value="2">100km - 150km</option>
                         </select>
-                        <label for="kmFilter">Select km range</label>
+                        <label for="kmFilter1">Select km range</label>
                     </div>
                     <button type="submit" class="btn btn-danger my-2"><span class="bi bi-filter"></span></button>
                 </form>
@@ -110,7 +111,7 @@
                 <!--my avatar-->
                 <div class="rounded-3 bg-white m-2 p-3">
                     <a href="myprofile.php" class="text-decoration-none link-light">
-                        <h3 class="text-danger">My Profile</h3>
+                        <strong class="fs-3 text-danger">My Profile</strong>
                         <!-- if per bordo colorato se presenti notifiche -->
                         <?php if (($templateParams["notificNotSeen"]) >= 1): ?>
                             <img src="<?php echo $templateParams['imgProfile']; ?>"
@@ -176,7 +177,7 @@
 
     <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
         <a href="#" class="text-decoration-none link-light">
-            <h3>SocialTrack</h3>
+            <strong class="fs-3">SocialTrack</strong>
         </a>
         <p class="text-center text-muted">© 2023 Socialtrack by Leoni, Casamenti</p>
     </footer>

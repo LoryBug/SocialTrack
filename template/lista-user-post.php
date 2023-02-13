@@ -18,11 +18,11 @@
                 <div class="col sm-6"></div>
                 <?php if ($Post["Username"] == $_SESSION["username"]) { ?>
                     <form action="#" method="post" name="deletePostForm<?php echo $Post["PostID"]?>" id="deletePostForm<?php echo $Post["PostID"]?>">
-                    <input type="hidden" id="deletePostID" name="deletePostID" value="<?php echo $Post["PostID"] ?>">
-                    <button class="btn btn-danger rounded-3 content-justify-end" id="deletePostButton" name="deletePostButton" 
+                    <input type="hidden" id="deletePostID<?php echo $Post["PostID"]?>" name="deletePostID" value="<?php echo $Post["PostID"] ?>">
+                    <button class="btn btn-danger rounded-3 content-justify-end" id="deletePostButton<?php echo $Post["PostID"]?>" name="deletePostButton" 
                         form="deletePostForm<?php echo $Post["PostID"]?>">
                         Elimina
-                        <i class="bi bi-trash"></i>
+                        <span class="bi bi-trash"></span>
                     </button>
                     </form>
                 <?php } ?>
@@ -62,7 +62,7 @@
                             <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapsePost<?php echo $Post["PostID"] ?>" aria-expanded="false"
                                 aria-controls="collapsePost<?php echo $Post["PostID"] ?>">
-                                <i class="fas fa-comment-alt me-2"></i>
+                                <span class="fas fa-comment-alt me-2"></span>
                                 Commenta ...
                             </button>
 
@@ -106,9 +106,10 @@
                                                                                                           " />
                                     </div>
                                     <!-- input -->
-                                    <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"] ?>">
+                                    <input type="hidden" id="postID<?php echo $Post["PostID"] ?>" name="postID" value="<?php echo $Post["PostID"] ?>">
                                     <input type="text" class="form-control border shadow-sm rounded-pill bg-gray"
-                                        id="CommentInput" name="CommentInput" placeholder="Write a comment" />
+                                        id="CommentInput<?php echo $Post["PostID"] ?>" name="CommentInput" placeholder="Write a comment" />
+                                        <label for="CommentInput<?php echo $Post["PostID"] ?>" hidden>CommentInput</label>
                                 </form>
                                 <!-- end -->
                             </div>

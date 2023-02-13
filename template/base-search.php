@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
-                <h3>Socialtrack</h3>
+                <strong class="fs-3">Socialtrack</strong>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -47,7 +47,8 @@
                 </ul>
                 <form class="d-flex" method="get" action="search.php" name="formSearchUser" id="formSearchUser">
                     <input class="form-control me-2" type="search" name="filter" placeholder="Search"
-                        aria-label="Search">
+                        aria-label="Search" id="filter">
+                        <label for="filter" hidden >filter</label>
                     <button class="btn btn-light" type="submit" form="formSearchUser"><span
                             class="bi bi-search"></span></button>
                 </form>
@@ -59,7 +60,7 @@
     </div>
     <footer class="p-4 bg-dark text-white text-center mt-4 pt-3">
         <a href="#" class="text-decoration-none link-light">
-            <h3>SocialTrack</h3>
+            <strong class="fs-3">SocialTrack</strong>
         </a>
         <p class="text-center text-muted">© 2023 Socialtrack by Leoni, Casamenti</p>
     </footer>

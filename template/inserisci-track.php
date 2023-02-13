@@ -17,12 +17,14 @@
                     <span class="input-group-text"> <em class="bi bi-pencil-square ps-2"></em></span>
                     <textarea class="form-control" aria-label="With textarea" id="textAreaTrack" name="textAreaTrack"
                         placeholder="Pubblica un nuovo tracciato ..."></textarea>
+                        <label for="textAreaTrack" hidden>textAreaTrack</label>
                 </div>
                 <div class="row align-items-center mt-4">
                     <div class="col-sm-3">
                         <label class="visually-hidden" for="specificSizeInputName">Km</label>
                         <input min="10" max="200" type="number" class="form-control" id="lengthTrack" name="lengthTrack"
                             placeholder="Lunghezza km">
+                            <label for="lengthTrack" hidden>lengthTrack</label>
                     </div>
                     <div class="col-sm-3">
                         <select class="form-select" aria-label="Default select example" id="typeTrack" name="typeTrack">
@@ -30,6 +32,7 @@
                             <option value="Off-Road">Off-Road</option>
                             <option value="Dual">Dual</option>
                         </select>
+                        <label for="typeTrack" hidden>typeTrack</label>
                     </div>
                     <div class="col-sm-3">
                         <select class="form-select" aria-label="Default select example" id="RegionTrack"
@@ -38,15 +41,18 @@
                             <option value="Centro">Centro</option>
                             <option value="Sud">Sud</option>
                         </select>
+                        <label for="RegionTrack" hidden>RegionTrack</label>
                     </div>
                 </div>
                 <h6 class="text-start mt-3">Inserisci GPX</h6>
                 <input type="file" class="form-control mt-1" id="GPXInput" name="GPXInput"
                     aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    <label for="GPXInput" hidden>GPXInput</label>
                 <h6 class="text-start mt-3">Inserisci immagine</h6>
                 <div class="input-group mt-1">
                     <input type="file" class="form-control" id="ImgInput" name="ImgInput"
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                        <label for="ImgInput" hidden>ImgInput</label>
                     <button class="btn btn-outline-secondary" type="submit" value="Submit" Form="formNewTrack"
                         id="inputGroupFileAddon04">Pubblica</button>
                 </div>

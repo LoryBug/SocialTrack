@@ -55,21 +55,21 @@ if (count($listaPost) == 0) { ?>
             <!-- likes & comments -->
             <div class="post__comment mt-3 position-relative">
                 <!-- comments start-->
-                <div class="accordion" id="accordionExample">
+                <div class="accordion" id="accEx">
                     <div class="accordion-item border-0">
                         <!--button Comment-->
                         <div class="d-grid gap-2 py-4">
                             <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapsePost<?php echo $Post["PostID"] ?>" aria-expanded="false"
                                 aria-controls="collapsePost<?php echo $Post["PostID"] ?>">
-                                <i class="fas fa-comment-alt me-2"></i>
+                                <em class="fas fa-comment-alt me-2"></em>
                                 Commenta ...
                             </button>
 
                         </div>
                         <!-- comment expand -->
                         <div id="collapsePost<?php echo $Post["PostID"] ?>" class="accordion-collapse collapse"
-                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            aria-labelledby="headingTwo" data-bs-parent="#accEx">
                             <hr />
                             <div class="accordion-body">
                                 <!-- comment 1 -->
@@ -113,6 +113,7 @@ if (count($listaPost) == 0) { ?>
                                     <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"] ?>">
                                     <input type="text" class="form-control border shadow-sm rounded-pill bg-gray"
                                         id="CommentInput" name="CommentInput" placeholder="Write a comment" />
+                                        <label for="CommentInput" class="form-control" hidden>commentInput</label>
                                 </form>
                                 <!-- end -->
                             </div>

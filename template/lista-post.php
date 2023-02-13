@@ -62,7 +62,7 @@ if (count($listaPost) == 0) { ?>
                             <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapsePost<?php echo $Post["PostID"] ?>" aria-expanded="false"
                                 aria-controls="collapsePost<?php echo $Post["PostID"] ?>">
-                                <i class="fas fa-comment-alt me-2"></i>
+                                <em class="fas fa-comment-alt me-2"></em>
                                 Commenta ...
                             </button>
 
@@ -113,6 +113,7 @@ if (count($listaPost) == 0) { ?>
                                     <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"] ?>">
                                     <input type="text" class="form-control border shadow-sm rounded-pill bg-gray"
                                         id="CommentInput" name="CommentInput" placeholder="Write a comment" />
+                                        <label for="CommentInput" class="form-control">commentInput</label>
                                 </form>
                                 <!-- end -->
                             </div>

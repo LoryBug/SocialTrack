@@ -18,10 +18,12 @@
                     <!--testo da inserire-->
                     <textarea class="form-control" aria-label="With textarea" id="textAreaPost" name="textAreaPost"
                         placeholder="Scrivi un nuovo post ..."></textarea>
+                        <label for="textAreaPost" class="form-control" hidden>textarea</label>
                 </div>
                 <div class="input-group mt-4">
                     <input type="file" class="form-control" id="ImgInput" name="ImgInput"
                         aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                        <label for="ImgInput" class="form-control" hidden>img</label>
                     <button class="btn btn-outline-secondary" type="submit" value="Submit" Form="formNewPost"
                         id="inputGroupFileAddon04">Pubblica</button>
                 </div>

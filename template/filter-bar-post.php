@@ -8,7 +8,7 @@
                 <option selected>Più recente</option>
                 <option value="1">Meno recente</option>
             </select>
-            <label for="Type">Data</label>
+            <label for="date">Data</label>
         </div>
         <button type="submit" class="btn btn-danger my-2" type="submit" value="Submit" Form="formOrderBy"
             id="inputOrder">Order <span class="bi bi-arrow-down-up"></span></button>

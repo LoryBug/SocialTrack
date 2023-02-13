@@ -49,7 +49,8 @@
                 </ul>
                 <form class="d-flex" method="get" action="search.php" name="formSearchUser" id="formSearchUser">
                     <input class="form-control me-2" type="search" name="filter" placeholder="Search"
-                        aria-label="Search">
+                        aria-label="Search" id="search">
+                        <label for="search" class="input" hidden>search</label>
                     <button class="btn btn-light" type="submit" form="formSearchUser"><span
                             class="bi bi-search"></span></button>
                 </form>

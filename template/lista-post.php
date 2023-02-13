@@ -69,7 +69,7 @@ if (count($listaPost) == 0) { ?>
                         </div>
                         <!-- comment expand -->
                         <div id="collapsePost<?php echo $Post["PostID"] ?>" class="accordion-collapse collapse"
-                            aria-labelledby="headingTwo" data-bs-parent="#accEx">
+                            aria-labelledby="collapsePost<?php echo $Post["PostID"] ?>" data-bs-parent="#accEx">
                             <hr />
                             <div class="accordion-body">
                                 <!-- comment 1 -->

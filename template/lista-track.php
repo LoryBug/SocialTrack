@@ -78,16 +78,16 @@ if (count($listatracciati) == 0) { ?>
                     <div class="accordion-item border-0">
                         <!--button Comment and Download-->
                         <div class="btn-group container-fluid" role="group" aria-label="Basic outlined example">
-                            <button type="button " class="btn btn-outline-primary" data-bs-toggle="collapse"
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="collapse"
                                 data-bs-target="#collapsePost<?php echo $Track["TrackID"] ?>" aria-expanded="false"
                                 aria-controls="collapsePost<?php echo $Track["TrackID"] ?>">Review</button>
-                            <a href="#" download="<?php echo $Track["FileGPX"]; ?>">
-                                <button type="button" class="btn btn-outline-danger">Download</button>
+                            <a class="btn btn-outline-danger" href="#" download="<?php echo $Track["FileGPX"]; ?>">
+                                Download
                             </a>
                         </div>
                         <!-- review expand -->
                         <div id="collapsePost<?php echo $Track["TrackID"] ?>" class="accordion-collapse collapse"
-                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample<?php echo $Track["TrackID"] ?>">
+                            aria-labelledby="collapsePost<?php echo $Track["TrackID"] ?>" data-bs-parent="#accordionExample<?php echo $Track["TrackID"] ?>">
                             <hr />
                             <div class="accordion-body">
                                 <!-- review -->

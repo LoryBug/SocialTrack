@@ -80,8 +80,8 @@
                         </div>
                         <!-- review expand -->
                         <div id="collapsePost<?php echo $Track["TrackID"]?>" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
-                            <hr />
+                            data-bs-parent="#accordionExample<?php echo $Track["TrackID"] ?>">
+                            <hr/>
                             <div class="accordion-body">
                                 <!-- review -->
                                 <?php foreach ($dbh->getReviewTrack($Track["TrackID"]) as $review): ?>

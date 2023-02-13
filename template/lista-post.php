@@ -55,7 +55,7 @@ if (count($listaPost) == 0) { ?>
             <!-- likes & comments -->
             <div class="post__comment mt-3 position-relative">
                 <!-- comments start-->
-                <div class="accordion" id="accEx">
+                <div class="accordion" id="accEx<?php echo $Post["PostID"] ?>">
                     <div class="accordion-item border-0">
                         <!--button Comment-->
                         <div class="d-grid gap-2 py-4">
@@ -69,7 +69,7 @@ if (count($listaPost) == 0) { ?>
                         </div>
                         <!-- comment expand -->
                         <div id="collapsePost<?php echo $Post["PostID"] ?>" class="accordion-collapse collapse"
-                            aria-labelledby="collapsePost<?php echo $Post["PostID"] ?>" data-bs-parent="#accEx">
+                            aria-labelledby="collapsePost<?php echo $Post["PostID"] ?>">
                             <hr />
                             <div class="accordion-body">
                                 <!-- comment 1 -->
@@ -97,7 +97,7 @@ if (count($listaPost) == 0) { ?>
 
                                 <?php endforeach; ?>
                                 <!-- create comment -->
-                                <form class="d-flex my-1" id="formNewComment" action="index.php" method="post">
+                                <form class="d-flex my-1" id="formNewComment<?php echo $Post["PostID"] ?>" action="index.php" method="post">
                                     <!-- avatar -->
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
@@ -108,12 +108,12 @@ if (count($listaPost) == 0) { ?>
                                                                                               " />
                                     </div>
                                     <!-- input -->
-                                    <input type="hidden" id="userPost" name="userPost"
+                                    <input type="hidden" id="userPost<?php echo $Post["PostID"] ?>" name="userPost"
                                         value="<?php echo $Post["Username"] ?>">
-                                    <input type="hidden" id="postID" name="postID" value="<?php echo $Post["PostID"] ?>">
+                                    <input type="hidden" id="postID<?php echo $Post["PostID"] ?>" name="postID" value="<?php echo $Post["PostID"] ?>">
                                     <input type="text" class="form-control border shadow-sm rounded-pill bg-gray"
-                                        id="CommentInput" name="CommentInput" placeholder="Write a comment" />
-                                        <label for="CommentInput" class="form-control" hidden>commentInput</label>
+                                        id="CommentInput<?php echo $Post["PostID"] ?>" name="CommentInput" placeholder="Write a comment" />
+                                        <label for="CommentInput<?php echo $Post["PostID"] ?>" class="form-control" hidden>commentInput</label>
                                 </form>
                                 <!-- end -->
                             </div>

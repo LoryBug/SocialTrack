@@ -22,11 +22,11 @@
                 <?php else: ?>
                     
                     <?php if (in_array($Following["FOL_Username"], multiDimArrayToArray($templateParams["session_following"]))): ?>
-                        <form id="formUnfollowlist_f<?php echo $Follower["Username"]; ?>" action="#" method="post">
+                        <form id="formUnfollowlist_f<?php echo $Following["FOL_Username"] ?>" action="#" method="post">
                             <input type="hidden" id="following_username<?php echo $Following["FOL_Username"]; ?>" name="following_username"
                                 value="<?php echo $Following["FOL_Username"]; ?>">
                             <input class="btn btn-outline-primary" type="submit" name="unfollowlist_following" value="Unfollow"
-                                form="formUnfollowlist_f<?php echo $Follower["Username"]; ?>">
+                                form="formUnfollowlist_f<?php echo $Following["FOL_Username"] ?>">
                         </form>
                     <?php else: ?>
                         <form id="formFollowlist_f<?php echo $Follower["Username"]; ?>" action="#" method="post">

@@ -31,7 +31,7 @@
             <label for="kmFilter">Lunghezza</label>
         </div>
         <button type="submit" class="btn btn-danger my-2" value="Submit" Form="formTracFilter"
-            id="inputOrder">Filter <span class="bi bi-filter"></span></button>
+            id="inputOrder1">Filter <span class="bi bi-filter"></span></button>
     </form>
 </div>
 <!--Order by-->

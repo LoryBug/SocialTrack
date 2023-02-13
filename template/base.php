@@ -89,12 +89,12 @@
                         <label for="Region">Select Region</label>
                     </div>
                     <div class="form-floating my-2">
-                        <select class="form-select" id="kmFilter" aria-label="Floating label select example">
+                        <select class="form-select" id="kmFilter1" aria-label="Floating label select example">
                             <option selected>0km - 50km</option>
                             <option value="1">50km - 100km</option>
                             <option value="2">100km - 150km</option>
                         </select>
-                        <label for="kmFilter">Select km range</label>
+                        <label for="kmFilter1">Select km range</label>
                     </div>
                     <button type="submit" class="btn btn-danger my-2"><span class="bi bi-filter"></span></button>
                 </form>

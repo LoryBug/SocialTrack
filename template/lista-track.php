@@ -128,7 +128,7 @@ if (count($listatracciati) == 0) { ?>
                                     <!-- input -->
                                     <input type="hidden" id="trackID<?php echo $Track["TrackID"] ?>" name="trackID"
                                         value="<?php echo $Track["TrackID"] ?>">
-                                    <input type="hidden" id="userTrack<?php echo $Track["Username"] ?>" name="userTrack"
+                                    <input type="hidden" id="userTrack<?php echo $Track["TrackID"] ?>" name="userTrack"
                                         value="<?php echo $Track["Username"] ?>">
                                     <div class="container d-flex">
                                         <div class="row">
@@ -145,7 +145,7 @@ if (count($listatracciati) == 0) { ?>
                                             </div>
                                             <div class="col-sm-3">
                                                 <button class="btn btn-outline-danger rounded-pill" type="submit"
-                                                    value="Submit" Form="formNewReview" id="inputGroupFile">
+                                                    value="Submit" Form="formNewReview" id="inputGroupFile<?php echo $Track["TrackID"] ?>">
                                                     Pubblica
                                                 </button>
                                             </div>

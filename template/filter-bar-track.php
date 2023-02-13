@@ -10,7 +10,7 @@
                 <option value="Off-Road">Off-Road</option>
                 <option value="Dual">Dual</option>
             </select>
-            <label for="Type">Tipo</label>
+            <label for="typeFilter">Tipo</label>
         </div>
         <div class="form-floating my-2">
             <select class="form-select border-primary" id="regionFilter" name="regionFilter" aria-label="Floating label select example">
@@ -19,7 +19,7 @@
                 <option value="Centro">Centro</option>
                 <option value="Sud">Sud</option>
             </select>
-            <label for="Region">Regione</label>
+            <label for="regionFilter">Regione</label>
         </div>
         <div class="form-floating my-2">
             <select class="form-select border-primary" id="kmFilter" name="kmFilter" aria-label="Floating label select example">
@@ -44,7 +44,7 @@
                 <option selected>Più recente</option>
                 <option value="1">Meno recente</option>
             </select>
-            <label for="Type">Data</label>
+            <label for="date">Data</label>
         </div>
         <button type="submit" class="btn btn-danger my-2" type="submit" value="Submit" Form="formTrackOrder"
             id="inputOrder">Order <span class="bi bi-arrow-down-up"></span></button>

@@ -74,7 +74,7 @@ if (count($listatracciati) == 0) { ?>
             <!-- like and review -->
             <div class="post__comment mt-3 position-relative">
                 <!-- comments start-->
-                <div class="accordion" id="accordionExample">
+                <div class="accordion" id="accordionExample1">
                     <div class="accordion-item border-0">
                         <!--button Comment and Download-->
                         <div class="btn-group container-fluid" role="group" aria-label="Basic outlined example">
@@ -87,7 +87,7 @@ if (count($listatracciati) == 0) { ?>
                         </div>
                         <!-- review expand -->
                         <div id="collapsePost<?php echo $Track["TrackID"] ?>" class="accordion-collapse collapse"
-                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample1">
                             <hr />
                             <div class="accordion-body">
                                 <!-- review -->
@@ -136,10 +136,12 @@ if (count($listatracciati) == 0) { ?>
                                                 <input type="number"
                                                     class="form-control border col-1 shadow-sm rounded-pill" id="trackVote"
                                                     name="trackVote" placeholder="Voto" min="1" max="5">
+                                                    <label for="trackVote" hidden>trackVote</label>
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control border shadow-sm rounded-pill"
                                                     id="reviewInput" name="reviewInput" placeholder="Write a review" />
+                                                    <label for="reviewInput" hidden>reviewInput</label>
                                             </div>
                                             <div class="col-sm-3">
                                                 <button class="btn btn-outline-danger rounded-pill" type="submit"

@@ -28,12 +28,12 @@
             <img class="d-none d-sm-block" src="upload/moto-login.png" alt="icon-socialtrack">
         </div>
         <!--form-->
-        <div style="max-width: 28 rem; width: 100%;">
+        <div style="width: 100%;">
             <div class="bg-white shadow rounded p-3 input-group-lg">
                 <form action="login.php" method="post">
 
                     <h2 class="text-center">Login</h2>
-                    <input type="username" class="form-control my-3" placeholder="Username" name="username"
+                    <input type="text" class="form-control my-3" placeholder="Username" name="username"
                         id="username">
                     <label for="username" class="form-label" hidden>username</label>
                     <input type="password" class="form-control my-3" placeholder="Password" name="password"
@@ -98,7 +98,7 @@
                                         <!-- username,email e pass -->
                                         <div class="row my-3">
                                             <div class="col-sm-11">
-                                                <input type="username" class="form-control" placeholder="Username"
+                                                <input type="text" class="form-control" placeholder="Username"
                                                     name="reg_username" id="reg_username">
                                                 <label for="reg_username" class="form-label" hidden>reg_username</label>
                                             </div>
@@ -135,14 +135,11 @@
                                             </span>
                                             <div class="col">
                                                 <select class="form-select" title="region_selector" id="reg_sel">
-                                                <label for="reg_sel" class="form-select" hidden>reg</label>
                                                     <option value="1" title="Nord" id="nord">Nord</option>
-                                                    <label for="nord" class="form-option" hidden>nord</label>
-                                                    <option value="2" title="Centro"id="centro">Centro</option>
-                                                    <label for="centro" class="form-option" hidden>centro</label>
+                                                    <option value="2" title="Centro" id="centro">Centro</option>
                                                     <option value="3" title="Sud" id="sud">Sud</option>
-                                                    <label for="sud" class="form-option" hidden>sud</label>
                                                 </select>
+                                                <label for="reg_sel" class="" hidden>reg</label>
                                             </div>
                                         </div>
 

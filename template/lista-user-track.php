@@ -22,7 +22,7 @@
                     <button class="btn btn-danger rounded-3 content-justify-end" id="deleteTrackButton" name="deleteTrackButton" 
                         form="deleteTrackForm<?php echo $Track["TrackID"]?>">
                         Elimina
-                        <i class="bi bi-trash"></i>
+                        <span class="bi bi-trash"></span>
                     </button>
                     </form>
                 <?php } ?>
@@ -127,10 +127,12 @@
                                                 <input type="number"
                                                     class="form-control border col-1 shadow-sm rounded-pill" id="trackVote"
                                                     name="trackVote" placeholder="Voto" min="1" max="5">
+                                                    <label for="trackVote" hidden>trackVote</label>
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control border shadow-sm rounded-pill"
                                                     id="reviewInput" name="reviewInput" placeholder="Write a review" />
+                                                    <label for="reviewInput" hidden>reviewInput</label>
                                             </div>
                                             <div class="col-sm-3">
                                                 <button class="btn btn-outline-danger rounded-pill" type="submit"

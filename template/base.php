@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
-                <h3>Socialtrack</h3>
+                <strong class="fs-3">Socialtrack</strong>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -111,7 +111,7 @@
                 <!--my avatar-->
                 <div class="rounded-3 bg-white m-2 p-3">
                     <a href="myprofile.php" class="text-decoration-none link-light">
-                        <h3 class="text-danger">My Profile</h3>
+                        <strong class="fs-3 text-danger">My Profile</strong>
                         <!-- if per bordo colorato se presenti notifiche -->
                         <?php if (($templateParams["notificNotSeen"]) >= 1): ?>
                             <img src="<?php echo $templateParams['imgProfile']; ?>"
@@ -177,7 +177,7 @@
 
     <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
         <a href="#" class="text-decoration-none link-light">
-            <h3>SocialTrack</h3>
+            <strong class="fs-3">SocialTrack</strong>
         </a>
         <p class="text-center text-muted">© 2023 Socialtrack by Leoni, Casamenti</p>
     </footer>

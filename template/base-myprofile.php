@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
-                <h3>Socialtrack</h3>
+                <strong class="fs-3">Socialtrack</strong>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -46,7 +46,8 @@
                 </ul>
                 <form class="d-flex" method="get" action="search.php" name="formSearchUser" id="formSearchUser">
                     <input class="form-control me-2" type="search" name="filter" placeholder="Search"
-                        aria-label="Search">
+                        aria-label="Search" id="search">
+                        <label for="search" hidden>search</label>
                     <button class="btn btn-light" type="submit" form="formSearchUser"><span
                             class="bi bi-search"></span></button>
                 </form>
@@ -67,9 +68,9 @@
                         </div>
                         <hr>
                         <div class="row">
-                            <h4>
+                            <strong class="fs-4">
                                 <?php echo $templateParams["username"] ?>
-                            </h4>
+                            </strong>
                             <a href="mailto:<?php echo $templateParams["email"] ?>"
                                 class="text-decoration-none text-dark">
                                 <p>
@@ -101,9 +102,9 @@
                                 aria-controls="nav-home" aria-selected="true">Followers</a>
                             <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-following"
                                 role="tab" aria-controls="nav-profile" aria-selected="false">Following</a>
-                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-posts" role="tab"
+                            <a class="nav-link " id="nav-posts-tab" data-bs-toggle="tab" href="#nav-posts" role="tab"
                                 aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Posts</a>
-                            <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-tracks"
+                            <a class="nav-link " id="nav-track-tab" data-bs-toggle="tab" href="#nav-tracks"
                                 role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Tracks</a>
                             <?php if (isset($templateParams["profile"]) && $templateParams["profile"] == $_SESSION["username"] || !isset($templateParams["profile"]))
                             : ?>
@@ -144,7 +145,7 @@
     </div>
     <footer class="mt-5 p-4 bg-dark text-white text-center pt-3">
         <a href="#" class="text-decoration-none link-light">
-            <h3>SocialTrack</h3>
+            <strong class="fs-3">SocialTrack</strong>
         </a>
         <p class="text-center text-muted">© 2023 Socialtrack by Leoni, Casamenti</p>
     </footer>

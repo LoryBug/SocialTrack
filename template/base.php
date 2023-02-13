@@ -133,11 +133,11 @@
                             </span>
                         </li>
                         <li class="list-group-item mt-2">
-                            <?php if (($templateParams["nTracks"]) < 5): ?>
+                            <?php if (($templateParams["nTracks"]) < 2): ?>
                                 <span class="badge bg-success">Principiante</span>
-                            <?php elseif (($templateParams["nTracks"]) < 10 && ($templateParams["nTracks"]) > 5): ?>
+                            <?php elseif (($templateParams["nTracks"]) < 3 && ($templateParams["nTracks"]) > 2): ?>
                                 <span class="badge bg-warning">Intermedio</span>
-                            <?php elseif (($templateParams["nTracks"]) >= 10): ?>
+                            <?php elseif (($templateParams["nTracks"]) >= 3): ?>
                                 <span class="badge bg-danger">Pilota</span>
                             <?php endif; ?>
 

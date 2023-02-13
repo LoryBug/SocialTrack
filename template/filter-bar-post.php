@@ -5,8 +5,13 @@
         <h4>Order by</h4>
         <div class="form-floating my-2">
             <select class="form-select border-primary" id="date" name="date" aria-label="Floating label select example">
-                <option selected>Più recente</option>
-                <option value="1">Meno recente</option>
+                <?php if (isset($_POST["date"]) && $_POST["date"] == "1") { ?>
+                    <option>Più recente</option>
+                    <option selected value="1">Meno recente</option>
+                <?php } else { ?>
+                    <option selected>Più recente</option>
+                    <option value="1">Meno recente</option>
+                <?php } ?>
             </select>
             <label for="date">Data</label>
         </div>

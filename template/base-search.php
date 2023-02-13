@@ -39,7 +39,7 @@
                         <a class="nav-link text-white" href="myprofile.php">My Account <span
                                 class="bi bi-person"></span></a>
                     </li>
-                    <li class class="nav-item">
+                    <li class="nav-item">
                         <a href="logout.php" class="nav-link text-white d-block mx-0 d-sm-none">Logout <span
                                     class="bi bi-sign-stop"></span>
                         </a>

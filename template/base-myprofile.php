@@ -39,7 +39,7 @@
                         <a class="nav-link text-white" href="myprofile.php">My Account <span
                                 class="bi bi-person"></span></a>
                     </li>
-                    <li class class="nav-item">
+                    <li class="nav-item">
                         <a href="logout.php" class="nav-link text-white d-block mx-0 d-sm-none">Logout <span class="bi bi-sign-stop"></span>
                         </a>
                     </li>
@@ -99,17 +99,17 @@
                         <hr>
                         <nav class="nav nav-tabs" id="nav-tab" role="tablist">
                             <a class="nav-link " id="nav-home-tab" data-bs-toggle="tab" href="#nav-follower" role="tab"
-                                aria-controls="nav-home" aria-selected="true">Followers</a>
+                                aria-controls="nav-home-tab" aria-selected="true">Followers</a>
                             <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-following"
-                                role="tab" aria-controls="nav-profile" aria-selected="false">Following</a>
+                                role="tab" aria-controls="nav-profile-tab" aria-selected="false">Following</a>
                             <a class="nav-link " id="nav-posts-tab" data-bs-toggle="tab" href="#nav-posts" role="tab"
-                                aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Posts</a>
+                                aria-controls="nav-posts-tab" tabindex="-1" aria-disabled="true">Posts</a>
                             <a class="nav-link " id="nav-track-tab" data-bs-toggle="tab" href="#nav-tracks"
-                                role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Tracks</a>
+                                role="tab" aria-controls="nav-track-tab" tabindex="-1" aria-disabled="true">Tracks</a>
                             <?php if (isset($templateParams["profile"]) && $templateParams["profile"] == $_SESSION["username"] || !isset($templateParams["profile"]))
                             : ?>
                                 <a class="nav-link " id="nav-disabled-tab" data-bs-toggle="tab" href="#nav-notifiche"
-                                    role="tab" aria-controls="nav-disabled" tabindex="-1" aria-disabled="true">Notifiche</a>
+                                    role="tab" aria-controls="nav-disabled-tab" tabindex="-1" aria-disabled="true">Notifiche</a>
                             <?php endif; ?>
                         </nav>
                         <div class="tab-content mb-2" id="nav-tabContent">

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,7 +25,7 @@
         <div class="text center text-lg-start mt-lg-5 pt-lg-5">
             <h1 class="fw-bold fs-0 ">Social Track</h1>
             <p class="w-75 mx-auto mx-lg-0 fs-4 text-primary">Il Social Network nato per i biker e ideato da biker</p>
-            <img class= "d-none d-sm-block" src="upload/moto-login.png" alt="icon-socialtrack">
+            <img class="d-none d-sm-block" src="upload/moto-login.png" alt="icon-socialtrack">
         </div>
         <!--form-->
         <div style="max-width: 28 rem; width: 100%;">
@@ -42,116 +43,124 @@
 
                 </form>
 
-                <al>
 
-                    <?php if (isset($templateParams["errorelogin"])): ?>
 
-                        <div class="alert alert-danger" role="alert">
-                            <?php echo $templateParams["errorelogin"] ?>
-                        </div>
+                <?php if (isset($templateParams["errorelogin"])): ?>
 
-                    <?php endif; ?>
-                    <div class="form-check ms-3">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Remind me
-                        </label>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $templateParams["errorelogin"] ?>
                     </div>
-                    <!--create account-->
-                    <hr />
 
-                    <div class="text-center my-4">
-                        <button class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#createModal">
-                            Create new Account
-                        </button>
-                    </div>
-                    <!--create sing-up pop-up MODAL-->
-                    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <!-- head -->
-                                <div class="modal-header">
-                                    <div>
-                                        <h2 class="modal-title" id="createModalLabel">Sign-up</h2>
-                                        <p class="text-muted fs-7">Iscriviti subito!! è veloce come la tua moto.</p>
-                                    </div>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                <?php endif; ?>
+                <div class="form-check ms-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Remind me
+                    </label>
+                </div>
+                <!--create account-->
+                <hr />
+
+                <div class="text-center my-4">
+                    <button class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#createModal">
+                        Create new Account
+                    </button>
+                </div>
+                <!--create sing-up pop-up MODAL-->
+                <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- head -->
+                            <div class="modal-header">
+                                <div>
+                                    <h2 class="modal-title" id="createModalLabel">Sign-up</h2>
+                                    <p class="text-muted fs-7">Iscriviti subito!! è veloce come la tua moto.</p>
                                 </div>
-                                <!-- body -->
-                                <div class="modal-body">
-                                    <form action="login.php" method="post" id="registration_form">
-                                        <div class="container">
-                                            <!--nome cognome-->
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input type="text" class="form-control" placeholder="Nome">
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control" placeholder="Cognome">
-                                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <!-- body -->
+                            <div class="modal-body">
+                                <form action="login.php" method="post" id="registration_form">
+                                    <div class="container">
+                                        <!--nome cognome-->
+                                        <div class="row">
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Nome" id="nome">
+                                                <label for="nome" class="form-label" hidden>name</label>
                                             </div>
-                                            <!-- username,email e pass -->
-                                            <div class="row my-3">
-                                                <div class="col-sm-11">
-                                                    <input type="username" class="form-control"
-                                                        placeholder="Username" name="reg_username" id="reg_username">
-                                                </div>
-                                                <div class="col-sm-1 mt-1">
-                                                    <span class="bi bi-info-circle" data-bs-toggle="popover"
-                                                        data-bs-content="Username non deve contenere spazi
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Cognome" id="cognome">
+                                                <label for="cognome" class="form-label" hidden>cognome</label>
+                                            </div>
+                                        </div>
+                                        <!-- username,email e pass -->
+                                        <div class="row my-3">
+                                            <div class="col-sm-11">
+                                                <input type="username" class="form-control" placeholder="Username"
+                                                    name="reg_username" id="reg_username">
+                                                <label for="reg_username" class="form-label" hidden>reg_username</label>
+                                            </div>
+                                            <div class="col-sm-1 mt-1">
+                                                <span class="bi bi-info-circle" data-bs-toggle="popover"
+                                                    data-bs-content="Username non deve contenere spazi
                                                     o caratteri speciali"></span>
-                                                </div>
                                             </div>
-                                            <div class="row my-3">
-                                                <div class="col">
-                                                    <input type="email" class="form-control"
-                                                        placeholder="Email address" name="reg_email" id="reg_email">
-                                                </div>
+                                        </div>
+                                        <div class="row my-3">
+                                            <div class="col">
+                                                <input type="email" class="form-control" placeholder="Email address"
+                                                    name="reg_email" id="reg_email">
+                                                <label for="reg_email" class="form-label" hidden>reg_email</label>
+
                                             </div>
-                                            <div class="row my-3">
-                                                <div class="col-sm-11">
-                                                    <input type="password" class="form-control"
-                                                        placeholder="New password" name="reg_password"
-                                                        id="reg_password">
-                                                </div>
-                                                <div class="col-sm-1 mt-1">
-                                                    <span
-                                                        class="bi bi-info-circle"
-                                                        data-bs-toggle="popover" data-bs-content="La password deve contenere almeno 8 caratteri
+                                        </div>
+                                        <div class="row my-3">
+                                            <div class="col-sm-11">
+                                                <input type="password" class="form-control" placeholder="New password"
+                                                    name="reg_password" id="reg_password">
+                                                <label for="reg_password" class="form-label" hidden>reg_password</label>
+                                            </div>
+                                            <div class="col-sm-1 mt-1">
+                                                <span class="bi bi-info-circle" data-bs-toggle="popover"
+                                                    data-bs-content="La password deve contenere almeno 8 caratteri
                                                 e almeno 2 caratteri speciali"></span>
-                                                </div>
                                             </div>
-                                            <!-- Regione -->
-                                            <div class="row my-3">
-                                                <span class="text-muted fs-7">
-                                                    Regione
-                                                </span>
-                                                <div class="col">
-                                                    <select class="form-select">
-                                                        <option value="1">Nord</option>
-                                                        <option value="2">Centro</option>
-                                                        <option value="3">Sud</option>
-                                                    </select>
-                                                </div>
+                                        </div>
+                                        <!-- Regione -->
+                                        <div class="row my-3">
+                                            <span class="text-muted fs-7">
+                                                Regione
+                                            </span>
+                                            <div class="col">
+                                                <select class="form-select" title="region_selector" id="reg_sel">
+                                                <label for="reg_sel" class="form-select" hidden>reg</label>
+                                                    <option value="1" title="Nord" id="nord">Nord</option>
+                                                    <label for="nord" class="form-option" hidden>nord</label>
+                                                    <option value="2" title="Centro"id="centro">Centro</option>
+                                                    <label for="centro" class="form-option" hidden>centro</label>
+                                                    <option value="3" title="Sud" id="sud">Sud</option>
+                                                    <label for="sud" class="form-option" hidden>sud</label>
+                                                </select>
                                             </div>
-
                                         </div>
 
-                                        <!-- button footer-->
-                                        <div class="text-center mt-3">
-                                            <button type="submit" value="Submit" form="registration_form"
-                                                class="btn btn-primary btn-lg">
-                                                Sign-up
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                                    </div>
+
+                                    <!-- button footer-->
+                                    <div class="text-center mt-3">
+                                        <button type="submit" value="Submit" form="registration_form"
+                                            class="btn btn-primary btn-lg">
+                                            Sign-up
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <!--finish sign-up pop-up-->
+                </div>
+                <!--finish sign-up pop-up-->
             </div>
         </div>
     </div>

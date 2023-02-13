@@ -18,8 +18,8 @@
                 <div class="col sm-6"></div>
                 <?php if ($Track["Username"] == $_SESSION["username"]) { ?>
                     <form action="#" method="post" name="deleteTrackForm<?php echo $Track["TrackID"]?>" id="deleteTrackForm<?php echo $Track["TrackID"]?>">
-                    <input type="hidden" id="deleteTrackID" name="deleteTrackID" value="<?php echo $Track["TrackID"] ?>">
-                    <button class="btn btn-danger rounded-3 content-justify-end" id="deleteTrackButton" name="deleteTrackButton" 
+                    <input type="hidden" id="deleteTrackID<?php echo $Track["TrackID"]?>" name="deleteTrackID" value="<?php echo $Track["TrackID"] ?>">
+                    <button class="btn btn-danger rounded-3 content-justify-end" id="deleteTrackButton<?php echo $Track["TrackID"]?>" name="deleteTrackButton" 
                         form="deleteTrackForm<?php echo $Track["TrackID"]?>">
                         Elimina
                         <span class="bi bi-trash"></span>
@@ -67,7 +67,7 @@
             <!-- like and review -->
             <div class="post__comment mt-3 position-relative">
                 <!-- comments start-->
-                <div class="accordion" id="accordionExample">
+                <div class="accordion" id="accordionExample<?php echo $Track["TrackID"] ?>">
                     <div class="accordion-item border-0">
                         <!--button Comment and Download-->
                         <div class="btn-group container-fluid" role="group" aria-label="Basic outlined example">
@@ -108,7 +108,7 @@
                                     </div>
                                 <?php endforeach; ?>
                                 <!-- create review -->
-                                <form class="d-flex my-1" id="formNewReview" action="myprofile.php" method="post">
+                                <form class="d-flex my-1" id="formNewReview<?php echo $Track["TrackID"] ?>" action="myprofile.php" method="post">
                                     <!-- avatar -->
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
@@ -119,24 +119,24 @@
                                                                             " />
                                     </div>
                                     <!-- input -->
-                                    <input type="hidden" id="trackID" name="trackID"
+                                    <input type="hidden" id="trackID<?php echo $Track["TrackID"] ?>" name="trackID"
                                         value="<?php echo $Track["TrackID"] ?>">
                                     <div class="container d-flex">
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <input type="number"
-                                                    class="form-control border col-1 shadow-sm rounded-pill" id="trackVote"
+                                                    class="form-control border col-1 shadow-sm rounded-pill" id="trackVote<?php echo $Track["TrackID"] ?>"
                                                     name="trackVote" placeholder="Voto" min="1" max="5">
-                                                    <label for="trackVote" hidden>trackVote</label>
+                                                    <label for="trackVote<?php echo $Track["TrackID"] ?>" hidden>trackVote</label>
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control border shadow-sm rounded-pill"
-                                                    id="reviewInput" name="reviewInput" placeholder="Write a review" />
-                                                    <label for="reviewInput" hidden>reviewInput</label>
+                                                    id="reviewInput<?php echo $Track["TrackID"] ?>" name="reviewInput" placeholder="Write a review" />
+                                                    <label for="reviewInput<?php echo $Track["TrackID"] ?>" hidden>reviewInput</label>
                                             </div>
                                             <div class="col-sm-3">
                                                 <button class="btn btn-outline-danger rounded-pill" type="submit"
-                                                    value="Submit" Form="formNewReview" id="inputGroupFile">
+                                                    value="Submit" Form="formNewReview" id="inputGroupFile<?php echo $Track["TrackID"] ?>">
                                                     Pubblica
                                                 </button>
                                             </div>

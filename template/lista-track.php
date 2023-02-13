@@ -74,7 +74,7 @@ if (count($listatracciati) == 0) { ?>
             <!-- like and review -->
             <div class="post__comment mt-3 position-relative">
                 <!-- comments start-->
-                <div class="accordion" id="accordionExample1">
+                <div class="accordion" id="accordionExample<?php echo $Track["TrackID"] ?>">
                     <div class="accordion-item border-0">
                         <!--button Comment and Download-->
                         <div class="btn-group container-fluid" role="group" aria-label="Basic outlined example">
@@ -87,7 +87,7 @@ if (count($listatracciati) == 0) { ?>
                         </div>
                         <!-- review expand -->
                         <div id="collapsePost<?php echo $Track["TrackID"] ?>" class="accordion-collapse collapse"
-                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample1">
+                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample<?php echo $Track["TrackID"] ?>">
                             <hr />
                             <div class="accordion-body">
                                 <!-- review -->
@@ -115,7 +115,7 @@ if (count($listatracciati) == 0) { ?>
                                     </div>
                                 <?php endforeach; ?>
                                 <!-- create review -->
-                                <form class="d-flex my-1" id="formNewReview" action="track.php" method="post">
+                                <form class="d-flex my-1" id="formNewReview<?php echo $Track["TrackID"] ?>" action="track.php" method="post">
                                     <!-- avatar -->
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
@@ -126,22 +126,22 @@ if (count($listatracciati) == 0) { ?>
                                                                                         " />
                                     </div>
                                     <!-- input -->
-                                    <input type="hidden" id="trackID" name="trackID"
+                                    <input type="hidden" id="trackID<?php echo $Track["TrackID"] ?>" name="trackID"
                                         value="<?php echo $Track["TrackID"] ?>">
-                                    <input type="hidden" id="userTrack" name="userTrack"
+                                    <input type="hidden" id="userTrack<?php echo $Track["Username"] ?>" name="userTrack"
                                         value="<?php echo $Track["Username"] ?>">
                                     <div class="container d-flex">
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <input type="number"
-                                                    class="form-control border col-1 shadow-sm rounded-pill" id="trackVote"
+                                                    class="form-control border col-1 shadow-sm rounded-pill" id="trackVote<?php echo $Track["TrackID"] ?>"
                                                     name="trackVote" placeholder="Voto" min="1" max="5">
-                                                    <label for="trackVote" hidden>trackVote</label>
+                                                    <label for="trackVote<?php echo $Track["TrackID"] ?>" hidden>trackVote</label>
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control border shadow-sm rounded-pill"
-                                                    id="reviewInput" name="reviewInput" placeholder="Write a review" />
-                                                    <label for="reviewInput" hidden>reviewInput</label>
+                                                    id="reviewInput<?php echo $Track["TrackID"] ?>" name="reviewInput" placeholder="Write a review" />
+                                                    <label for="reviewInput<?php echo $Track["TrackID"] ?>" hidden>reviewInput</label>
                                             </div>
                                             <div class="col-sm-3">
                                                 <button class="btn btn-outline-danger rounded-pill" type="submit"

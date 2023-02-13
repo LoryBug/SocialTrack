@@ -69,7 +69,7 @@
                         </div>
                         <!-- comment expand -->
                         <div id="collapsePost<?php echo $Post["PostID"] ?>" class="accordion-collapse collapse"
-                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            aria-labelledby="collapsePost<?php echo $Post["PostID"] ?>" data-bs-parent="#accordionExample">
                             <hr />
                             <div class="accordion-body">
                                 <!-- comment 1 -->

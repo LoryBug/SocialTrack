@@ -6,8 +6,8 @@
                 <div class="col sm-7 border shadow-sm rounded-3">
                 <?php endif; ?>
                 <div class="d-flex align-items-center p-2">
-                    <img src="<?php echo $Notific["Comment_profileImg"]; ?>" class="rounded-circle me-2" alt="" width="50px"
-                        height="50px" class="rounded-sm ml-n2" />
+                    <img src="<?php echo $Notific["Comment_profileImg"]; ?>" class="rounded-circle me-2 ml-n2" alt="" width="50"
+                        height="50" />
                     <div class="d-flex-fill pl-3 pr-3 ps-4">
                         <div class="row">
                             <p>
@@ -34,8 +34,8 @@
                     <div class="col sm-7 border shadow-sm rounded-3">
                     <?php endif; ?>
                     <div class="d-flex align-items-center p-2">
-                        <img src="<?php echo $Notific["Review_Img"]; ?>" class="rounded-circle me-2" alt="" width="50px"
-                            height="50px" class="rounded-sm ml-n2" />
+                        <img src="<?php echo $Notific["Review_Img"]; ?>" class="rounded-circle me-2 ml-n2" alt="" width="50"
+                            height="50"/>
                         <div class="d-flex-fill pl-3 pr-3 ps-4">
                             <div class="row">
                                 <p>
@@ -61,8 +61,8 @@
                         <div class="col sm-7 border shadow-sm rounded-3">
                         <?php endif; ?>
                         <div class="d-flex align-items-center p-2">
-                            <img src="<?php echo $Notific["User_Img"]; ?>" class="rounded-circle me-2" alt="" width="50px"
-                                height="50px" class="rounded-sm ml-n2" />
+                            <img src="<?php echo $Notific["User_Img"]; ?>" class="rounded-circle me-2 ml-n2" alt="" width="50"
+                                height="50"/>
                             <div class="d-flex-fill pl-3 pr-3 ps-4">
                                 <div class="row">
                                     <p>

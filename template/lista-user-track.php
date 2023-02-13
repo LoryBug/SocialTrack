@@ -17,13 +17,16 @@
                 </div>
                 <div class="col sm-6"></div>
                 <?php if ($Track["Username"] == $_SESSION["username"]) { ?>
-                    <form action="#" method="post" name="deleteTrackForm<?php echo $Track["TrackID"]?>" id="deleteTrackForm<?php echo $Track["TrackID"]?>">
-                    <input type="hidden" id="deleteTrackID<?php echo $Track["TrackID"]?>" name="deleteTrackID" value="<?php echo $Track["TrackID"] ?>">
-                    <button class="btn btn-danger rounded-3 content-justify-end" id="deleteTrackButton<?php echo $Track["TrackID"]?>" name="deleteTrackButton" 
-                        form="deleteTrackForm<?php echo $Track["TrackID"]?>">
-                        Elimina
-                        <span class="bi bi-trash"></span>
-                    </button>
+                    <form action="#" method="post" name="deleteTrackForm<?php echo $Track["TrackID"] ?>"
+                        id="deleteTrackForm<?php echo $Track["TrackID"] ?>">
+                        <input type="hidden" id="deleteTrackID<?php echo $Track["TrackID"] ?>" name="deleteTrackID"
+                            value="<?php echo $Track["TrackID"] ?>">
+                        <button class="btn btn-danger rounded-3 content-justify-end"
+                            id="deleteTrackButton<?php echo $Track["TrackID"] ?>" name="deleteTrackButton"
+                            form="deleteTrackForm<?php echo $Track["TrackID"] ?>">
+                            Elimina
+                            <span class="bi bi-trash"></span>
+                        </button>
                     </form>
                 <?php } ?>
             </div>
@@ -71,17 +74,16 @@
                     <div class="accordion-item border-0">
                         <!--button Comment and Download-->
                         <div class="btn-group container-fluid" role="group" aria-label="Basic outlined example">
-                            <button type="button " class="btn btn-outline-primary" data-bs-toggle="collapse"
-                                data-bs-target="#collapsePost<?php echo $Track["TrackID"]?>" aria-expanded="false"
-                                aria-controls="collapsePost<?php echo $Track["TrackID"]?>">Review</button>
-                            <a href="#" download="<?php echo $Track["FileGPX"]; ?>">
-                                <button type="button" class="btn btn-outline-danger">Download</button>
+                            <button type="submit" class="btn btn-outline-primary" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePost<?php echo $Track["TrackID"] ?>" aria-expanded="false"
+                                aria-controls="collapsePost<?php echo $Track["TrackID"] ?>">Review</button>
+                            <a href="#" download="<?php echo $Track["FileGPX"]; ?>" class="btn btn-outline-danger">Download
                             </a>
                         </div>
                         <!-- review expand -->
-                        <div id="collapsePost<?php echo $Track["TrackID"]?>" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample<?php echo $Track["TrackID"] ?>">
-                            <hr/>
+                        <div id="collapsePost<?php echo $Track["TrackID"] ?>" class="accordion-collapse collapse"
+                            aria-labelledby="collapsePost<?php echo $Track["TrackID"] ?>" data-bs-parent="#accordionExample<?php echo $Track["TrackID"] ?>">
+                            <hr />
                             <div class="accordion-body">
                                 <!-- review -->
                                 <?php foreach ($dbh->getReviewTrack($Track["TrackID"]) as $review): ?>
@@ -108,15 +110,16 @@
                                     </div>
                                 <?php endforeach; ?>
                                 <!-- create review -->
-                                <form class="d-flex my-1" id="formNewReview<?php echo $Track["TrackID"] ?>" action="myprofile.php" method="post">
+                                <form class="d-flex my-1" id="formNewReview<?php echo $Track["TrackID"] ?>"
+                                    action="myprofile.php" method="post">
                                     <!-- avatar -->
                                     <div>
                                         <img src="<?php echo $templateParams['imgProfile']; ?>" alt="avatar"
                                             class="rounded-circle me-2" style="
-                                                                            width: 40px;
-                                                                            height: 40px;
-                                                                            object-fit: cover;
-                                                                            " />
+                                                                                width: 40px;
+                                                                                height: 40px;
+                                                                                object-fit: cover;
+                                                                                " />
                                     </div>
                                     <!-- input -->
                                     <input type="hidden" id="trackID<?php echo $Track["TrackID"] ?>" name="trackID"
@@ -125,14 +128,18 @@
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <input type="number"
-                                                    class="form-control border col-1 shadow-sm rounded-pill" id="trackVote<?php echo $Track["TrackID"] ?>"
-                                                    name="trackVote" placeholder="Voto" min="1" max="5">
-                                                    <label for="trackVote<?php echo $Track["TrackID"] ?>" hidden>trackVote</label>
+                                                    class="form-control border col-1 shadow-sm rounded-pill"
+                                                    id="trackVote<?php echo $Track["TrackID"] ?>" name="trackVote"
+                                                    placeholder="Voto" min="1" max="5">
+                                                <label for="trackVote<?php echo $Track["TrackID"] ?>"
+                                                    hidden>trackVote</label>
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control border shadow-sm rounded-pill"
-                                                    id="reviewInput<?php echo $Track["TrackID"] ?>" name="reviewInput" placeholder="Write a review" />
-                                                    <label for="reviewInput<?php echo $Track["TrackID"] ?>" hidden>reviewInput</label>
+                                                    id="reviewInput<?php echo $Track["TrackID"] ?>" name="reviewInput"
+                                                    placeholder="Write a review" />
+                                                <label for="reviewInput<?php echo $Track["TrackID"] ?>"
+                                                    hidden>reviewInput</label>
                                             </div>
                                             <div class="col-sm-3">
                                                 <button class="btn btn-outline-danger rounded-pill" type="submit"

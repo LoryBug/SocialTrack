@@ -21,7 +21,6 @@
                 </div>
                 <div class="row align-items-center mt-4">
                     <div class="col-sm-3">
-                        <label class="visually-hidden" for="specificSizeInputName">Km</label>
                         <input min="10" max="200" type="number" class="form-control" id="lengthTrack" name="lengthTrack"
                             placeholder="Lunghezza km">
                             <label for="lengthTrack" hidden>lengthTrack</label>

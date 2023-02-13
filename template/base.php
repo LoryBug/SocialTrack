@@ -41,16 +41,16 @@
                         <a class="nav-link text-white" href="myprofile.php">My Account <span
                                 class="bi bi-person"></span></a>
                     </li>
-                    <li class class="nav-item">
+                    <li class="nav-item">
                         <a href="logout.php" class="nav-link text-white d-block mx-0 d-sm-none">Logout <span
-                                    class="bi bi-sign-stop"></span>
+                                class="bi bi-sign-stop"></span>
                         </a>
                     </li>
                 </ul>
                 <form class="d-flex" method="get" action="search.php" name="formSearchUser" id="formSearchUser">
                     <input class="form-control me-2" type="search" name="filter" placeholder="Search"
                         aria-label="Search" id="search">
-                        <label for="search" class="input" hidden>search</label>
+                    <label for="search" class="input" hidden>search</label>
                     <button class="btn btn-light" type="submit" form="formSearchUser"><span
                             class="bi bi-search"></span></button>
                 </form>
@@ -145,9 +145,9 @@
                     </ul>
                 </div>
                 <div class="d-flex align-self-start pt-3">
-                    <a href="logout.php" class="text-decoration-none link-light">
-                        <button type="button" class="btn btn-outline-danger">Logout <span
-                                class="bi bi-sign-stop"></span></button>
+                    <a role="button" href="logout.php" class="text-decoration-none btn btn-outline-danger">
+                        Logout <span class="bi bi-sign-stop"></span>
+
                     </a>
                 </div>
             </div>

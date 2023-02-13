@@ -46,7 +46,7 @@
             </select>
             <label for="date">Data</label>
         </div>
-        <button type="submit" class="btn btn-danger my-2" type="submit" value="Submit" Form="formTrackOrder"
+        <button type="submit" class="btn btn-danger my-2" value="Submit" Form="formTrackOrder"
             id="inputOrder">Order <span class="bi bi-arrow-down-up"></span></button>
     </form>
 </div>

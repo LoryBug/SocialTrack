@@ -145,13 +145,12 @@ if (count($listatracciati) == 0) { ?>
                                             </div>
                                             <div class="col-sm-3">
                                                 <button class="btn btn-outline-danger rounded-pill" type="submit"
-                                                    value="Submit" Form="formNewReview" id="inputGroupFile<?php echo $Track["TrackID"] ?>">
+                                                    value="Submit" Form="formNewReview<?php echo $Track["TrackID"]?>" id="inputGroupFile<?php echo $Track["TrackID"] ?>">
                                                     Pubblica
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
-
                                 </form>
                                 <!-- end -->
                             </div>

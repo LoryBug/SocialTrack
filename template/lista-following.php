@@ -26,14 +26,13 @@
                             <input type="hidden" id="following_username<?php echo $Following["FOL_Username"]; ?>" name="following_username"
                                 value="<?php echo $Following["FOL_Username"]; ?>">
                             <input class="btn btn-outline-primary" type="submit" name="unfollowlist_following" value="Unfollow"
-                                form="formUnfollowlist_f">
+                                form="formUnfollowlist_f<?php echo $Follower["Username"]; ?>">
                         </form>
                     <?php else: ?>
                         <form id="formFollowlist_f<?php echo $Follower["Username"]; ?>" action="#" method="post">
                             <input type="hidden" id="following_username<?php echo $Following["FOL_Username"]; ?>" name="following_username"
                                 value="<?php echo $Following["FOL_Username"]; ?>">
-                            <input class="btn btn-primary" type="submit" name="followlist_following" value="Follow"
-                                form="formFollowlist_f">
+                            <input class="btn btn-primary" type="submit" name="followlist_following" value="Follow" form="formFollowlist_f<?php echo $Follower["Username"]; ?>">
                         </form>
                     <?php endif; ?>
                 <?php endif; ?>

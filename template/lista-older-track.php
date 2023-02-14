@@ -73,11 +73,11 @@ if (count($listatracciati) == 0) { ?>
                     <div class="accordion-item border-0">
                         <!--button Comment and Download-->
                         <div class="btn-group container-fluid" role="group" aria-label="Basic outlined example">
-                            <button type="button " class="btn btn-outline-primary" data-bs-toggle="collapse"
-                                data-bs-target="#collapsePost<?php echo $Track["TrackID"]?>" aria-expanded="false"
-                                aria-controls="collapsePost<?php echo $Track["TrackID"]?>">Review</button>
-                            <a href="#" download="<?php echo $Track["FileGPX"]; ?>">
-                                <button type="button" class="btn btn-outline-danger">Download</button>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePost<?php echo $Track["TrackID"] ?>" aria-expanded="false"
+                                aria-controls="collapsePost<?php echo $Track["TrackID"] ?>">Review</button>
+                            <a class="btn btn-outline-danger" href="#" download="<?php echo $Track["FileGPX"]; ?>">
+                                Download
                             </a>
                         </div>
                         <!-- review expand -->

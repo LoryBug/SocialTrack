@@ -150,16 +150,16 @@ elseif ($tipo!="Tutto" && $km!="Tutto"&& $regione!="Tutto") {
                                         value="<?php echo $Track["Username"] ?>">
                                     <div class="container d-flex">
                                         <div class="row">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-3 mt-1">
                                                 <input type="number"
                                                     class="form-control border col-1 shadow-sm rounded-pill" id="trackVote"
                                                     name="trackVote" placeholder="Voto" min="1" max="5">
                                             </div>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-6 mt-1">
                                                 <input type="text" class="form-control border shadow-sm rounded-pill"
                                                     id="reviewInput" name="reviewInput" placeholder="Write a review" />
                                             </div>
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-3 mt-2">
                                                 <button class="btn btn-outline-danger rounded-pill" type="submit"
                                                     value="Submit" Form="formNewReview" id="inputGroupFile">
                                                     Pubblica

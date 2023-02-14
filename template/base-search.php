@@ -58,12 +58,12 @@
     <div class="container text-center border shadow my-4 p-4">
         <?php require($templateParams["lista"]); ?>
     </div>
-    <footer class="p-4 bg-dark text-white text-center mt-4 pt-3">
+    <!--<footer class="p-4 bg-dark text-white text-center mt-4 pt-3">
         <a href="#" class="text-decoration-none link-light">
             <strong class="fs-3">SocialTrack</strong>
         </a>
         <p class="text-center text-muted">© 2023 Socialtrack by Leoni, Casamenti</p>
-    </footer>
+    </footer>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>

@@ -70,7 +70,7 @@
         <div class="collapse" id="FilterButton">
             <div class="card card-body">
                 <!--form small display-->
-                <form>
+                <form action="track.php">
                     <p class="fs-5 fw-bold">Filter</p>
                     <div class="form-floating my-2">
                         <select class="form-select" id="Type" aria-label="Floating label select example">
@@ -111,15 +111,22 @@
                 <!--my avatar-->
                 <div class="rounded-3 bg-white m-2 p-3">
                     <a href="myprofile.php" class="text-decoration-none link-light">
-                        <strong class="fs-3 text-danger">My Profile</strong>
-                        <!-- if per bordo colorato se presenti notifiche -->
-                        <?php if (($templateParams["notificNotSeen"]) >= 1): ?>
-                            <img src="<?php echo $templateParams['imgProfile']; ?>"
-                                class="rounded-circle border border-danger border-3" height="55" width="55" alt="Avatar">
-                        <?php else: ?>
-                            <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle" height="55"
-                                width="55" alt="Avatar">
-                        <?php endif; ?>
+                        <div class="row">
+                            <strong class="fs-3 text-danger">My Profile</strong>
+                        </div>
+                        <div class="row">
+                            <div class="col sm-4">
+                                <!-- if per bordo colorato se presenti notifiche -->
+                                <?php if (($templateParams["notificNotSeen"]) >= 1): ?>
+                                    <img src="<?php echo $templateParams['imgProfile']; ?>"
+                                        class="rounded-circle border border-danger border-3" height="55" width="55"
+                                        alt="Avatar">
+                                <?php else: ?>
+                                    <img src="<?php echo $templateParams['imgProfile']; ?>" class="rounded-circle"
+                                        height="55" width="55" alt="Avatar">
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </a>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item mt-2">Follower

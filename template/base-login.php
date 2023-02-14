@@ -126,8 +126,7 @@
                                             </div>
                                             <div class="col-sm-1 mt-1">
                                                 <span class="bi bi-info-circle" data-bs-toggle="popover"
-                                                    data-bs-content="La password deve contenere almeno 8 caratteri
-                                                e almeno 2 caratteri speciali"></span>
+                                                    data-bs-content="La password viene criptata con hash a 128 caratteri"></span>
                                             </div>
                                         </div>
                                         <!-- Regione -->

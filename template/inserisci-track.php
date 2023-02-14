@@ -19,13 +19,13 @@
                         placeholder="Pubblica un nuovo tracciato ..."></textarea>
                         <label for="textAreaTrack" hidden>textAreaTrack</label>
                 </div>
-                <div class="row align-items-center mt-4">
-                    <div class="col-sm-3">
+                <div class="row align-items-center mt-3">
+                    <div class="col-sm-3 mt-1">
                         <input min="10" max="200" type="number" class="form-control" id="lengthTrack" name="lengthTrack"
                             placeholder="Lunghezza km">
                             <label for="lengthTrack" hidden>lengthTrack</label>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 mt-1">
                         <select class="form-select" aria-label="Default select example" id="typeTrack" name="typeTrack">
                             <option selected>Road</option>
                             <option value="Off-Road">Off-Road</option>
@@ -33,7 +33,7 @@
                         </select>
                         <label for="typeTrack" hidden>typeTrack</label>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 mt-1">
                         <select class="form-select" aria-label="Default select example" id="RegionTrack"
                             name="RegionTrack">
                             <option selected>Nord</option>

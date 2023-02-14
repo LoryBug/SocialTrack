@@ -132,18 +132,18 @@ if (count($listatracciati) == 0) { ?>
                                         value="<?php echo $Track["Username"] ?>">
                                     <div class="container d-flex">
                                         <div class="row">
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-3 mt-1">
                                                 <input type="number"
                                                     class="form-control border col-1 shadow-sm rounded-pill" id="trackVote<?php echo $Track["TrackID"] ?>"
                                                     name="trackVote" placeholder="Voto" min="1" max="5">
                                                     <label for="trackVote<?php echo $Track["TrackID"] ?>" hidden>trackVote</label>
                                             </div>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-6 mt-1">
                                                 <input type="text" class="form-control border shadow-sm rounded-pill"
                                                     id="reviewInput<?php echo $Track["TrackID"] ?>" name="reviewInput" placeholder="Write a review" />
                                                     <label for="reviewInput<?php echo $Track["TrackID"] ?>" hidden>reviewInput</label>
                                             </div>
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-3 mt-2">
                                                 <button class="btn btn-outline-danger rounded-pill" type="submit"
                                                     value="Submit" Form="formNewReview<?php echo $Track["TrackID"]?>" id="inputGroupFile<?php echo $Track["TrackID"] ?>">
                                                     Pubblica
